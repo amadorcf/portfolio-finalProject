@@ -1,0 +1,16 @@
+@font-face {
+  font-family: Yanone;
+  src: url('fonts/yanone.ttf');
+}
+
+@font-face {
+  font-family: finger;
+  src: url('fonts/Fingerprint.otf');
+}
+
+
+body{
+  background-color: rgb(219, 202, 202);
+  font-family: Yanone, Arial, Helvetica;
+}
+
