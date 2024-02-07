@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
+  public title: string | undefined;
+  public subtitle: string | undefined;
+  public email: string | undefined;
+
+  constructor(){
+    this.title = "Amador Cano Fernández";
+    this.subtitle = "Future Full-Stack Developer";
+    this.email = "amadorcf@outlook.com"
+  }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+
+  }
 
 }
