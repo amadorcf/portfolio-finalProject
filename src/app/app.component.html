@@ -1,15 +1,29 @@
-<h1>PORTFOLIO PROJECT</h1>
+<!--Cabecera-->
+<header>
+  <div class="web-title">
+    <h1></h1>
+  </div>
+</header>
 
-<nav>
-  <a [routerLink]="['about']" [routerLinkActive]="['active']">Sobre mi</a>
-  &nbsp;
-  <a [routerLink]="['projects']" [routerLinkActive]="['active']">Proyectos</a>
-  &nbsp;
-  <a [routerLink]="['create']" [routerLinkActive]="['active']">Crear proyecto</a>
-  &nbsp;
-  <a [routerLink]="['contact']" [routerLinkActive]="['active']">Contacto</a>
+<!--Barra de navegacion-->
+<nav class="nav">
+  <ul>
+    <li><a [routerLink]="['about']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+    <li><a [routerLink]="['projects']" [routerLinkActive]="['actived']">Proyectos</a></li>
+    <li><img src="../assets/img/amadorcf_logo.png" alt=""></li>
+    <li><a [routerLink]="['create']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
+    <li><a [routerLink]="['contact']" [routerLinkActive]="['actived']">Contacto</a></li>
+  </ul>
 </nav>
 
+<!--Contenido principal-->
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
 
-<router-outlet></router-outlet>
+<!--Pie de pagina-->
+<footer id="footer">
+  Porfolio Project &copy;
+</footer>
+
 
