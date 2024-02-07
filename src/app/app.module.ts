@@ -24,6 +24,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     BrowserModule,
     FormsModule,
     routing,
+    HttpClientModule
   ],
   providers: [
     appRoutingProviders

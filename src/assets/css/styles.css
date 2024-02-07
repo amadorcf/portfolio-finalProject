@@ -67,16 +67,17 @@ header .web-title{
   color: rgba(0, 0, 0, 1);
   text-decoration: none;
   font-size: 22px;
-  transition: all 200ms;
+  transition: all 250ms;
 }
 
 .nav a:hover, .actived{
   transform: scale(1.2, 1.2);
   font-weight: bold;
-  background: rgba(243, 148, 49, 0.8);
+  background: rgba(243, 148, 49, 0.9);
   border: 1px solid transparent;
   border-radius: 25px;
   padding: 10px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* LOGO */
@@ -158,4 +159,71 @@ article.about{
   padding-top: 10px;
   padding-bottom: 30px;
   text-align: justify;
+}
+
+/* SECCION CREAR PROYECTO */
+.container{
+  width: 80%;
+  padding: 10px;
+  min-height: 1000px;
+  margin: 0px auto;
+}
+
+.container h2{
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+form{
+  width: 80%;
+  text-align: left;
+}
+
+form label{
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+  width: 40%;
+  padding: 5px;
+}
+
+form button,
+form input[type="submit"]{
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: black;
+  background-color: rgba(243, 148, 49, 0.9);
+  border: 1px solid rgba(75, 41, 5, 1);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover,
+form input[type="submit"]:hover{
+  background-color: rgba(243, 148, 49, 0.6);
+  border: 1px solid rgba(75, 41, 5, 1);
+  border-radius: 5px;
+}
+
+form input[disabled]{
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.form_error{
+  font-size: 18px;
+  color: red;
+  padding: 3px;
+  margin-left: 5px;
 }
