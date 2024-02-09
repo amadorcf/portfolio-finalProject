@@ -19,7 +19,7 @@
 body{
   font-family: Yanone, Arial, Helvetica;
   font-size: 20px;
-  background-color: white;
+  background-color: #fafafa;
   /*
   background: url('../img/bg-green.jpg');
   background-size: 100%;
@@ -226,4 +226,21 @@ form input[disabled]{
   color: red;
   padding: 3px;
   margin-left: 5px;
+}
+
+/* Alertas de nuevo proyecto*/
+.message{
+  width: 50%;
+  padding: 5px;
+  border: 1px solid #eee;
+}
+
+.success{
+  background-color: green;
+  color: white;
+}
+
+.failed{
+  background-color: red;
+  color: white;
 }

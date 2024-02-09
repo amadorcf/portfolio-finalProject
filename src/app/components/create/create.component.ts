@@ -10,8 +10,9 @@ import { ProjectService } from '../../services/project.service';
 })
 export class CreateComponent {
 
-  public title: string | undefined
+  public title: string | undefined;
   public project: Project;
+  public status: string | undefined;
 
   constructor(
     private _projectService: ProjectService
@@ -29,5 +30,19 @@ export class CreateComponent {
 
   onSubmit(form:any){
     console.log(this.project)
+    this._projectService.saveProject(this.project).subscribe(
+      response =>{
+        //console.log(response)
+        if(response.project){
+          this.status = 'success';
+          form.reset();
+        }else{
+          this.status = 'failed';
+        }
+      },
+      error =>{
+        console.log(<any>error)
+      }
+    );
   }
 }
