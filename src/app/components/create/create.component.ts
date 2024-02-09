@@ -53,7 +53,7 @@ export class CreateComponent {
 						});
 					}else{
 						//this.save_project = response.project;
-            
+
 						this.status = 'success';
 						form.reset();
 					}
@@ -65,6 +65,7 @@ export class CreateComponent {
       error =>{
         console.log(<any>error)
       }
+      
     );
   }
 
