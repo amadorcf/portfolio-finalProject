@@ -11,9 +11,10 @@ import { Global } from '../../services/global';
 })
 export class ProjectsComponent {
   public projects: Project[] | undefined;
+  public url:string | undefined;
 
   constructor(private _projectService: ProjectService){
-
+    this.url = Global.url;
   }
 
   ngOnInit(): void {

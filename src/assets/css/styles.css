@@ -244,3 +244,41 @@ form input[disabled]{
   background-color: red;
   color: white;
 }
+
+/*SECCION PROYECTOS*/
+
+.projects-container{
+  width: 80%;
+  height: auto;
+  padding: 10px;
+  min-height: 1000px;
+  margin: 0px auto;
+}
+
+.projects-container h2{
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.project{
+  display: block;
+  list-style: none;
+  float: left;
+  width: 28%;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.project .image{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project img{
+  width: 100%;
+  height: 200px;
+}
