@@ -11,6 +11,7 @@ import { CreateComponent } from './components/create/create.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 // Array de rutas
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'projects', component: ProjectsComponent},
   {path:'create', component: CreateComponent},
   {path:'contact', component: ContactComponent},
+  {path:'project/:id', component: DetailComponent},
   {path:'**', component: ErrorComponent},
 
 ];

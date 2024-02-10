@@ -7,7 +7,7 @@ import { Global } from "./global";
 @Injectable()
 export class ProjectService{
   public url:string | undefined;
-  
+
   constructor(private _http: HttpClient){
     this.url = Global.url;
   }
@@ -29,7 +29,11 @@ export class ProjectService{
 		return this._http.get(this.url+'projects', {headers: headers});
 	}
 
+  getProject(id:any): Observable<any>{
+		let headers = new HttpHeaders().set('Content-Type','application/json');
 
+		return this._http.get(this.url+'project/'+id, {headers: headers});
+	}
 
 }
 

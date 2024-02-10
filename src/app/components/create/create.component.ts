@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
-import { UploadService } from '../../services/upload.service';
 import { Global } from '../../services/global';
+import { UploadService } from '../../services/upload.service';
 
 @Component({
   selector: 'app-create',
@@ -14,6 +14,7 @@ export class CreateComponent {
 
   public title: string | undefined;
   public project: Project;
+  public save_project: any;
   public status: string | undefined;
   public filesToUpload: Array<File> | undefined;
 
@@ -46,13 +47,13 @@ export class CreateComponent {
 						this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
 						.then((result:any) => {
 
-							//this.save_project = result.project;
+							this.save_project = result.project;
 
 							this.status = 'success';
 							form.reset();
 						});
 					}else{
-						//this.save_project = response.project;
+						this.save_project = response.project;
 
 						this.status = 'success';
 						form.reset();
@@ -65,7 +66,7 @@ export class CreateComponent {
       error =>{
         console.log(<any>error)
       }
-      
+
     );
   }
 

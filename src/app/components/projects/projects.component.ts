@@ -24,13 +24,11 @@ export class ProjectsComponent {
 
   getProjects(){
     this._projectService.getProjects().subscribe({
-      next: (response) =>
-        {
+      next: (response) =>{
           console.log(response)
           if(response.projects){
-          this.projects = response.projects;
-        }}
-      ,
+            this.projects = response.projects;
+          }},
       error: (e) => console.error(e),
       complete: () => console.info('metodo GetProjects completado')
   })
