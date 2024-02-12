@@ -217,6 +217,29 @@ form input[type="submit"]:hover{
   border-radius: 5px;
 }
 
+.button-edit,
+.button-delete{
+  width: 40%;
+  float:left;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 10px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button-edit:hover{
+  background-color: gold;
+  color: #fff;
+}
+
+.button-delete:hover{
+  background-color: firebrick;
+  color: #fff;
+}
 form input[disabled]{
   opacity: 0.4;
   cursor: not-allowed;
@@ -304,8 +327,9 @@ form input[disabled]{
 }
 
 .detail-container .image{
-	float: left;
-	width: 47%;
+  text-align: center;
+	width: 45%;
+  float: left;
 }
 
 .detail-container .image img{
@@ -316,6 +340,7 @@ form input[disabled]{
 	float: left;
 	width: 48%;
 	margin-left:30px;
+  margin-top: 30px;
 }
 
 .detail-container h2{
@@ -323,4 +348,10 @@ form input[disabled]{
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 10px;
 	margin-bottom: 15px;
+}
+
+.confirm{
+	display: block;
+	font-weight: bold;
+	margin-top: 20px;
 }

@@ -13,6 +13,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class DetailComponent implements OnInit {
   public url: string;
   public project: Project | undefined;
+  public confirm: boolean = false;
 
   constructor(
     private _projectService: ProjectService,
@@ -42,22 +43,23 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  /*
-  setConfirm(confirm){
+
+  setConfirm(confirm:any){
     this.confirm = confirm;
   }
 
-  deleteProject(id){
-  	this._projectService.deleteProject(id).subscribe(
-  		response => {
-  			if(response.project){
-  				this._router.navigate(['/proyectos']);
-  			}
-  		},
-  		error => {
-  			console.log(<any>error);
-  		}
-  	);
+  deleteProject(id:any){
+  	this._projectService.deleteProject(id).subscribe({
+      next: (response) =>{
+        console.log(response)
+        if(response.project){
+          this._router.navigate(['/projects']);
+        }},
+      error: (e) => console.error(<any>e),
+      complete: () => console.info('metodo deleteProject completado')
+    });
   }
-  */
+
 }
+
+
