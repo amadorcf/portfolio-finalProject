@@ -5,13 +5,13 @@ import { ModuleWithProviders, createComponent } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Importar componentes
-import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { CreateComponent } from './components/create/create.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { EditComponent } from './components/edit/edit.component';
 
 // Array de rutas
 const routes: Routes = [
@@ -21,7 +21,8 @@ const routes: Routes = [
   {path:'create', component: CreateComponent},
   {path:'contact', component: ContactComponent},
   {path:'project/:id', component: DetailComponent},
-  {path:'**', component: ErrorComponent},
+  {path:'edit-project/:id', component: EditComponent},
+  {path:'**', component: ErrorComponent}
 
 ];
 

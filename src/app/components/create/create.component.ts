@@ -17,11 +17,13 @@ export class CreateComponent {
   public save_project: any;
   public status: string | undefined;
   public filesToUpload: Array<File> | undefined;
+  public url: string | undefined;
 
   constructor(
     private _projectService: ProjectService,
     private _uploadService: UploadService
   ){
+    this.url = Global.url;
     this.title = "Crear proyecto";
     this.project = new Project('', '', '', '', 2024, '', '');
 
