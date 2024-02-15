@@ -190,6 +190,7 @@ form label{
 form input[type="text"],
 form input[type="number"],
 form input[type="email"],
+form input[type="url"],
 form textarea{
   width: 40%;
   padding: 5px;
@@ -291,7 +292,7 @@ form input[disabled]{
   display: block;
   list-style: none;
   float: left;
-  width: 28%;
+  width: 29%;
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
@@ -300,7 +301,7 @@ form input[disabled]{
 
 .project .image{
   width: 100%;
-  height: 220px;
+  height: 250px;
   overflow: hidden;
   position: relative; /* Se usa para que no se salga la imagen de la caja, ya que la imagen tiene position absolute */
 
@@ -311,10 +312,17 @@ form input[disabled]{
   height: 90%;
   position: absolute; /* se usa en caso de este div, donde tiene la altura y el ancho definido, sin esto top, right y left no funcionarían */
 
-  top: 10%; /* sirve en caso de un div como este, donde tiene una altura definida, en caso de que la altura no este definida esta edición no se pone ; */
+  top: 4%; /* sirve en caso de un div como este, donde tiene una altura definida, en caso de que la altura no este definida esta edición no se pone ; */
   right: 0; /* se debe usar para que margin 0 auto funcione */
   left: 0; /* se debe usar para que margin 0 auto funcione */
   margin: 0 auto; /* Esto lo centra */
+  filter: grayscale(1);
+  transition: all 250ms;
+}
+
+.project img:hover{
+  filter: grayscale(0);
+  transform: scale(1.05, 1.05);
 }
 
 .project a{
@@ -340,6 +348,7 @@ form input[disabled]{
 .detail-container .image img{
 	width: 60%;
   height: 90%;
+
 }
 
 .detail-container .data{
@@ -347,6 +356,11 @@ form input[disabled]{
 	width: 48%;
 	margin-left:30px;
   margin-top: 30px;
+}
+
+.detail-container .data a[type="url"]{
+  text-decoration: none;
+  color: blue;
 }
 
 .detail-container h2{
@@ -366,4 +380,9 @@ form input[disabled]{
   text-align: center;
   border-bottom: 1px solid transparent;
   border-radius: 5px;
+}
+
+/* Slider */
+.contact-container .bx-wrapper {
+  margin: 0 auto;
 }

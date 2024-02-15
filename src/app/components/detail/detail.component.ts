@@ -28,15 +28,20 @@ export class DetailComponent implements OnInit {
   		let id = params['id'];
 
       this.getProject(id);
+
     });
   }
 
   getProject(id: any) {
+
     this._projectService.getProject(id).subscribe({
       next: (response) =>{
         console.log(response)
+
         if(response.project){
+
           this.project = response.project;
+          console.log(this.project)
         }},
       error: (e) => console.error(<any>e),
       complete: () => console.info('metodo GetProject completado')

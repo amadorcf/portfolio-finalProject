@@ -1,1 +1,17 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <h1>Contacto</h1>
+
+
+  <input type="number" [(ngModel)]="widthSlider" ><br> <!-- (keyup.enter)="cargarSlider()" -->
+  <button (click)="cargarSlider()">Cargar slider</button>
+  <button type="reset" id="limpiar" (click)="reiniciarSlider()">Reiniciar slider</button>
+
+  <div *ngIf="anchoToSlider">
+
+    <slider [anchura]="anchoToSlider"></slider>
+
+  </div>
+
+
+</div>
+

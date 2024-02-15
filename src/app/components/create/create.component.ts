@@ -25,7 +25,7 @@ export class CreateComponent {
   ){
     this.url = Global.url;
     this.title = "Crear proyecto";
-    this.project = new Project('', '', '', '', 2024, '', '');
+    this.project = new Project('', '', '', '', 2024, '', '', '');
 
   }
 

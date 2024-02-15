@@ -43,6 +43,12 @@
     </p>
 
     <p>
+      <label for="link">Enlace web</label>
+      <input type="url" id="link" name="link" #link="ngModel" [(ngModel)]="project.link" />
+      <span class="form_error" *ngIf="link.touched && !link.valid">Los lenguajes son obligatorios</span>
+    </p>
+
+    <p>
       <label for="image">Imagen del proyecto</label>
       <span *ngIf="project.image" style="float: none">
         <img src="{{url+'get-image/'+project.image}}" width="100px"/>

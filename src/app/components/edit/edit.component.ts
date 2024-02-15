@@ -26,7 +26,7 @@ export class EditComponent implements OnInit {
     private _uploadService: UploadService
   ) {
     this.url = Global.url;
-    this.project = new Project('', '', '', '', 2024, '', '');
+    this.project = new Project('', '', '', '', 2024, '', '', '');
   }
 
   ngOnInit(){
