@@ -304,7 +304,7 @@ form input[disabled]{
   height: 250px;
   overflow: hidden;
   position: relative; /* Se usa para que no se salga la imagen de la caja, ya que la imagen tiene position absolute */
-
+  filter: grayscale(0);
 }
 
 .project img{
@@ -316,11 +316,11 @@ form input[disabled]{
   right: 0; /* se debe usar para que margin 0 auto funcione */
   left: 0; /* se debe usar para que margin 0 auto funcione */
   margin: 0 auto; /* Esto lo centra */
-  filter: grayscale(1);
+  /*filter: grayscale(1);*/
   transition: all 250ms;
 }
 
-.project img:hover{
+.project .image:hover{
   filter: grayscale(0);
   transform: scale(1.05, 1.05);
 }

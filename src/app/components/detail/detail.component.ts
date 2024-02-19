@@ -14,7 +14,7 @@ export class DetailComponent implements OnInit {
   public url: string;
   public project: Project | undefined;
   public confirm: boolean = false;
-
+  public website: any;
   constructor(
     private _projectService: ProjectService,
     private _router: Router,
@@ -30,6 +30,8 @@ export class DetailComponent implements OnInit {
       this.getProject(id);
 
     });
+
+
   }
 
   getProject(id: any) {
@@ -42,6 +44,7 @@ export class DetailComponent implements OnInit {
 
           this.project = response.project;
           console.log(this.project)
+
         }},
       error: (e) => console.error(<any>e),
       complete: () => console.info('metodo GetProject completado')

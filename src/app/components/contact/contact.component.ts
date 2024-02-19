@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -9,12 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
   public widthSlider: number | undefined;
-  public anchoToSlider: number | undefined;
+  public anchoToSlider: any | undefined;
+  public autor: any;
 
-  constructor() { }
+  @ViewChild('textos', {static: true}) textos: any;
+
+
+  constructor() {
+    this.autor = undefined;
+  }
 
   ngOnInit(): void {
 
+    // Opcion clasica
+    //alert(document.querySelector('#texto')?.innerHTML);
+
+    // Opcion Angular viewChild
+    console.log("Evento capturado con viewChild...\n"+this.textos.nativeElement.innerText);
+
+    /*
     var elementos = document.getElementsByTagName('input');
 
     $("#limpiar").click(function (e) {
@@ -23,15 +36,22 @@ export class ContactComponent implements OnInit {
           elementos[i].value='';
         }
     });
-
+    */
   }
 
   cargarSlider(){
     this.anchoToSlider = this.widthSlider;
+    if(this.anchoToSlider > 600){
+      this.anchoToSlider = 600;
+    }
   }
 
   reiniciarSlider(){
     this.anchoToSlider = undefined;
+  }
+
+  getAutor(event: any){
+    this.autor = event;
   }
 
 }

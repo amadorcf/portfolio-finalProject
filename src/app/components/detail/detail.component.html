@@ -10,7 +10,7 @@
 		<h3>{{project.description}}</h3>
 		<p>{{project.category}}</p>
 		<p>{{project.langs}}</p>
-    <a type="url" href="https://www.plasticoscano.com/">{{project.link}}</a>
+    Link -> <a type="url" href="{{project.link}}">{{project.name}}</a>
 
 		<p *ngIf="confirm == false">
 			<a [routerLink]="['/edit-project', project._id]" class="button-edit">Editar</a>
