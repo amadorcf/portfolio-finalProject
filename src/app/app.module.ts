@@ -14,6 +14,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ResaltadoDirective } from './resaltado.directive';
+import { SecurityComponent } from './components/security/security.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ResaltadoDirective } from './resaltado.directive';
     DetailComponent,
     EditComponent,
     SliderComponent,
-    ResaltadoDirective
+    ResaltadoDirective,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,

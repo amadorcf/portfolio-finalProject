@@ -31,6 +31,6 @@ export class ProjectsComponent {
           }},
       error: (e) => console.error(e),
       complete: () => console.info('metodo GetProjects completado')
-  })
+    })
   }
 }

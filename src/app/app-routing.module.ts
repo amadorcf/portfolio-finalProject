@@ -12,6 +12,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
+import { SecurityComponent } from './components/security/security.component';
 
 // Array de rutas
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'contact', component: ContactComponent},
   {path:'project/:id', component: DetailComponent},
   {path:'edit-project/:id', component: EditComponent},
+  {path:'spring-security', component: SecurityComponent},
   {path:'**', component: ErrorComponent}
 
 ];

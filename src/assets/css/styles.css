@@ -27,6 +27,15 @@ body{
   */
 }
 
+footer {
+  position:relative;
+
+  width: 100%;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
 .clearfix{
   float: none;
   clear: both;
@@ -309,7 +318,7 @@ form input[disabled]{
 
 .project img{
   width: 80%;
-  height: 90%;
+  height: 80%;
   position: absolute; /* se usa en caso de este div, donde tiene la altura y el ancho definido, sin esto top, right y left no funcionarían */
 
   top: 4%; /* sirve en caso de un div como este, donde tiene una altura definida, en caso de que la altura no este definida esta edición no se pone ; */
@@ -385,4 +394,49 @@ form input[disabled]{
 /* Slider */
 .contact-container .bx-wrapper {
   margin: 0 auto;
+}
+
+
+/* Web: Spring Security */
+article.spring-security{
+  width: 70%;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.spring-security p{
+  padding-top: 10px;
+  padding-bottom: 30px;
+  text-align: justify;
+}
+
+.spring-security h2{
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+.spring-security img{
+  width: 250px;
+  height: 150px;
+}
+
+.spring-security .keywords a{
+  font-style: italic;
+  color: blue;
+}
+
+.spring-security .first ol a{
+  text-decoration: none;
+}
+
+.spring-security .first ul{
+  list-style: none;
+  text-indent: 1em;
+}
+
+.spring-security .first ul a{
+  font-weight: bold;
 }
