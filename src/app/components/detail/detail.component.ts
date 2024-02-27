@@ -38,12 +38,12 @@ export class DetailComponent implements OnInit {
 
     this._projectService.getProject(id).subscribe({
       next: (response) =>{
-        console.log(response)
+        //console.log(response)
 
         if(response.project){
 
           this.project = response.project;
-          console.log(this.project)
+          //console.log(this.project)
 
         }},
       error: (e) => console.error(<any>e),
@@ -59,7 +59,7 @@ export class DetailComponent implements OnInit {
   deleteProject(id:any){
   	this._projectService.deleteProject(id).subscribe({
       next: (response) =>{
-        console.log(response)
+        //console.log(response)
         if(response.project){
           this._router.navigate(['/projects']);
         }},

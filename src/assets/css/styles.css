@@ -133,7 +133,7 @@ header .web-title{
   margin: 0px auto;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 #title h1{
@@ -284,7 +284,7 @@ form input[disabled]{
 /*SECCION PROYECTOS*/
 
 .projects-container{
-  width: 80%;
+  width: 100%;
   height: auto;
   padding: 10px;
   min-height: 1000px;
@@ -317,11 +317,10 @@ form input[disabled]{
 }
 
 .project img{
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 60%;
   position: absolute; /* se usa en caso de este div, donde tiene la altura y el ancho definido, sin esto top, right y left no funcionarían */
-
-  top: 4%; /* sirve en caso de un div como este, donde tiene una altura definida, en caso de que la altura no este definida esta edición no se pone ; */
+  top: 25%; /* sirve en caso de un div como este, donde tiene una altura definida, en caso de que la altura no este definida esta edición no se pone ; */
   right: 0; /* se debe usar para que margin 0 auto funcione */
   left: 0; /* se debe usar para que margin 0 auto funcione */
   margin: 0 auto; /* Esto lo centra */
@@ -356,7 +355,7 @@ form input[disabled]{
 
 .detail-container .image img{
 	width: 60%;
-  height: 90%;
+  height: 60%;
 
 }
 
@@ -391,23 +390,24 @@ form input[disabled]{
   border-radius: 5px;
 }
 
-/* Slider */
+/* Slider
 .contact-container .bx-wrapper {
   margin: 0 auto;
 }
-
+*/
 
 /* Web: Spring Security */
 article.spring-security{
-  width: 70%;
+  width: 90%;
   margin: 0px auto;
   margin-bottom: 20px;
-  font-size: 22px;
+  font-size: 16px;
+  font-family: Helvetica;
+  line-height: 1.2em;
 }
 
 .spring-security p{
-  padding-top: 10px;
-  padding-bottom: 30px;
+
   text-align: justify;
 }
 
@@ -419,8 +419,9 @@ article.spring-security{
 }
 
 .spring-security img{
-  width: 250px;
-  height: 150px;
+  width: 60%;
+  height: 50%;
+  padding: 10px;
 }
 
 .spring-security .keywords a{
@@ -439,4 +440,29 @@ article.spring-security{
 
 .spring-security .first ul a{
   font-weight: bold;
+}
+
+summary {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  font-weight: bold;
+  margin: -1.5em -0.5em 0;
+  padding: 0.5em;
+  cursor: pointer;
+  border: #ccc 1px solid;
+  border-radius: 4px;
+}
+
+.summary-content{
+  margin-top: 10px;
+}
+
+details {
+  padding: 0.5em 0.5em 0;
+}
+
+details[open] {
+  padding: 0.5em;
+  margin-top: 10px;
+
 }

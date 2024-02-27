@@ -36,7 +36,7 @@ export class CreateComponent {
   }
 
   onSubmit(form:any){
-    console.log(this.project)
+    //console.log(this.project)
 
     //Guardar datos
     this._projectService.saveProject(this.project).subscribe(

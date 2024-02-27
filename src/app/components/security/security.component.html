@@ -6,81 +6,118 @@
     <p>En este proyecto se condensa todo lo aprendido sobre Spring Security y OAuth 2.0</p>
   </div>
 
-  <div class="keywords">
-    <h2>Palabras clave</h2>
-    <ul>
-      <li><a href="">Spring Data JPA:</a>
-        Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.</li>
-      <li><a href="">H2 DataBase:</a>
-        Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.</li>
-      <li><a href="">Validation:</a>
-        Bean Validation with Hibernate validator.</li>
-      <li><a href="">Spring Web:</a>
-        Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.</li>
-      <li><a href="">Lombok:</a>
-        Java annotation library which helps to reduce boilerplate code.</li>
-    </ul>
-  </div>
+  <details >
+    <summary>Palabras clave</summary>
+    <div class="summary-content">
+      <ul>
+        <li><a href="">Spring Data JPA:</a>
+          Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.</li>
+        <li><a href="">H2 DataBase:</a>
+          Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.</li>
+        <li><a href="">Validation:</a>
+          Bean Validation with Hibernate validator.</li>
+        <li><a href="">Spring Web:</a>
+          Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.</li>
+        <li><a href="">Lombok:</a>
+          Java annotation library which helps to reduce boilerplate code.</li>
+      </ul>
+    </div>
+  </details>
   <br><br>
 
-  <div class="first">
-    <h2>Primeros "Pasos"</h2>
-    <ol>
+  <details class="first">
+    <summary>Primeros "Pasos"</summary>
+    <div class="summary-content">
+      <ol>
 
-      <li>Usar "<a href="https://start.spring.io/">spring initialzr</a>" para crear proyecto.
-        <ul>
-          <li><a>Caracteristicas basicas:</a>  Project-Maven, Spring Boot-3.2.3, Packaging-Jar, </li>
-          <li><a>Dependencias:</a> Spring Data JPA, H2 DataBase, Validation, Spring Web</li>
-        </ul>
-      </li>
+        <li>Usar "<a href="https://start.spring.io/">spring initialzr</a>" para crear proyecto.
+          <ul>
+            <li><a>Caracteristicas basicas:</a>  Project-Maven, Spring Boot-3.2.3, Packaging-Jar, </li>
+            <li><a>Dependencias:</a> Spring Data JPA, H2 DataBase, Validation, Spring Web</li>
+          </ul>
+        </li>
 
-      <li>Genereamos el archivo zip, descomprimimos y lo inicializamos con InteliJ</li>
+        <li>Genereamos el archivo zip, descomprimimos y lo inicializamos con InteliJ</li>
 
-      <li>En Java-amadorcf.es-project creamos la estructura de los diferentes packages del proyecto
-        <ul>
-          <li><a>controller:</a>   </li>
-          <li><a>service:</a> </li>
-          <li><a>dto:</a> </li>
-          <li><a>persistance(entity y repository)</a>  </li>
-          <li><a>exception:</a> </li>
-          <li><a>service:</a> </li>
-        </ul>
-      </li>
+        <li>En Java/amadorcf.es/project creamos la estructura de los diferentes packages del proyecto
+          <ul>
+            <li>
+              <strong>controller: </strong>
+              <p>El controlador es responsable de manejar las solicitudes HTTP entrantes y enviar respuestas. Por lo general, recibe datos del usuario a través de la solicitud, delega en un servicio para realizar la lógica de negocio y luego envía una respuesta al usuario.</p>
+            </li><br>
+            <li>
+              <strong>service: </strong>
+              <p>La capa de servicio contiene lógica de negocio y es responsable de manipular los datos recuperados de la capa de repositorio. En otras palabras, la capa de servicio realiza operaciones en los datos (por ejemplo, filtrado, ordenamiento, validación, etc.) antes de enviarlos de vuelta al controlador o al repositorio.</p>
+            </li><br>
+            <li>
+              <strong>dto:</strong>
+              <p>Es un patrón muy efectivo para transmitir información entre un cliente y un servidor, pues permite crear estructuras de datos independientes de nuestro modelo de datos (Entidades), lo que nos permite crear cuantas “vistas” sean necesarias de un conjunto de tablas u orígenes de datos</p>
+            </li><br>
+            <li>
+              <strong>persistance(entity y repository):</strong>
+              <p>La capa de repositorio es responsable de acceder a la base de datos y realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar). Proporciona una capa de abstracción sobre la base de datos para que la capa de servicio no tenga que lidiar con los detalles de cómo se almacenan los datos.</p>
+            </li><br>
+            <li>
+              <strong>exception:</strong>
+              <p></p>
+            </li><br>
 
-    </ol>
-  </div>
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </details>
   <br><br>
 
-  <div class="first">
-    <h2>Crear BACK-END</h2>
-    <ol>
+  <details class="first">
+    <summary>Crear BACK-END</summary>
 
-      <li><strong>ENTITY (Java CLASS)</strong>
-        <ul>
-          <li>Crear clase Product</li>
-          <li>Agregar las diferentes anotaciones "&#64;Entity", "&#64;Id", "&#64;GeneratedValue", "&#64;Enumerable"</li>
-          <li>Agregar Getter y Setters (Atajo: ALT+Insert)</li>
-        </ul>
-      </li>
+    <div class="summary-content">
+      <ol>
 
-      <li><strong>SERVICE (Java INTERFACE)</strong>
-        <ul>
-          <li>Crear interface ProductService</li>
-          <li>Agregar las diferentes anotaciones "&#64;Entity", "&#64;Id", "&#64;GeneratedValue", "&#64;Enumerable"</li>
-          <li>Agregar Getter y Setters (Atajo: ALT+Insert)</li>
-        </ul>
-      </li>
+        <li><strong>ENTITY (Java CLASS)</strong>
+          <ul>
+            <li>Crear clase Product</li>
+            <li>Agregar las diferentes anotaciones "&#64;Entity", "&#64;Id", "&#64;GeneratedValue", "&#64;Enumerable"</li>
+            <li>Agregar Getter y Setters (Atajo: ALT+Insert)</li>
+          </ul>
+        </li>
 
-      <li><strong>CONTROLLER (Java CLASS)</strong>
-        <ul>
-          <li>Crear interface ProductService</li>
-          <li>Agregar las diferentes anotaciones "&#64;Entity", "&#64;Id", "&#64;GeneratedValue", "&#64;Enumerable"</li>
-          <li>Agregar Getter y Setters (Atajo: ALT+Insert)</li>
-        </ul>
-      </li>
+        <li><strong>SERVICE (Java INTERFACE)</strong>
+          <ul>
+            <li>Crear interface ProductService</li>
+            <li>Agregar las diferentes anotaciones "&#64;Entity", "&#64;Id", "&#64;GeneratedValue", "&#64;Enumerable"</li>
+            <li>Agregar Getter y Setters (Atajo: ALT+Insert)</li>
+          </ul>
+        </li>
 
-    </ol>
-  </div>
+        <li><strong>CONTROLLER (Java CLASS)</strong>
+          <ul>
+            <li>Crear clase ProductController</li>
+            <li>Agregar las diferentes anotaciones "&#64;RequestMaping", "&#64;RestController" para el propio controlador</li>
+            <li>Agregar las diferentes anotaciones "&#64;GetMapping", "&#64;PostMapping para cada metodo a utilizar</li>
+          </ul>
+        </li>
+
+        <li><strong>DTO (Data Transfer Object)</strong>
+          <ul>
+            <li>Crear clases SaveProduct y SaveCategory</li>
+          </ul>
+        </li>
+
+        <li><strong>SERVICE/IMPL (Casos de uso, implementacion de cada servicio)</strong>
+          <ul>
+            <li>Crear package Impl</li>
+            <li>Crear clase ProductServiceImpl y CategoryServiceImpl</li>
+            <li>Implementar metodos de cada servicio: usar sugerencia de IntliJ </li>
+            <li>Return repositorios: crearlos e importarlos</li>
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </details>
   <br><br>
 
 

@@ -25,7 +25,7 @@ export class ProjectsComponent {
   getProjects(){
     this._projectService.getProjects().subscribe({
       next: (response) =>{
-          console.log(response)
+          //console.log(response)
           if(response.projects){
             this.projects = response.projects;
           }},
