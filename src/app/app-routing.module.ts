@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'contact', component: ContactComponent},
   {path:'project/:id', component: DetailComponent},
   {path:'edit-project/:id', component: EditComponent},
-  {path:'spring-security', component: SecurityComponent},
+  {path:'projects/spring-security', component: SecurityComponent},
   {path:'**', component: ErrorComponent}
 
 ];
