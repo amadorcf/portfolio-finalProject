@@ -1,9 +1,11 @@
 <article class="spring-security">
 
-  <div id="title">
-    <img src="http://localhost:3700/api/get-image/lH2qdoib2LT6zFPRPfsMQoY0.png">
-    <h2>Spring Security Project</h2>
-    <p>En este proyecto se condensa todo lo aprendido sobre Spring Security y OAuth 2.0</p>
+  <div id="title" *ngIf="project">
+    <div class="image" *ngIf="project.image">
+      <img src="{{url+'get-image/'+project.image}}"/>
+    </div>
+    <h2>{{project.name}}</h2>
+    <p>{{project.description}}</p>
   </div>
 
   <details >

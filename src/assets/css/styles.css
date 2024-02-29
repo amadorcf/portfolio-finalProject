@@ -27,14 +27,7 @@ body{
   */
 }
 
-footer {
-  position:relative;
 
-  width: 100%;
-  padding: 20px;
-  color: white;
-  text-align: center;
-}
 
 .clearfix{
   float: none;
@@ -83,6 +76,7 @@ header .web-title{
   transition: all 250ms;
   border: 1px solid transparent;
   border-radius: 25px;
+  text-align: center;
 }
 
 .nav a:hover, .actived{
@@ -125,10 +119,13 @@ header .web-title{
 
 /* PIE DE PAGINA */
 #footer{
-  width: 80%;
-  margin: 0px auto;
-  padding-top: 15px;
+  position: absolute;
+  width: 100%;
   color: rgba(0, 0, 0, 0.5);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+
 }
 
 
@@ -401,8 +398,58 @@ form input[disabled]{
 }
 */
 
-/* PROJECT: Spring Security */
-article.spring-security{
+
+
+/* ESTILOS ARTICLES*/
+article p{
+  text-align: justify;
+}
+
+article h2{
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+article img{
+  width: 60%;
+  height: 50%;
+  padding: 10px;
+}
+
+article .keywords a{
+  font-style: italic;
+  color: blue;
+}
+
+article .first ol a{
+  text-decoration: none;
+}
+
+article .first ul{
+  list-style: none;
+  text-indent: 1em;
+}
+
+article .first ul a{
+  font-weight: bold;
+}
+
+article .create-backend ol a{
+  text-decoration: none;
+}
+
+article .create-backend ul{
+  list-style: none;
+  text-indent: 1em;
+}
+
+article .create-backend ul a{
+  font-weight: bold;
+}
+
+article{
   width: 80%;
   margin: 0px auto;
   margin-bottom: 20px;
@@ -411,24 +458,7 @@ article.spring-security{
   line-height: 1.2em;
 }
 
-.spring-security p{
-  text-align: justify;
-}
-
-.spring-security h2{
-	display: block;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 10px;
-	margin-bottom: 30px;
-}
-
-.spring-security img{
-  width: 60%;
-  height: 50%;
-  padding: 10px;
-}
-
-
+/* MENUS DESPLEGABLES */
 summary {
   color: rgba(0, 0, 0, 0.8);
   font-size: 20px;
@@ -448,7 +478,8 @@ summary {
 .summary-content li{
   margin-top: 5px;
 }
-details {
+
+details{
   padding: 0.5em 0.5em 0;
 }
 
@@ -458,40 +489,9 @@ details[open] {
 }
 
 details[open] summary{
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.8);
   border: #ccc 0px solid;
-
 }
 
-.spring-security .keywords a{
-  font-style: italic;
-  color: blue;
-}
-
-.spring-security .first ol a{
-  text-decoration: none;
-}
-
-.spring-security .first ul{
-  list-style: none;
-  text-indent: 1em;
-}
-
-.spring-security .first ul a{
-  font-weight: bold;
-}
-
-.spring-security .create-backend ol a{
-  text-decoration: none;
-}
-
-.spring-security .create-backend ul{
-  list-style: none;
-  text-indent: 1em;
-}
-
-.spring-security .create-backend ul a{
-  font-weight: bold;
-}
 
 

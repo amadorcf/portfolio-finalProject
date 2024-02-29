@@ -13,6 +13,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SecurityComponent } from './components/security/security.component';
+import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-bootcamp.component';
 
 // Array de rutas
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'contact', component: ContactComponent},
   {path:'project/:id', component: DetailComponent},
   {path:'edit-project/:id', component: EditComponent},
-  {path:'projects/spring-security', component: SecurityComponent},
+  {path:'projects/spring-security/:id', component: SecurityComponent},
+  {path:'projects/web-dev-bootcamp/:id', component: WebDevBootcampComponent},
   {path:'**', component: ErrorComponent}
 
 ];

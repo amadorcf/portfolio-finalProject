@@ -15,6 +15,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ResaltadoDirective } from './resaltado.directive';
 import { SecurityComponent } from './components/security/security.component';
+import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-bootcamp.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SecurityComponent } from './components/security/security.component';
     EditComponent,
     SliderComponent,
     ResaltadoDirective,
-    SecurityComponent
+    SecurityComponent,
+    WebDevBootcampComponent
   ],
   imports: [
     BrowserModule,

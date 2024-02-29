@@ -1,0 +1,22 @@
+/*
+.sections[open] .sub-summary{
+  margin-top: 10px;
+}
+*/
+
+#sub-section{
+  font-size: 22px;
+  color: rgba(70, 70, 70, 1);
+}
+
+.sections summary{
+  margin-top: 10px;
+}
+
+.sub-summary-content{
+  margin-top: 15px;
+}
+
+.sub-summary-content li{
+  list-style: square;
+}

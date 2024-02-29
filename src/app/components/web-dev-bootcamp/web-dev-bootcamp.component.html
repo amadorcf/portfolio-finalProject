@@ -1,0 +1,60 @@
+<article class="spring-security">
+
+  <div id="title" *ngIf="project">
+    <div class="image" *ngIf="project.image">
+      <img src="{{url+'get-image/'+project.image}}"/>
+    </div>
+    <h2>{{project.name}}</h2>
+    <p>{{project.description}}</p>
+  </div>
+
+  <div class="sections">
+
+    <summary id="sub-section">Sections</summary>
+
+      <details>
+        <summary class="sub-summary">19: jQuery</summary>
+          <div class="sub-summary-content">
+            <ul>
+
+              <li><strong >Keywords</strong>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam repellat exercitationem quibusdam non cumque accusantium quae deleniti nemo beatae quasi, dolorum eligendi alias accusamus quia dolores, deserunt ad! Architecto, numquam.</p>
+              </li>
+
+              <li><strong >Selectors</strong>
+                <br>With JavaScripts: document.querySelector("h1")
+                <br>With jQuery: $("h1")
+              </li>
+
+            </ul>
+          </div>
+
+      </details>
+
+
+      <details>
+        <summary class="sub-summary">20: Simon Game</summary>
+          <div class="sub-summary-content">
+            <ul>
+
+              <li><strong >Keywords</strong>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam repellat exercitationem quibusdam non cumque accusantium quae deleniti nemo beatae quasi, dolorum eligendi alias accusamus quia dolores, deserunt ad! Architecto, numquam.</p>
+              </li>
+
+            </ul>
+          </div>
+
+      </details>
+  </div>
+  <br><br>
+
+  <div class="sections">
+
+    <summary id="sub-section">Others..</summary>
+  </div>
+  <br><br>
+
+
+
+
+</article>

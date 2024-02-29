@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Project } from '../../models/project';
+import { Component } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
+import { Project } from '../../models/project';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Global } from '../../services/global';
-import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
+  selector: 'app-web-dev-bootcamp',
+  templateUrl: './web-dev-bootcamp.component.html',
+  styleUrl: './web-dev-bootcamp.component.css',
   providers: [ProjectService],
 })
-export class DetailComponent implements OnInit {
+export class WebDevBootcampComponent {
   public url: string;
   public project: Project | undefined;
   public confirm: boolean = false;
@@ -51,23 +51,4 @@ export class DetailComponent implements OnInit {
     });
   }
 
-
-  setConfirm(confirm:any){
-    this.confirm = confirm;
-  }
-
-  deleteProject(id:any){
-  	this._projectService.deleteProject(id).subscribe({
-      next: (response) =>{
-        //console.log(response)
-        if(response.project){
-          this._router.navigate(['/projects']);
-        }},
-      error: (e) => console.error(<any>e),
-      complete: () => console.info('metodo deleteProject completado')
-    });
-  }
-
 }
-
-
