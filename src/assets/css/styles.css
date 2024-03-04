@@ -27,8 +27,6 @@ body{
   */
 }
 
-
-
 .clearfix{
   float: none;
   clear: both;
@@ -129,7 +127,7 @@ header .web-title{
 }
 
 
-/* SOBRE MI */
+/* SOBRE MI -about- */
 #title{
   width: 50%;
   margin: 0px auto;
@@ -158,6 +156,7 @@ article.about{
   margin: 0px auto;
   margin-bottom: 20px;
   font-size: 22px;
+  font-family: Yanone;
 }
 
 .about h2{
@@ -401,6 +400,15 @@ form input[disabled]{
 
 
 /* ESTILOS ARTICLES*/
+article{
+  width: 80%;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: Helvetica;
+  line-height: 1.2em;
+}
+
 article p{
   text-align: justify;
 }
@@ -449,14 +457,7 @@ article .create-backend ul a{
   font-weight: bold;
 }
 
-article{
-  width: 80%;
-  margin: 0px auto;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-family: Helvetica;
-  line-height: 1.2em;
-}
+
 
 /* MENUS DESPLEGABLES */
 summary {

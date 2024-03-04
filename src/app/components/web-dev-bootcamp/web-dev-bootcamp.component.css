@@ -20,3 +20,9 @@
 .sub-summary-content li{
   list-style: square;
 }
+
+
+.sub-summary-content ol li{
+  list-style: none;
+  text-indent: 1em;
+}
