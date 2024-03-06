@@ -18,9 +18,8 @@
 }
 
 .sub-summary-content li{
-  list-style: square;
+  list-style: circle;
 }
-
 
 .sub-summary-content ol li{
   list-style: none;
