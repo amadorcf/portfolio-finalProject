@@ -284,7 +284,7 @@ form input[disabled]{
 /*SECCION PROYECTOS*/
 
 .projects-container{
-  width: 80%;
+  width: 100%;
   height: auto;
   padding: 10px;
   min-height: 1000px;
@@ -455,7 +455,7 @@ article ol a{
 
 article ul{
   list-style: none;
-  text-indent: 1em;
+  /* text-indent: 1em; */
 }
 
 article ul a{
