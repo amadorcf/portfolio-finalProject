@@ -18,11 +18,18 @@
 }
 
 .sub-summary-content li{
-  list-style: square;
+  list-style: circle;
 
 }
 
 .sub-summary-content ol li{
   list-style: none;
+}
 
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
 }

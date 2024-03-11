@@ -16,8 +16,6 @@
         <summary class="sub-summary">19: jQuery</summary>
           <div class="sub-summary-content">
             <ul>
-
-              <!--
               <li><strong >Keywords</strong>
                 <ol>
                   <li>
@@ -30,7 +28,6 @@
 
                 </ol>
               </li>
-              -->
 
               <li><strong>Selectors</strong>
                 <br>With JavaScript: document.querySelector("h1")
@@ -52,48 +49,112 @@
               </li>
             </ul>
           </div>
-
-      </details>
-
-
-      <details>
-        <summary class="sub-summary">20: Simon Game</summary>
-          <div class="sub-summary-content">
-            <ul>
-
-              <li><strong >Keywords</strong>
-
-              </li>
-
-            </ul>
-          </div>
-
       </details>
 
       <details>
-        <summary class="sub-summary">23: NodeJS</summary>
+        <summary class="sub-summary">23: NodeJS - NPM</summary>
           <div class="sub-summary-content">
             <ul>
               <li><strong >Keywords</strong>
-                Node File System, NPM packages (npm i name_package) // i = install
+                <p>Node File System, NPM packages (npm i name_package) // i = install</p>
               </li>
-              <li><strong >QR Generator</strong>
+              <li><strong >Exercise - QR Generator</strong>
                 <p>Generate a QR from a information input from user</p>
                 <p>npm used: inquirer, qr-image, fs</p>
               </li>
             </ul>
           </div>
-
       </details>
+
+      <details>
+        <summary class="sub-summary">24: Express.js</summary>
+          <div class="sub-summary-content">
+            <ul>
+              <li><strong >Keywords</strong>
+                <p>To use a Middleware: app.use</p>
+                <p>To send a response: res.send()...</p>
+                <p>To redirect to html file:  <code>res.sendFile(__dirname + "/public/index.html");</code></p>
+                <p></p>
+              </li>
+
+              <li><strong >What is Express?</strong>
+                <p>It is a work environment for web applications for the Node.js programmer, open source and licensed by MIT. It is used to develop web applications and APIs.</p>
+              </li>
+              <li><strong >Creating a Express Server</strong>
+                <p>1.Create directory</p>
+                <p>2.Create index.js</p>
+                <p>3. Initialise NPM</p>
+                <p>4. Install Express package</p>
+                <p>5. Write Server application in index.js</p>
+                <p>6. Start Server: <em>npm init -y</em> </p>
+                <p> &nbsp; NOTE: To see windows open ports: <em>netstat -ano | findstr "LISTENING"</em></p>
+              </li>
+              <li><strong >HTTP Request</strong>
+                <p>GET</p>
+                <p>POST</p>
+                <p>PUT, PATH</p>
+                <p>DELETE</p>
+              </li>
+              <li><strong >Middlewares</strong>
+                <p>- <em>Pre-procesing:</em> body parser(Parse incoming request bodies in a middleware before your handlers, available under the req.body property.)</p>
+                <p>- <em>Login:</em> morgan(to get https params)</p>
+                <p>- <em>Errors:</em> </p>
+                <p>- <em>Authenticacion:</em> </p>
+              </li>
+
+            </ul>
+          </div>
+      </details>
+
+      <details>
+        <summary class="sub-summary">25: EJS <em>(Embedded JavaScript templating)</em></summary>
+          <div class="sub-summary-content">
+            <ul>
+              <li><strong >Keywords</strong>
+                <p>Install with: <code>npm i ejs</code></p>
+              </li>
+              <li><strong >Tags</strong>
+                <p><code>&lt;%</code> 'Scriptlet' tag, for control-flow, no output
+                <p><code>&lt;%_</code> ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it. <strong>(JS Execute)</strong></p>
+                <p><code>&lt;%=</code> Outputs the value into the template HTML escaped. <strong>(JS Output)</strong></p>
+                <p><code>&lt;%-</code> Outputs the unescaped value into the template. <strong>(Render HTML)</strong></p>
+                <p><code>&lt;%#</code> Comment tag, no execution, no output. <strong>(Stop Execution)</strong></p>
+                <p><code>&lt;%- include()</code> Insert another EJS file
+                <p><code>&lt;%%</code> Outputs a literal '&lt;%'</p>
+                <p><code>%&gt;</code> Plain ending tag</p>
+                <p><code>-%&gt;</code> Trim-mode ('newline slurp') tag, trims following newline</p>
+                <p><code>_%&gt;</code> ‘Whitespace Slurping’ ending tag, removes all whitespace after it</p>
+              </li>
+              <li><strong >Templates, Partials and Layouts</strong>
+                <p>To charge statics files like images, js files etc <code>app.use(express.static("public"));</code></p>
+                <p>To charge statics files like images, js files etc <code><%- include("partials/header.ejs") %></code></p>
+              </li>
+            </ul>
+          </div>
+      </details>
+
   </div>
   <br><br>
 
   <div class="sections">
 
-    <summary id="sub-section">Others..</summary>
+    <summary id="sub-section">Challenge projects</summary>
+    <details>
+      <summary class="sub-summary">20: Simon Game</summary>
+        <div class="sub-summary-content">
+          <ul>
+
+            <li><strong >Description</strong>
+              <img src="../../../assets/img/simon-game.jpg" style="width: 250px; display: block;">
+              <p>Game to practice all learning about jQuery </p>
+            </li>
+
+          </ul>
+        </div>
+
+    </details>
   </div>
   <br><br>
-
 
 
 

@@ -286,13 +286,13 @@ form input[disabled]{
 .projects-container{
   width: 100%;
   height: auto;
-  padding: 10px;
+
   min-height: 1000px;
   margin: 0px auto;
 }
 
 .projects-container h2{
-  margin-bottom: 0px;
+  margin:0px 50px 10px 50px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
 }
@@ -337,6 +337,7 @@ form input[disabled]{
   text-decoration: none;
   color: black;
 }
+
 
 
 /* Seccion: Detalle*/
