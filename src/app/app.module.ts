@@ -16,6 +16,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { ResaltadoDirective } from './resaltado.directive';
 import { SecurityComponent } from './components/security/security.component';
 import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-bootcamp.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-b
     SliderComponent,
     ResaltadoDirective,
     SecurityComponent,
-    WebDevBootcampComponent
+    WebDevBootcampComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
