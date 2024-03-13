@@ -17,6 +17,7 @@ import { ResaltadoDirective } from './resaltado.directive';
 import { SecurityComponent } from './components/security/security.component';
 import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-bootcamp.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { IonIcon } from '@ionic/angular/standalone';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     FormsModule,
     routing,
-    HttpClientModule
+    HttpClientModule,
+    IonIcon
   ],
   providers: [
     appRoutingProviders
