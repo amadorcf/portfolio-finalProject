@@ -12,11 +12,11 @@ export class FooterComponent {
 
   constructor(){
     this.year = (new Date()).getFullYear();
+    
     addIcons({
       logoFacebook,
       logoLinkedin,
       logoGithub
-
     });
   }
 
