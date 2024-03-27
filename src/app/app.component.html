@@ -1,26 +1,32 @@
-<!--Cabecera-->
+<!--Cabecera--><!--Barra de navegacion-->
+<header>
+  <nav class="nav">
+    <ul>
+      <li><img src="../assets/img/amadorcf_logo.png"></li>
+      <li><a [routerLink]="['about']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+      <li><a [routerLink]="['projects']" [routerLinkActive]="['actived']">Proyectos</a></li>
 
+      <li><a [routerLink]="['create']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
+      <li ><a [routerLink]="['contact']" [routerLinkActive]="['actived']" >Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-<!--Barra de navegacion-->
-<nav class="nav">
-  <ul>
-    <li><img src="../assets/img/amadorcf_logo.png"></li>
-    <li><a [routerLink]="['about']" [routerLinkActive]="['actived']">Sobre mi</a></li>
-    <li><a [routerLink]="['projects']" [routerLinkActive]="['actived']">Proyectos</a></li>
-
-    <li><a [routerLink]="['create']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
-    <li ><a [routerLink]="['contact']" [routerLinkActive]="['actived']" >Contacto</a></li>
-  </ul>
-</nav>
 
 <!--Contenido principal-->
-<section id="content">
-  <router-outlet></router-outlet>
-</section>
+<main>
+  <section id="content">
+    <router-outlet></router-outlet>
+  </section>
+</main>
+
 
 <!--Pie de pagina-->
 <!-- <footer id="footer">
   Porfolio Project &copy; 2024
 </footer> -->
-<app-footer></app-footer>
+<footer>
+  <app-footer></app-footer>
+</footer>
+
 
