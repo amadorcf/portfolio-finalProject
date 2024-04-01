@@ -27,16 +27,16 @@
                   <li>$("h1")</li>
 
                 </ol>
-              </li>
+              </li><br>
 
               <li><strong>Selectors</strong>
                 <br>With JavaScript: document.querySelector("h1")
                   VS  With jQuery: $("h1")
-              </li>
+                </li><br>
 
               <li><strong>Minification</strong>
                 <p>https://minifier.org/</p>
-              </li>
+              </li><br>
 
               <li><strong>Methods</strong>
                 <p>css()</p>
@@ -46,7 +46,7 @@
                 <p>"hide()" and "show()"</p>
                 <p>toogle()</p>
                 <p>animate()</p>
-              </li>
+              </li><br>
             </ul>
           </div>
       </details>
@@ -57,11 +57,11 @@
             <ul>
               <li><strong >Keywords</strong>
                 <p>Node File System, NPM packages (npm i name_package) // i = install</p>
-              </li>
+              </li><br>
               <li><strong >Exercise - QR Generator</strong>
                 <p>Generate a QR from a information input from user</p>
                 <p>npm used: inquirer, qr-image, fs</p>
-              </li>
+              </li><br>
             </ul>
           </div>
       </details>
@@ -75,11 +75,11 @@
                 <p>To send a response: res.send()...</p>
                 <p>To redirect to html file:  <code>res.sendFile(__dirname + "/public/index.html");</code></p>
                 <p></p>
-              </li>
+              </li><br>
 
               <li><strong >What is Express?</strong>
                 <p>It is a work environment for web applications for the Node.js programmer, open source and licensed by MIT. It is used to develop web applications and APIs.</p>
-              </li>
+              </li><br>
               <li><strong >Creating a Express Server</strong>
                 <p>1.Create directory</p>
                 <p>2.Create index.js</p>
@@ -88,19 +88,19 @@
                 <p>5. Write Server application in index.js</p>
                 <p>6. Start Server: <em>npm init -y</em> </p>
                 <p> &nbsp; NOTE: To see windows open ports: <em>netstat -ano | findstr "LISTENING"</em></p>
-              </li>
+              </li><br>
               <li><strong >HTTP Request</strong>
                 <p>GET</p>
                 <p>POST</p>
                 <p>PUT, PATH</p>
                 <p>DELETE</p>
-              </li>
+              </li><br>
               <li><strong >Middlewares</strong>
                 <p>- <em>Pre-procesing:</em> body parser(Parse incoming request bodies in a middleware before your handlers, available under the req.body property.)</p>
                 <p>- <em>Login:</em> morgan(to get https params)</p>
                 <p>- <em>Errors:</em> </p>
                 <p>- <em>Authenticacion:</em> </p>
-              </li>
+              </li><br>
 
             </ul>
           </div>
@@ -112,7 +112,7 @@
             <ul>
               <li><strong >Keywords</strong>
                 <p>Install with: <code>npm i ejs</code></p>
-              </li>
+              </li><br>
               <li><strong >Tags</strong>
                 <p><code>&lt;%</code> 'Scriptlet' tag, for control-flow, no output
                 <p><code>&lt;%_</code> ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it. <strong>(JS Execute)</strong></p>
@@ -124,14 +124,74 @@
                 <p><code>%&gt;</code> Plain ending tag</p>
                 <p><code>-%&gt;</code> Trim-mode ('newline slurp') tag, trims following newline</p>
                 <p><code>_%&gt;</code> ‘Whitespace Slurping’ ending tag, removes all whitespace after it</p>
-              </li>
+              </li><br>
               <li><strong >Templates, Partials and Layouts</strong>
                 <p>To charge statics files like images, js files etc <code>app.use(express.static("public"));</code></p>
                 <p>To charge statics files like images, js files etc <code><%- include("partials/header.ejs") %></code></p>
-              </li>
+              </li><br>
               <li><strong >Exercise - Band Generator Name</strong>
                 <p>Practice all learned in this section.</p>
-              </li>
+              </li><br>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+        <summary class="sub-summary">33: PostgreSQL</summary>
+          <div class="sub-summary-content">
+            <ul>
+              <li><strong>Keywords</strong>
+                <p>
+                  Cheat sheet: <a href="https://www.postgresqltutorial.com/postgresql-cheat-sheet/">https://www.postgresqltutorial.com/postgresql-cheat-sheet/</a>
+                </p>
+                <p>CREATE, SELECT, WHERE, LIKE</p>
+              </li><br>
+              <li><strong>Query and Display</strong>
+                <p>Call to the database: <code>const result = await db.query("SELECT country_code FROM visited_countries");</code></p>
+              </li><br>
+              <li><strong>Adding Data</strong>
+                <p>Insert data to the database
+                  <code>
+                    await db.query(
+                      "INSERT INTO visited_countries (country_code) VALUES ($1)",
+                      [countryCode]
+                    );
+                  </code></p>
+              </li><br>
+              <li><strong>One-to-One Relationships</strong>
+                <p>
+                  <img src="https://vertabelo.com/blog/one-to-one-relationship-in-database/1-to-1-pk-plus-fk.png" alt="">
+                </p>
+                <p>
+                  <a href="https://vertabelo.com/blog/one-to-one-relationship-in-database/">More info...</a>
+                 </p><br>
+                <p>PK - Primary key
+                  <em>"identify all records in table"</em>
+                </p>
+                <p>FK - Foreign key
+                  <em>"identify the relationship between records of a second table with the records of the first table. <pre>  The foreign key column country_id should be UNIQUE.</pre></em>
+                </p>
+
+              </li><br>
+
+              <li><strong>One-to-Many Relationships</strong>
+                <p>
+                  <img src="https://vertabelo.com/blog/one-to-many-relationship/relationships.jpg" alt="">
+                </p>
+                <p>
+                  <a href="https://vertabelo.com/blog/one-to-many-relationship/">More info...</a>
+                </p><br>
+              </li><br>
+
+              <li><strong>Many-to-Many Relationships</strong>
+                <p>
+                  <img src="https://www.sqlshack.com/wp-content/uploads/2020/03/many-to-many-relationship-example.png" alt="">
+                </p>
+                <p>
+                  <a href="https://vertabelo.com/blog/many-to-many-relationship/">More info...</a>
+                </p><br>
+              </li><br>
+
             </ul>
           </div>
       </details>
@@ -146,11 +206,10 @@
       <summary class="sub-summary">20: Simon Game</summary>
         <div class="sub-summary-content">
           <ul>
-
+            <img src="../../../assets/img/simon-game.jpg" style="width: 250px; display: block;">
             <li><strong >Description</strong>
-              <img src="../../../assets/img/simon-game.jpg" style="width: 250px; display: block;">
               <p>Game to practice all learning about jQuery </p>
-            </li>
+            </li><br>
 
           </ul>
         </div>
