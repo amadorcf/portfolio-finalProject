@@ -158,6 +158,16 @@
                     );
                   </code></p>
               </li><br>
+              <li><strong >Reset Sequence ID</strong>
+                <p>
+                  <code>SELECT setval('table_name_id_seq', (SELECT MAX(id) FROM table_name));</code>
+                </p>
+                <p>
+                  <code>ALTER SEQUENCE table_name_id_seq RESTART;</code>
+                  (If an entire table has been emptied and you want to reset)
+                </p>
+
+              </li><br>
               <li><strong>One-to-One Relationships</strong>
                 <p>
                   <img src="https://vertabelo.com/blog/one-to-one-relationship-in-database/1-to-1-pk-plus-fk.png" alt="">
@@ -205,6 +215,7 @@
   <div class="sections">
 
     <summary id="sub-section">Challenge projects</summary>
+
     <details>
       <summary class="sub-summary">20: Simon Game</summary>
         <div class="sub-summary-content">
@@ -212,6 +223,20 @@
             <img src="../../../assets/img/simon-game.jpg" style="width: 250px; display: block;">
             <li><strong >Description</strong>
               <p>Game to practice all learning about jQuery </p>
+            </li><br>
+
+          </ul>
+        </div>
+
+    </details>
+
+    <details>
+      <summary class="sub-summary">33: Tasks-list </summary>
+        <div class="sub-summary-content">
+          <ul>
+            <img src="../../../assets/img/tasks-list.jpg" style="width: 250px; display: block;">
+            <li><strong >Description</strong>
+              <p>To-Do list to practice all learning about BBDD with PostgreSQL</p>
             </li><br>
 
           </ul>
