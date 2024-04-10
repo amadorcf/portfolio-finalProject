@@ -79,7 +79,7 @@ header .web-title{
 
 .nav li{
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
 }
 
 .nav a{
@@ -113,7 +113,7 @@ header .web-title{
   width: 150px;
   height: 150px;
   /*background-color: rgba(228, 232,210, 1);*/
-  margin-right: 100px;
+  margin-right: 50px;
   border-radius: 100%;
   transition: all 300ms;
 }
@@ -123,15 +123,14 @@ header .web-title{
 }
 
 
-
 /* CONTENEDOR PRINCIPAL */
 #content{
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 80%;
   margin: 0px auto;
-  margin-bottom: 150px;
-  border-left: 1px;
-  padding-top: 10px;
+  margin-bottom: 200px;
+
   min-height: 500px;
 }
 
@@ -193,8 +192,8 @@ article.about{
 
 /* SECCION CREAR PROYECTO */
 .container{
-  width: 80%;
-  padding: 10px;
+  width: 100%;
+
   min-height: 1000px;
   margin: 0px auto;
 }
@@ -203,6 +202,8 @@ article.about{
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
   margin-bottom: 10px;
+
+
 }
 
 form{
@@ -273,10 +274,12 @@ form input[type="submit"]:hover{
   background-color: firebrick;
   color: #fff;
 }
+
 form input[disabled]{
   opacity: 0.4;
   cursor: not-allowed;
 }
+
 .form_error{
   font-size: 18px;
   color: red;
@@ -303,14 +306,6 @@ form input[disabled]{
 
 /*SECCION PROYECTOS*/
 
-.projects-container{
-  display: flex;
-  flex-direction: column;
-}
-
-.all-projects{
-  align-self:auto;
-}
 
 .projects-container h2{
   margin:0px 50px 10px 50px;
@@ -318,39 +313,41 @@ form input[disabled]{
   padding-bottom: 5px;
 }
 
-.project{
-  display: block;
-  list-style: none;
-  float: left;
-  width: 29%;
-  text-align: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 30px;
+.all-projects{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 30px;
 }
 
-.project .image{
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  position: relative; /* Se usa para que no se salga la imagen de la caja, ya que la imagen tiene position absolute */
-  filter: grayscale(0);
+.project{
+  flex: 1;
+  min-width: 400px;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .all-projects {
+    flex-direction: column;
+    height: 100%;
+  }
 }
 
 .project img{
-  width: 65%;
-  height: 60%;
-  position: absolute; /* se usa en caso de este div, donde tiene la altura y el ancho definido, sin esto top, right y left no funcionarían */
-  top: 30%; /* sirve en caso de un div como este, donde tiene una altura definida, en caso de que la altura no este definida esta edición no se pone ; */
-  right: 0; /* se debe usar para que margin 0 auto funcione */
-  left: 0; /* se debe usar para que margin 0 auto funcione */
-  margin: 0 auto; /* Esto lo centra */
-  /*filter: grayscale(1);*/
+  width: 300px;
+  height: 200px;
+  margin-bottom: 10px;
   transition: all 250ms;
 }
 
-.project .image:hover{
-  filter: grayscale(0);
+.project img:hover{
+  filter: grayscale(1);
   transform: scale(1.05, 1.05);
 }
 
@@ -399,6 +396,7 @@ form input[disabled]{
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 10px;
 	margin-bottom: 30px;
+
 }
 
 .confirm{
@@ -419,9 +417,9 @@ form input[disabled]{
 }
 */
 .contact-container{
-  width: 80%;
+  width: 100%;
   height: auto;
-  padding: 10px;
+
   min-height: 1000px;
   margin: 0px auto;
 }
