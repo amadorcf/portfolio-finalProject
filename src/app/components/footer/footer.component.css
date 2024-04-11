@@ -59,7 +59,8 @@ p {
 }
 
 .copyright {
-  color: white;
+  color: #fafafa;
+  opacity: 80%;
 }
 
 /*wave and animation*/
@@ -139,22 +140,18 @@ footer .wave#wave4 {
 }
 
 .menu-footer a{
-  padding: 10px;
+  padding: 5px;
   color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 22px;
+  font-size: 20px;
   transition: all 250ms;
   border: 1px solid transparent;
-  border-radius: 100%;
+  border-radius: 0%;
 }
 
 .menu-footer a:hover, .actived{
-  transform: scale(1.3, 1.3);
   font-weight: bold;
-  background: rgba(243, 148, 49, 0.9);
-  border: 1px solid transparent;
-  border-radius: 100%;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2, 1.2);
+  text-decoration: underline;
 }
 
 /* Mobile version*/

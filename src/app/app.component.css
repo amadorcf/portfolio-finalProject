@@ -1,0 +1,72 @@
+/* Ocultar seccion */
+nav ul li:nth-child(5) {
+  display: none;
+}
+
+
+/* Desktop menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.logo{
+  order: 1;
+}
+
+.toggle {
+  display: none;
+}
+
+.item {
+  text-align: center;
+  order: 2;
+
+}
+
+
+
+/* Tablet menu */
+@media all and (max-width: 600px) {
+  .menu {
+    justify-content: center;
+  }
+
+}
+
+/* Desktop menu */
+@media all and (max-width: 900px) {
+
+  .item {
+    width: 100%;
+    display: none;
+    text-align: center;
+  }
+
+  .item.active {
+    display: block;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  .item {
+    order: 1;
+  }
+
+  .menu li {
+    padding: 15px 10px;
+  }
+
+  .menu img{
+    margin-right: 0px;
+  }
+}

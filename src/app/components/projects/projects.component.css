@@ -1,0 +1,8 @@
+@media all and (max-width: 900px) {
+
+  .project{
+    padding: 0px;
+    padding-bottom: 10px;
+    min-width: 0px;
+  }
+}
