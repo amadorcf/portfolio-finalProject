@@ -1,7 +1,7 @@
 footer {
   position: relative;
   background: #3586ff;
-  filter: saturate(0);
+  filter: grayscale(100%);
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -12,7 +12,7 @@ footer {
 }
 
 footer .social_icon,
-footer .menu {
+footer .menu-footer {
   position: relative;
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ footer .menu {
 }
 
 footer .social_icon li,
-footer .menu li {
+footer .menu-footer li {
   text-transform: uppercase;
   list-style: none;
 }
@@ -37,7 +37,7 @@ footer .social_icon li a:hover {
   color: blue;
 }
 
-footer .menu li a {
+footer .menu-footer li a {
   font-size: 1.2em;
   color: #fafafa;
   margin: 0 10px;
@@ -46,9 +46,9 @@ footer .menu li a {
   text-decoration: none;
   opacity: 0.75;
 }
-footer .menu li a:hover {
+footer .menu-footer li a:hover {
   opacity: 1;
-  color: #fff;
+  color: blue;
 }
 p {
   color: whtie;
@@ -70,7 +70,7 @@ footer .wave {
   width: 100%;
   height: 100px;
   background: url(https://i.ibb.co/rZt4Nhg/wave.png);
-  filter: saturate(0);
+
   background-size: 1000px 100px;
 }
 
@@ -117,4 +117,51 @@ footer .wave#wave4 {
   100% {
     background-position-x: 1000px;
   }
+}
+
+/* Enlaces */
+.menu-footer{
+  display: flex;
+  text-transform: uppercase;
+}
+
+.toggle a{
+  font-size: 20px;
+}
+
+.menu-footer ul{
+  list-style: none;
+}
+
+.menu-footer li{
+  text-align: center;
+  list-style: none;
+}
+
+.menu-footer a{
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 22px;
+  transition: all 250ms;
+  border: 1px solid transparent;
+  border-radius: 100%;
+}
+
+.menu-footer a:hover, .actived{
+  transform: scale(1.3, 1.3);
+  font-weight: bold;
+  background: rgba(243, 148, 49, 0.9);
+  border: 1px solid transparent;
+  border-radius: 100%;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile version*/
+@media all and (max-width: 900px) {
+
+  .menu-footer{
+    flex-direction: column;
+  }
+
 }
