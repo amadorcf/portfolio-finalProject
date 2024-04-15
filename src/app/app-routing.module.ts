@@ -14,11 +14,13 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SecurityComponent } from './components/security/security.component';
 import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-bootcamp.component';
+import { ResumeComponent } from './components/resume/resume.component';
 
 // Array de rutas
 const routes: Routes = [
   {path:'', component: AboutComponent},
   {path:'about', component: AboutComponent},
+  {path:'resume', component: ResumeComponent},
   {path:'projects', component: ProjectsComponent},
   {path:'create', component: CreateComponent},
   {path:'contact', component: ContactComponent},

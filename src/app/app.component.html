@@ -1,16 +1,20 @@
 <!--Cabecera--><!--Barra de navegacion-->
-<header>
-  <nav class="nav">
-    <ul>
-      <li><img src="../assets/img/amadorcf_logo.png"></li>
-      <li><a [routerLink]="['about']" [routerLinkActive]="['actived']">Sobre mi</a></li>
-      <li><a [routerLink]="['projects']" [routerLinkActive]="['actived']">Proyectos</a></li>
 
-      <li><a [routerLink]="['create']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
-      <li ><a [routerLink]="['contact']" [routerLinkActive]="['actived']" >Contacto</a></li>
+  <nav>
+    <ul class="menu">
+      <li class="logo"><img src="../assets/img/amadorcf_logo.png"></li>
+      <li class="item"><a [routerLink]="['about']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+      <li class="item"><a [routerLink]="['projects']" [routerLinkActive]="['actived']">Proyectos</a></li>
+      <li class="item"><a [routerLink]="['resume']" [routerLinkActive]="['actived']">CV</a></li>
+
+      <!-- Oculto esta seccion a traves de CSS -->
+      <li class="item"><a [routerLink]="['create']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
+
+      <li class="item"><a [routerLink]="['contact']" [routerLinkActive]="['actived']">Contacto</a></li>
+      <li class="toggle"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
     </ul>
   </nav>
-</header>
+
 
 
 <!--Contenido principal-->
@@ -28,5 +32,6 @@
 <footer>
   <app-footer></app-footer>
 </footer>
+
 
 

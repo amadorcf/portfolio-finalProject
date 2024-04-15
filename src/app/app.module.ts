@@ -12,12 +12,11 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
-import { SliderComponent } from './components/slider/slider.component';
-import { ResaltadoDirective } from './resaltado.directive';
 import { SecurityComponent } from './components/security/security.component';
 import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-bootcamp.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IonIcon } from '@ionic/angular/standalone';
+import { ResumeComponent } from './components/resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +28,10 @@ import { IonIcon } from '@ionic/angular/standalone';
     ProjectsComponent,
     DetailComponent,
     EditComponent,
-    SliderComponent,
-    ResaltadoDirective,
     SecurityComponent,
     WebDevBootcampComponent,
-    FooterComponent
+    FooterComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
