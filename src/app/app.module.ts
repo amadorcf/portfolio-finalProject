@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'; //para las peticiones AJAX
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -38,7 +38,8 @@ import { ResumeComponent } from './components/resume/resume.component';
     FormsModule,
     routing,
     HttpClientModule,
-    IonIcon
+    IonIcon,
+    ReactiveFormsModule 
   ],
   providers: [
     appRoutingProviders

@@ -1,16 +1,76 @@
 <div class="contact-container">
 
-  <h2>Contacto</h2>
+  <!-- <div class="header">
+    <h2>Contacto</h2>
+  </div> -->
+
+  <div class="content" >
+    <div  class="contactForm">
+
+      <div class="message failed" *ngIf="status == 'failed'">
+        El mensaje no se ha podido enviar, por favor intentelo de nuevo.
+      </div>
+      <div class="message success" *ngIf="status == 'success'">
+        Tu mensaje ha sido enviado correctamente, ¡gracias!
+      </div>
+
+      <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
+        <div class="form-group">
+          <label class="label" for="name">Nombre completo</label>
+          <input formControlName="from_name" type="text" class="form-control" name="name" id="name" required>
+
+        </div>
 
 
-  <div id="texto">
-    <p>
-      Esta es la pagina de contacto, puedes enviarme cualquier duda
-    </p>
+        <div class="form-group">
+          <label class="label" for="email">Correo electrónico</label>
+          <input formControlName="from_email" type="email" class="form-control" name="email" id="email" required>
+        </div>
+
+
+        <div class="form-group">
+          <label class="label" for="subject">Asunto</label>
+          <input formControlName="subject" type="text" class="form-control" name="subject" id="subject" required>
+        </div>
+
+
+        <div class="form-group">
+          <label class="label" for="#">Mensaje</label>
+          <textarea formControlName="message" name="message" class="form-control" id="message" required></textarea>
+        </div>
+
+        <!-- {{form.value | json}} -->
+
+        <div class="form-group">
+          <input type="submit" value="Enviar" class="btn btn-primary">
+          <div class="submitting"></div>
+        </div>
+      </form>
+    </div>
+
+    <div class="info">
+      <div class="info-header">
+        <h2>¡ Escribeme !</h2>
+        <p class="mb-4">Hazme llegar tu comentario, opinion...</p>
+      </div>
+
+      <div class="info-item">
+          <a href="https://www.linkedin.com/in/amadorcf/"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <p><a href="https://www.linkedin.com/in/amadorcf/">LinkedIn</a></p>
+      </div>
+
+      <div class="info-item">
+          <a href="https://github.com/amadorcf"><ion-icon name="logo-github"></ion-icon></a>
+          <p><a href="https://github.com/amadorcf">GitHub</a></p>
+      </div>
+
+      <div class="info-item">
+          <a href="mailto:amadorcf@outlook.com"><ion-icon name="mail"></ion-icon></a>
+          <p><a href="mailto:amadorcf@outlook.com">amadorcf&#64;outlook.com</a></p>
+      </div>
+
+    </div>
+
   </div>
 
-
-
 </div>
-
-

@@ -1,0 +1,42 @@
+
+form{
+  width: 80%;
+  text-align: left;
+}
+
+form label{
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="url"],
+form textarea{
+  width: 40%;
+  padding: 5px;
+}
+
+form button,
+form input[type="submit"]{
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: black;
+  background-color: rgba(243, 148, 49, 0.9);
+  border: 1px solid rgba(75, 41, 5, 1);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover,
+form input[type="submit"]:hover{
+  background-color: rgba(243, 148, 49, 0.6);
+  border: 1px solid rgba(75, 41, 5, 1);
+  border-radius: 5px;
+}

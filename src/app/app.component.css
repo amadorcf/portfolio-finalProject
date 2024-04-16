@@ -37,8 +37,8 @@ nav ul li:nth-child(5) {
 
 }
 
-/* Desktop menu */
-@media all and (max-width: 900px) {
+/* Mobile menu */
+@media all and (max-width: 950px) {
 
   .item {
     width: 100%;

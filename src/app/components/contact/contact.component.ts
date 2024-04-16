@@ -1,57 +1,59 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent{
 
-  public widthSlider: number | undefined;
-  public anchoToSlider: any | undefined;
-  public autor: any;
+  public status: string | undefined;
 
-  @ViewChild('textos', {static: true}) textos: any;
+  form: FormGroup = this.fb.group({
+    from_name: '',
+    to_name: 'admin',
+    from_email: '',
+    subject: '',
+    message: '',
+  });
 
+  constructor(private fb: FormBuilder) {}
 
-  constructor() {
-    this.autor = undefined;
-  }
+  async send(){
 
-  ngOnInit(): void {
+    try{
+      await emailjs.send(
+        'service_dd9ln1a',
+        'template_royanqa',
+        {
+          from_name: this.form.value.from_name,
+          to_name: this.form.value.to_name,
+          from_email: this.form.value.from_email,
+          subject: this.form.value.subject,
+          message: this.form.value.message,
+        },
+        {
+          publicKey: 'loguy9uRd-2e6dMXW',
+        },);
 
-    // Opcion clasica
-    //alert(document.querySelector('#texto')?.innerHTML);
+        /* alert("Message has been sent"); */
+        this.status = 'success';
+        this.form.reset();
 
-    // Opcion Angular viewChild
-    console.log("Evento capturado con viewChild...\n"+this.textos.nativeElement.innerText);
+    } catch (err) {
+      if (err instanceof EmailJSResponseStatus) {
+        console.log('EMAILJS FAILED...', err);
+        return;
+      }
 
-    /*
-    var elementos = document.getElementsByTagName('input');
-
-    $("#limpiar").click(function (e) {
-      e.preventDefault();
-        for (let i = 0; i < elementos.length; i++) {
-          elementos[i].value='';
-        }
-    });
-    */
-  }
-
-  cargarSlider(){
-    this.anchoToSlider = this.widthSlider;
-    if(this.anchoToSlider > 600){
-      this.anchoToSlider = 600;
+      this.status = 'failed';
+      console.log('ERROR', err);
     }
-  }
 
-  reiniciarSlider(){
-    this.anchoToSlider = undefined;
-  }
+  };
 
-  getAutor(event: any){
-    this.autor = event;
-  }
+
 
 }
