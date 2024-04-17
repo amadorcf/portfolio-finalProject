@@ -5,6 +5,7 @@
   </div> -->
 
   <div class="content" >
+    
     <div  class="contactForm">
 
       <div class="message failed" *ngIf="status == 'failed'">
@@ -17,33 +18,51 @@
       <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
         <div class="form-group">
           <label class="label" for="name">Nombre completo</label>
-          <input formControlName="from_name" type="text" class="form-control" name="name" id="name" required>
-
+          <input formControlName="from_name" type="text" class="form-control" name="name" id="name" >
+          <span class="form_error"
+          *ngIf="(registerFormControl['from_name'].touched ) && registerFormControl['from_name'].errors?.['required']">
+          El nombre es obligatorio
+          </span>
         </div>
 
 
         <div class="form-group">
           <label class="label" for="email">Correo electrónico</label>
           <input formControlName="from_email" type="email" class="form-control" name="email" id="email" required>
+          <span class="form_error"
+          *ngIf="(registerFormControl['from_email'].touched ) && registerFormControl['from_email'].errors?.['required']">
+          El email es obligatorio
+          </span>
+          <span class="form_error"
+          *ngIf="registerFormControl['from_email'].touched  && registerFormControl['from_email'].errors?.['email']">
+          El email no es correcto
+          </span>
         </div>
 
 
         <div class="form-group">
           <label class="label" for="subject">Asunto</label>
           <input formControlName="subject" type="text" class="form-control" name="subject" id="subject" required>
+          <span class="form_error"
+          *ngIf="(registerFormControl['subject'].touched ) && registerFormControl['subject'].errors?.['required']">
+          El asunto es obligatorio
+          </span>
         </div>
 
 
         <div class="form-group">
           <label class="label" for="#">Mensaje</label>
           <textarea formControlName="message" name="message" class="form-control" id="message" required></textarea>
+          <span class="form_error"
+          *ngIf="(registerFormControl['message'].touched ) && registerFormControl['message'].errors?.['required']">
+          El mensaje es obligatorio
+          </span>
         </div>
 
         <!-- {{form.value | json}} -->
 
         <div class="form-group">
-          <input type="submit" value="Enviar" class="btn btn-primary">
-          <div class="submitting"></div>
+          <input type="submit" value="Enviar" class="btn btn-primary" [disabled]="!form['valid']">
         </div>
       </form>
     </div>

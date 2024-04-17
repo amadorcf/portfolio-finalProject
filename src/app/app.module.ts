@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IonIcon } from '@ionic/angular/standalone';
 import { ResumeComponent } from './components/resume/resume.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ResumeComponent } from './components/resume/resume.component';
     SecurityComponent,
     WebDevBootcampComponent,
     FooterComponent,
-    ResumeComponent
+    ResumeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { ResumeComponent } from './components/resume/resume.component';
     routing,
     HttpClientModule,
     IonIcon,
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ],
   providers: [
     appRoutingProviders

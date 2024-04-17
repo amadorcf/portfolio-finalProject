@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
@@ -7,7 +7,7 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent{
+export class ContactComponent implements OnInit{
 
   public status: string | undefined;
 
@@ -21,7 +21,20 @@ export class ContactComponent{
 
   constructor(private fb: FormBuilder) {}
 
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.form = this.fb.group({
+      from_name: ['', Validators.required],
+      to_name: '',
+      from_email: ['', [Validators.required, Validators.email]],
+      subject: ['', Validators.required],
+      message: ['', Validators.required],
+    });
+  }
+
   async send(){
+    /* emailjs.init('loguy9uRd-2e6dMXW'); */
 
     try{
       await emailjs.send(
@@ -38,7 +51,7 @@ export class ContactComponent{
           publicKey: 'loguy9uRd-2e6dMXW',
         },);
 
-        /* alert("Message has been sent"); */
+
         this.status = 'success';
         this.form.reset();
 
@@ -48,12 +61,15 @@ export class ContactComponent{
         return;
       }
 
-      this.status = 'failed';
       console.log('ERROR', err);
     }
 
   };
 
+
+  get registerFormControl() {
+    return this.form.controls;
+  }
 
 
 }
