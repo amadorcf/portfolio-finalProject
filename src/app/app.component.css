@@ -46,6 +46,9 @@
     justify-content: center;
   }
 
+  .show{
+    display: none;
+  }
 }
 
 /* Mobile menu */
@@ -81,5 +84,7 @@
     margin-right: 0px;
   }
 
-
+  .show{
+    display: none;
+  }
 }
