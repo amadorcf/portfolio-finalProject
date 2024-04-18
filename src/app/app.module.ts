@@ -17,7 +17,9 @@ import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-b
 import { FooterComponent } from './components/footer/footer.component';
 import { IonIcon } from '@ionic/angular/standalone';
 import { ResumeComponent } from './components/resume/resume.component';
-
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,6 @@ import { ResumeComponent } from './components/resume/resume.component';
     WebDevBootcampComponent,
     FooterComponent,
     ResumeComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -41,11 +42,21 @@ import { ResumeComponent } from './components/resume/resume.component';
     routing,
     HttpClientModule,
     IonIcon,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() =>
+      initializeApp({
+        projectId: 'portfolio-project-d906b',
+        appId: '1:341349842167:web:ba510a5b36c0180e25e7f2',
+        storageBucket: 'portfolio-project-d906b.appspot.com',
+        apiKey: 'AIzaSyBNjG5atEMjCtIHRBbrd2W0iqR8OH8fFTM',
+        authDomain: 'portfolio-project-d906b.firebaseapp.com',
+        messagingSenderId: '341349842167',
+      })
+    ),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [
-    appRoutingProviders
-  ],
-  bootstrap: [AppComponent]
+  providers: [appRoutingProviders],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
