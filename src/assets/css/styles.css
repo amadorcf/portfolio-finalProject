@@ -203,9 +203,8 @@ article.about{
 
 /* SECCION CREAR PROYECTO */
 .container{
-  width: 100%;
-
-  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
   margin: 0px auto;
 }
 

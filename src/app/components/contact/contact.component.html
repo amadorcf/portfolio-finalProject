@@ -5,7 +5,7 @@
   </div> -->
 
   <div class="content" >
-    
+
     <div  class="contactForm">
 
       <div class="message failed" *ngIf="status == 'failed'">
@@ -35,7 +35,7 @@
           </span>
           <span class="form_error"
           *ngIf="registerFormControl['from_email'].touched  && registerFormControl['from_email'].errors?.['email']">
-          El email no es correcto
+          Correo electrónico incorrecto
           </span>
         </div>
 

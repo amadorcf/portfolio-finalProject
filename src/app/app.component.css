@@ -1,8 +1,20 @@
 /* Ocultar seccion */
-nav ul li:nth-child(5) {
+/* nav ul li:nth-child(6) {
   display: none;
+} */
+
+
+.show-button{
+  padding: 20px;
+
+  background-color: transparent;
+  color: transparent;
+  border: 0px;
 }
 
+.show{
+  display: none;
+}
 
 /* Desktop menu */
 .menu {
@@ -24,7 +36,6 @@ nav ul li:nth-child(5) {
 .item {
   text-align: center;
   order: 2;
-
 }
 
 

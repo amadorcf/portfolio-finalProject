@@ -1,0 +1,66 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container h2{
+  display: none;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+
+}
+
+form label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="url"],
+form textarea{
+  padding: 5px;
+  width: 100%;
+}
+
+form textarea{
+  height: 200px;
+}
+
+form button,
+form input[type="submit"]{
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: black;
+  background-color: #f39431e6;
+  border: 1px solid rgba(75, 41, 5, 1);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover,
+form input[type="submit"]:hover{
+  background-color: rgba(243, 148, 49, 0.6);
+  border: 1px solid rgba(75, 41, 5, 1);
+  border-radius: 5px;
+}
+
+form p{
+  text-align: center;
+}
+
+form img{
+  width: 200px;
+}
+

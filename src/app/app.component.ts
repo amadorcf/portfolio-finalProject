@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 declare var $: any;
 
 @Component({
@@ -21,9 +20,19 @@ export class AppComponent {
           $(".item").addClass("active"); $(this).find("a").html("<i class='fas fa-times'></i>");
         }
       });
+
+      $(".show-button").on("click",  () => {
+        if ($(".acf").hasClass("show")) {
+          $(".acf").removeClass("show");
+          $("html, body").animate({ scrollTop: 0 }, "slow");
+        } else {
+          $(".acf").addClass("show");
+          $("html, body").animate({ scrollTop: 0 }, "slow");
+        }
+      });
+
     });
   }
-
 
 
 }

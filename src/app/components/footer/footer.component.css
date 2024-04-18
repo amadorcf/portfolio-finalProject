@@ -1,3 +1,18 @@
+/* Ocultar seccion */
+/* nav ul li:nth-child(6) {
+  display: none;
+} */
+
+
+.show-button{
+  padding: 20px;
+  border-radius: 100%;
+  background-color: transparent;
+  color: transparent;
+  border: 0px;
+}
+
+
 footer {
   position: relative;
   background: #3586ff;
