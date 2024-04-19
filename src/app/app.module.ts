@@ -43,6 +43,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     HttpClientModule,
     IonIcon,
     ReactiveFormsModule,
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
     provideFirebaseApp(() =>
       initializeApp({
         projectId: 'portfolio-project-d906b',
@@ -53,8 +55,6 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
         messagingSenderId: '341349842167',
       })
     ),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent],
