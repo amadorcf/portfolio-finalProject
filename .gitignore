@@ -42,9 +42,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
-/BACK-END/node_modules
-
 # Firebase
 .firebase
 *-debug.log
