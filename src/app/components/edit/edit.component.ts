@@ -1,9 +1,12 @@
+import { ProjectFireService } from './../../services/projectFire.service';
+import { Storage, ref, uploadBytes, getDownloadURL, listAll } from '@angular/fire/storage';
+
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
-import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
+import { ProjectService } from '../../services/project.service';
 import { UploadService } from '../../services/upload.service';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-edit',
@@ -11,82 +14,91 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
   styleUrls: ['./edit.component.css'],
   providers: [ProjectService, UploadService]
 })
-export class EditComponent implements OnInit {
-
-  public title: string | undefined;
+export class EditComponent implements OnInit { public title: string | undefined;
   public project: Project;
   public save_project: any;
   public status: string | undefined;
   public filesToUpload: Array<File> | undefined;
-  public url: string;
+  public url: string | undefined;
+
+  projectForm: FormGroup;
+  images: string[];
+  image: string;
 
   constructor(
-    private _projectService: ProjectService,
-    private _route: ActivatedRoute,
-    private _uploadService: UploadService
+    private projectsService: ProjectFireService,
+    private storage: Storage
   ) {
-    this.url = Global.url;
+    this.projectForm = new FormGroup({
+      name: new FormControl(),
+      description: new FormControl(),
+      category: new FormControl(),
+      year: new FormControl(),
+      langs: new FormControl(),
+      link: new FormControl(),
+      image: new FormControl(),
+    });
+
+    this.title = 'Crear proyecto';
     this.project = new Project('', '', '', '', 2024, '', '', '');
+    this.images = [];
+    this.url = Global.url;
+    this.image = '';
   }
 
-  ngOnInit(){
-    this._route.params.subscribe(params => {
-  		let id = params['id'];
-
-      this.getProject(id);
-    });
+  ngOnInit(): void {
+    this.getImages();
   }
 
-  getProject(id: any) {
-    this._projectService.getProject(id).subscribe({
-      next: (response) =>{
-        console.log(response)
-        if(response.project){
-          this.project = response.project;
-        }},
-      error: (e) => console.error(<any>e),
-      complete: () => console.info('metodo GetProject completado')
-    });
+  async onSubmit(form:any) {
+    console.log(form.value);
+    const response = this.projectsService.addProject(form.value); // esto devulvete una promesa
+    console.log(response);
+
   }
 
-  onSubmit(form:any){
-    //Actualizar datos
-    this._projectService.updateProject(this.project).subscribe(
+  // Funcion para las alertas de las validaciones del formulario
+  get projectFormControl() {
+    return this.projectForm.controls;
+  }
 
-      response =>{
-        //console.log(response)
-        if(response.project){
 
-          // Subir la imagen
-					if(this.filesToUpload){
-						this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
-						.then((result:any) => {
+  // Funcion para subir archivos
+  fileChangeEvent($event: any) {
 
-							this.save_project = result.project;
-							this.status = 'success';
+    // Subir imagen a Firebase, metoro valido tambien para archivos
+    const file = $event.target.files[0];
+    const imgRef = ref(this.storage, `images/${file.name}`);
 
-						});
-					}else{
-						this.save_project = response.project;
-						this.status = 'success';
+    uploadBytes(imgRef, file)
+      .then(async (response) => {
+        const img_url = await getDownloadURL(imgRef);
+        this.projectForm.patchValue({
+          image: img_url
+        });
+        console.log("Imagen subida correctamente a Firebase: ", file.name);
+      })
+      .catch((error) => console.log(error));
 
-					}
+  }
 
-        }else{
-          this.status = 'failed';
+
+  // Funcion para obtener imagenes
+  getImages() {
+    const imagesRef = ref(this.storage, 'images');
+
+    listAll(imagesRef)
+      .then(async (response) => {
+        this.images = [];
+
+        for (let item of response.items) {
+          const url = await getDownloadURL(item);
+
+          this.images.push(url);
         }
-      },
-      error =>{
-        console.log(<any>error)
-      }
 
-    );
-
-  }
-
-  fileChangeEvent(fileInput:any){
-    //console.log(fileInput)
-    this.filesToUpload = <Array<File>>fileInput.target.files;
+      })
+      .catch((error) => console.log(error));
   }
 
 }

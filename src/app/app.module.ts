@@ -17,9 +17,12 @@ import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-b
 import { FooterComponent } from './components/footer/footer.component';
 import { IonIcon } from '@ionic/angular/standalone';
 import { ResumeComponent } from './components/resume/resume.component';
+
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     ReactiveFormsModule,
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
     provideFirebaseApp(() =>
       initializeApp({
         projectId: 'portfolio-project-d906b',

@@ -22,8 +22,6 @@ export class ContactComponent implements OnInit{
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.form = this.fb.group({
       from_name: ['', Validators.required],
       to_name: '',
