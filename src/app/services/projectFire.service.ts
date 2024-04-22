@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Firestore, collection, addDoc, collectionData, doc, getDoc } from "@angular/fire/firestore";
+import { Firestore, collection, addDoc, collectionData, doc, getDoc, deleteDoc } from "@angular/fire/firestore";
 import Project from "../interfaces/project.fire.interface";
 import { Observable } from "rxjs";
 
@@ -34,6 +34,10 @@ export class ProjectFireService{
     return doc(this.firestore, `${PATH}/${id}`);
   }
 
+  deleteProject(id: string) {
+    const placeDocRef = doc(this.firestore, `projects/${id}`);
+    return deleteDoc(placeDocRef);
+  }
 }
 
 

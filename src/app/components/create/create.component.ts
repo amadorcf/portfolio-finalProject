@@ -52,9 +52,24 @@ export class CreateComponent {
   }
 
   async onSubmit(form:any) {
-    console.log(form.value);
-    const response = this.projectsService.addProject(form.value); // esto devulvete una promesa
-    console.log(response);
+
+    /* const response = this.projectsService.addProject(form.value); // esto devulvete una promesa */
+    this.projectsService.addProject(form.value)
+      .then( (response) => {
+
+        if(response){
+          console.log(this.project)
+          this.save_project = this.project._id;
+          this.status = 'success';
+          form.reset();
+        }else{
+          this.save_project = this.project._id;
+          this.status = 'failed';
+        }
+
+
+      })
+      .catch((error) => console.log(error));
 
   }
 

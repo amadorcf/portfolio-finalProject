@@ -1,9 +1,9 @@
+import Project from '../../interfaces/project.fire.interface';
 import { ProjectFireService } from './../../services/projectFire.service';
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
-import { Global } from '../../services/global';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import Project from '../../interfaces/project.fire.interface';
+
 
 @Component({
   selector: 'app-detail',
@@ -22,6 +22,7 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private projectFireService: ProjectFireService,
+    private _router: Router,
     private _route: ActivatedRoute
   ) {
     this.project = {
@@ -75,15 +76,11 @@ export class DetailComponent implements OnInit {
   }
 
   deleteProject(id:any){
-  	/* this._projectService.deleteProject(id).subscribe({
-      next: (response) =>{
-        //console.log(response)
-        if(response.project){
-          this._router.navigate(['/projects']);
-        }},
-      error: (e) => console.error(<any>e),
-      complete: () => console.info('metodo deleteProject completado')
-    }); */
+
+    this.projectFireService.deleteProject(id);
+    this._router.navigate(['/projects']);
+    console.log("Proyecto borrado correctamente")
+
   }
 
 }
