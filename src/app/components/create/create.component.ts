@@ -58,7 +58,7 @@ export class CreateComponent {
       .then( (response) => {
 
         if(response){
-          console.log(this.project)
+          console.log(response)
           this.save_project = this.project._id;
           this.status = 'success';
           form.reset();

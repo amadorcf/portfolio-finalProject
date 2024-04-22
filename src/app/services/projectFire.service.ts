@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Firestore, collection, addDoc, collectionData, doc, getDoc, deleteDoc } from "@angular/fire/firestore";
+import { Firestore, collection, addDoc, collectionData, doc, getDoc, deleteDoc, updateDoc } from "@angular/fire/firestore";
 import Project from "../interfaces/project.fire.interface";
 import { Observable } from "rxjs";
 
@@ -26,8 +26,15 @@ export class ProjectFireService{
   }
 
   async getProject(id: string){
-    const snapshot = await getDoc(this.document(id));
-    return snapshot.data() as Project;
+
+    try {
+      const snapshot = await getDoc(this.document(id));
+      return snapshot.data() as Project;
+    } catch (error) {
+      //catch error
+      return undefined;
+    }
+
   }
 
   private document(id: string) {
@@ -37,6 +44,10 @@ export class ProjectFireService{
   deleteProject(id: string) {
     const placeDocRef = doc(this.firestore, `projects/${id}`);
     return deleteDoc(placeDocRef);
+  }
+
+  updateProject(id: string, project: Project) {
+    return updateDoc(this.document(id), { ...project });
   }
 }
 

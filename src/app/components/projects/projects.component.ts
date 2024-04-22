@@ -19,15 +19,7 @@ export class ProjectsComponent {
   constructor(
     private projectFireService: ProjectFireService
   ) {
-    this.projects = [{
-      name: 'test',
-      description: 'test',
-      category: 'test',
-      year: 2024,
-      langs: 'test',
-      link: 'test',
-      image: 'test',
-    }];
+    this.projects = [];
     this.url = Global.url;
   }
 

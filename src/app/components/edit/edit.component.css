@@ -1,23 +1,10 @@
-.container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container h2{
-  display: none;
-}
-
 form{
-  display: flex;
-  flex-direction: column;
-
+  text-align: center;
 }
 
 form label{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  width: 100%;
   margin-top: 10px;
 }
 
@@ -26,8 +13,8 @@ form input[type="number"],
 form input[type="email"],
 form input[type="url"],
 form textarea{
+  width: 40%;
   padding: 5px;
-  width: 100%;
 }
 
 form textarea{
@@ -43,7 +30,7 @@ form input[type="submit"]{
   font-weight: bold;
   text-transform: capitalize;
   color: black;
-  background-color: #f39431e6;
+  background-color: rgba(243, 148, 49, 0.9);
   border: 1px solid rgba(75, 41, 5, 1);
   border-radius: 5px;
   cursor: pointer;

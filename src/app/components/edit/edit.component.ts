@@ -2,11 +2,14 @@ import { ProjectFireService } from './../../services/projectFire.service';
 import { Storage, ref, uploadBytes, getDownloadURL, listAll } from '@angular/fire/storage';
 
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../../models/project';
-import { Global } from '../../services/global';
+
+
 import { ProjectService } from '../../services/project.service';
 import { UploadService } from '../../services/upload.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import Project from '../../interfaces/project.fire.interface';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-edit',
@@ -15,19 +18,24 @@ import { FormControl, FormGroup } from '@angular/forms';
   providers: [ProjectService, UploadService]
 })
 export class EditComponent implements OnInit { public title: string | undefined;
-  public project: Project;
+  public confirm: boolean = false;
+  public website: any;
   public save_project: any;
   public status: string | undefined;
   public filesToUpload: Array<File> | undefined;
   public url: string | undefined;
+  idToUpdate: string;
 
   projectForm: FormGroup;
-  images: string[];
-  image: string;
+  project: Project;
+  projects: Project[];
 
   constructor(
     private projectsService: ProjectFireService,
-    private storage: Storage
+    private _router: Router,
+    private _route: ActivatedRoute,
+    private storage: Storage,
+    private fb: FormBuilder
   ) {
     this.projectForm = new FormGroup({
       name: new FormControl(),
@@ -38,22 +46,70 @@ export class EditComponent implements OnInit { public title: string | undefined;
       link: new FormControl(),
       image: new FormControl(),
     });
-
-    this.title = 'Crear proyecto';
-    this.project = new Project('', '', '', '', 2024, '', '', '');
-    this.images = [];
-    this.url = Global.url;
-    this.image = '';
+    this.project = {
+      name: 'test',
+      description: 'test',
+      category: 'test',
+      year: 2024,
+      langs: 'test',
+      link: 'test',
+      image: 'test'
+    };
+    this.projects = [{
+      name: 'test-pro',
+      description: 'test-pro',
+      category: 'test-pro',
+      year: 2222,
+      langs: 'test-pro',
+      link: 'test-pro',
+      image: 'test-pro',
+    }];
+    this.title = 'Editar proyecto';
+    this.idToUpdate = '';
   }
 
-  ngOnInit(): void {
-    this.getImages();
+  ngOnInit(){
+    this._route.params.subscribe(params => {
+  		let id = params['id'];
+      this.idToUpdate = id;
+      this.getProject(id);
+
+    });
+
+  }
+
+   getProject(id:any) {
+    this.projectsService.getProjects().subscribe( projects => {
+      this.projects = projects;
+
+      for(let project of projects){
+        if ( project.id == id){
+          this.project = project;
+          this.save_project = project;
+          this.projectForm = this.fb.group({
+            name: this.project.name,
+            description: this.project.description,
+            category: this.project.category,
+            year: this.project.year,
+            langs: this.project.langs,
+            link: this.project.link,
+            image: this.project.image,
+          });
+          console.log("Edit Project", project)
+        }
+      }
+
+    });
+
   }
 
   async onSubmit(form:any) {
-    console.log(form.value);
-    const response = this.projectsService.addProject(form.value); // esto devulvete una promesa
-    console.log(response);
+    /* const response = this.projectsService.addProject(form.value); // esto devulvete una promesa */
+    this.projectsService.updateProject(this.idToUpdate, form.value);
+
+    this.status = 'success';
+    form.reset();
+    console.log("Proyecto editado correctamente")
 
   }
 
@@ -82,23 +138,5 @@ export class EditComponent implements OnInit { public title: string | undefined;
 
   }
 
-
-  // Funcion para obtener imagenes
-  getImages() {
-    const imagesRef = ref(this.storage, 'images');
-
-    listAll(imagesRef)
-      .then(async (response) => {
-        this.images = [];
-
-        for (let item of response.items) {
-          const url = await getDownloadURL(item);
-
-          this.images.push(url);
-        }
-
-      })
-      .catch((error) => console.log(error));
-  }
 
 }
