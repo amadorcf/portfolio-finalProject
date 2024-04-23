@@ -15,11 +15,20 @@ export class AppComponent {
     $(() => {
       $(".toggle").on("click",  () => {
         if ($(".item").hasClass("active")) {
-          $(".item").removeClass("active"); $(this).find("a").html("<i class='fas fa-bars'></i>");
+          $(".item").removeClass("active");
+          /* $(this).find("a").html("<i class='fas fa-bars'></i>"); */
+          $(".toggle a i").removeClass("fa-solid fa-times");
+          $(".toggle a i").addClass("fa-solid fa-bars");
+
         } else {
-          $(".item").addClass("active"); $(this).find("a").html("<i class='fas fa-times'></i>");
+          $(".item").addClass("active");
+         /*  $(this).find("a").html("<i class='fas fa-times'></i>"); */
+         $(".toggle a i").removeClass("fa-solid fa-bars");
+         $(".toggle a i").addClass("fa-solid fa-times");
         }
       });
+
+
 
       $(".show-button").on("click",  () => {
         if ($(".acf").hasClass("show")) {
