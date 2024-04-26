@@ -5,4 +5,10 @@
     padding-bottom: 10px;
     min-width: 0px;
   }
+
+  .projects-container h2{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
 }

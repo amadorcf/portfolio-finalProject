@@ -1,9 +1,15 @@
+import { ProjectFireService } from './../../services/projectFire.service';
+import { Storage, ref, uploadBytes, getDownloadURL, listAll } from '@angular/fire/storage';
+
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../../models/project';
+
+
 import { ProjectService } from '../../services/project.service';
-import { Global } from '../../services/global';
 import { UploadService } from '../../services/upload.service';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import Project from '../../interfaces/project.fire.interface';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-edit',
@@ -11,82 +17,126 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
   styleUrls: ['./edit.component.css'],
   providers: [ProjectService, UploadService]
 })
-export class EditComponent implements OnInit {
-
-  public title: string | undefined;
-  public project: Project;
+export class EditComponent implements OnInit { public title: string | undefined;
+  public confirm: boolean = false;
+  public website: any;
   public save_project: any;
   public status: string | undefined;
   public filesToUpload: Array<File> | undefined;
-  public url: string;
+  public url: string | undefined;
+  idToUpdate: string;
+
+  projectForm: FormGroup;
+  project: Project;
+  projects: Project[];
 
   constructor(
-    private _projectService: ProjectService,
+    private projectsService: ProjectFireService,
+    private _router: Router,
     private _route: ActivatedRoute,
-    private _uploadService: UploadService
+    private storage: Storage,
+    private fb: FormBuilder
   ) {
-    this.url = Global.url;
-    this.project = new Project('', '', '', '', 2024, '', '', '');
+    this.projectForm = new FormGroup({
+      name: new FormControl(),
+      description: new FormControl(),
+      category: new FormControl(),
+      year: new FormControl(),
+      langs: new FormControl(),
+      link: new FormControl(),
+      image: new FormControl(),
+    });
+    this.project = {
+      name: 'test',
+      description: 'test',
+      category: 'test',
+      year: 2024,
+      langs: 'test',
+      link: 'test',
+      image: 'test'
+    };
+    this.projects = [{
+      name: 'test-pro',
+      description: 'test-pro',
+      category: 'test-pro',
+      year: 2222,
+      langs: 'test-pro',
+      link: 'test-pro',
+      image: 'test-pro',
+    }];
+    this.title = 'Editar proyecto';
+    this.idToUpdate = '';
   }
 
   ngOnInit(){
     this._route.params.subscribe(params => {
   		let id = params['id'];
-
+      this.idToUpdate = id;
       this.getProject(id);
+
     });
+
   }
 
-  getProject(id: any) {
-    this._projectService.getProject(id).subscribe({
-      next: (response) =>{
-        console.log(response)
-        if(response.project){
-          this.project = response.project;
-        }},
-      error: (e) => console.error(<any>e),
-      complete: () => console.info('metodo GetProject completado')
-    });
-  }
+   getProject(id:any) {
+    this.projectsService.getProjects().subscribe( projects => {
+      this.projects = projects;
 
-  onSubmit(form:any){
-    //Actualizar datos
-    this._projectService.updateProject(this.project).subscribe(
-
-      response =>{
-        //console.log(response)
-        if(response.project){
-
-          // Subir la imagen
-					if(this.filesToUpload){
-						this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
-						.then((result:any) => {
-
-							this.save_project = result.project;
-							this.status = 'success';
-
-						});
-					}else{
-						this.save_project = response.project;
-						this.status = 'success';
-
-					}
-
-        }else{
-          this.status = 'failed';
+      for(let project of projects){
+        if ( project.id == id){
+          this.project = project;
+          this.save_project = project;
+          this.projectForm = this.fb.group({
+            name: this.project.name,
+            description: this.project.description,
+            category: this.project.category,
+            year: this.project.year,
+            langs: this.project.langs,
+            link: this.project.link,
+            image: this.project.image,
+          });
+          console.log("Edit Project", project)
         }
-      },
-      error =>{
-        console.log(<any>error)
       }
 
-    );
+    });
 
   }
 
-  fileChangeEvent(fileInput:any){
-    //console.log(fileInput)
-    this.filesToUpload = <Array<File>>fileInput.target.files;
+  async onSubmit(form:any) {
+    /* const response = this.projectsService.addProject(form.value); // esto devulvete una promesa */
+    this.projectsService.updateProject(this.idToUpdate, form.value);
+
+    this.status = 'success';
+    form.reset();
+    console.log("Proyecto editado correctamente")
+
   }
+
+  // Funcion para las alertas de las validaciones del formulario
+  get projectFormControl() {
+    return this.projectForm.controls;
+  }
+
+
+  // Funcion para subir archivos
+  fileChangeEvent($event: any) {
+
+    // Subir imagen a Firebase, metoro valido tambien para archivos
+    const file = $event.target.files[0];
+    const imgRef = ref(this.storage, `images/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(async (response) => {
+        const img_url = await getDownloadURL(imgRef);
+        this.projectForm.patchValue({
+          image: img_url
+        });
+        console.log("Imagen subida correctamente a Firebase: ", file.name);
+      })
+      .catch((error) => console.log(error));
+
+  }
+
 
 }

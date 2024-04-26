@@ -80,15 +80,40 @@
     order: 1;
   }
 
+  .menu a{
+    padding: 5px 10px;
+  }
+
+  .menu .item a{
+    border-radius: 5%;
+  }
+
+  .menu .item .actived{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
+  }
+
+  .menu .item a:hover {
+    background: rgba(243, 148, 49, 0.9);
+  }
+
+
   .menu li {
-    padding: 15px 10px;
+    padding: 8px 10px;
   }
 
   .menu img{
     margin-right: 0px;
+    width: 120px;
+    height: 120px;
   }
 
   .show{
     display: none;
   }
+
+  nav ul li:nth-child(6) {
+    margin-bottom: 20px;
+  }
 }
+
+

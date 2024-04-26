@@ -1,36 +1,32 @@
 import { Component } from '@angular/core';
-import { Project } from '../../models/project';
-import { ProjectService } from '../../services/project.service';
+
+import { ProjectFireService } from '../../services/projectFire.service';
+import Project from '../../interfaces/project.fire.interface';
 import { Global } from '../../services/global';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
-  providers: [ProjectService]
+  providers: []
 })
 export class ProjectsComponent {
-  public projects: Project[] | undefined;
+
   public url:string | undefined;
 
-  constructor(private _projectService: ProjectService){
+  projects: Project[];
+
+  constructor(
+    private projectFireService: ProjectFireService
+  ) {
+    this.projects = [];
     this.url = Global.url;
   }
 
-  ngOnInit(): void {
-    this.getProjects();
-
-  }
-
-  getProjects(){
-    this._projectService.getProjects().subscribe({
-      next: (response) =>{
-          //console.log(response)
-          if(response.projects){
-            this.projects = response.projects;
-          }},
-      error: (e) => console.error(e),
-      complete: () => console.info('metodo GetProjects completado')
-    })
+  ngOnInit(){
+    this.projectFireService.getProjects().subscribe( projects => {
+      this.projects = projects;
+      console.log("Metodo getProjects", projects)
+    });
   }
 }
