@@ -142,7 +142,7 @@ main {
   width: 80%;
   margin: 0px auto;
   margin-bottom: 200px;
-  margin-top: 40px;
+  margin-top: 30px;
   min-height: 500px;
 }
 
@@ -182,7 +182,7 @@ main {
   margin-bottom: 5px;
 }
 
-article.about{
+.about{
   width: 70%;
   margin: 0px auto;
   margin-top: 50px;
@@ -191,7 +191,7 @@ article.about{
   font-family: Yanone;
 }
 
-.about h2{
+.about .about-content h2{
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
   margin-bottom: 5px;
@@ -201,6 +201,13 @@ article.about{
   padding-top: 10px;
   padding-bottom: 30px;
   text-align: justify;
+}
+
+.about img{
+  width: 200px;
+  height: auto;
+  border-radius: 100%;
+  padding: 10px;
 }
 
 /* SECCION CREAR PROYECTO */
