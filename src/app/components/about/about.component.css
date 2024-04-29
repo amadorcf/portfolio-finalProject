@@ -1,1 +1,22 @@
+@media all and (max-width: 950px) {
+
+  .about{
+    margin-top: 0;
+  }
+
+  .about img{
+    width: 120px;
+    height: auto;
+  }
+
+  #title{
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  #title h1 {
+    font-size: 34px;
+  }
+
+}
 

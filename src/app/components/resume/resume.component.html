@@ -1,71 +1,363 @@
-<div class="resume-container">
+<div class="cv-container">
+  <!--========== HEADER ==========-->
+  <header class="l-header" id="header">
+    <nav class="nav bd-container">
+      <a href="/resume" class="nav__logo">amadorcf</a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="/resume#home" class="nav__link active-link">
+              <i class="bx bx-home nav__icon"></i>Inicio
+            </a>
+          </li>
 
-  <!-- Barra lateral -->
-  <aside class="lateral" >
-    <div class="personal-data" >
-      <ul class="social_icon">
-        <li>
-          <a href="https://www.linkedin.com/in/amadorcf/"><ion-icon name="logo-linkedin"></ion-icon></a>
-          LinkedIn
-        </li>
-        <li>
-          <a href="https://github.com/amadorcf"><ion-icon name="logo-github"></ion-icon></a>
-          GitHub
-        </li>
-        <li>
-          <a href="mailto:amadorcf@outlook.com"><ion-icon name="mail"></ion-icon></a>
-          <span>amadorcf&#64;outlook.com</span>
-        </li>
-      </ul>
+          <li class="nav__item">
+            <a href="/resume#profile" class="nav__link">
+              <i class="bx bx-user nav__icon"></i>Perfil
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="/resume#education" class="nav__link">
+              <i class="bx bx-book nav__icon"></i>Educación
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="/resume#skills" class="nav__link">
+              <i class="bx bx-receipt nav__icon"></i>Habilidades
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="/resume#experience" class="nav__link">
+              <i class="bx bx-receipt nav__icon"></i>Experiencia profesional
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="/resume#formation" class="nav__link">
+              <i class="bx bx-award nav__icon"></i>Formacion
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="/resume#references" class="nav__link">
+              <i class="bx bx-link-external nav__icon"></i>Referencias
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="bx bx-grid-alt"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main class="l-main bd-container">
+    <!-- All elements within this div, is generated in PDF -->
+    <div class="resume" id="area-cv">
+      <div class="resume__left">
+        <!--========== HOME ==========-->
+        <section class="home" id="home">
+          <div class="home__container section bd-grid">
+            <div class="home__data bd-grid">
+              <img
+                src="../../../assets/img/cartoon22.gif"
+                alt=""
+                class="home__img"
+              />
+              <h1 class="home__title">AMADOR <br><b>CANO FERNANDEZ</b></h1>
+              <h3 class="home__profession">Future Full-Stack Developer</h3>
+
+              <!-- Theme change button -->
+              <i class="bx bx-moon change-theme" title="Theme" id="theme-button"></i>
+
+              <!-- Button to generate and download the pdf. Available for desktop. -->
+              <a download="" href="assets/pdf/ResumeCv.pdf">
+                <i class="bx bx-download generate-pdf" title="Descargar PDF" id="resume-button"></i>
+              </a>
+
+              <div>
+                <a download="" href="assets/pdf/ResumeCv.pdf" class="home__button-movil">Descargar</a>
+              </div>
+              
+            </div>
+
+            <div class="home__address bd-grid">
+              <span class="home_information">
+                <i class="bx bx-map home__icon"> Baeza - Jaén</i>
+              </span>
+
+              <span class="home_information">
+                <i class="bx bx-envelope home__icon">
+                  acf0000&#64;outlook.com</i
+                >
+              </span>
+
+              <span class="home_information">
+                <i class="bx bx-phone home__icon"> 999-999-999</i>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!--========== SOCIAL ==========-->
+        <section class="social section">
+          <h2 class="section-title">SOCIAL</h2>
+          <div class="social__container bd-grid">
+            <a href="#" target="_blank" class="social__link">
+              <i class="bx bxl-linkedin-square social__icon">&#64;amadorcf</i>
+            </a>
+
+            <a href="#" target="_blank" class="social__link">
+              <i class="bx bxl-facebook-square social__icon">&#64;amadorcf</i>
+            </a>
+
+            <a href="#" target="_blank" class="social__link">
+              <i class="bx bxl-instagram social__icon">&#64;amadorcf</i>
+            </a>
+          </div>
+        </section>
+
+        <!--========== PROFILE ==========-->
+        <section class="profile section" id="profile">
+          <h2 class="section-title">Perfil</h2>
+          <p class="profile__description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+            omnis numquam vero autem animi reiciendis laudantium optio. Laborum
+            omnis ipsum odio sit praesentium quos beatae? Tempora aspernatur
+            libero nihil adipisci!
+          </p>
+        </section>
+
+        <!--========== EDUCATION ==========-->
+        <section class="education section" id="education">
+          <h2 class="section-title">Educacion</h2>
+
+          <div class="education__container">
+            <div class="education__content">
+              <div class="education__time">
+                <span class="education__rounder"></span>
+                <span class="education__line"></span>
+              </div>
+
+              <div class="education__data bd-grid">
+                <h3 class="education__title">Ingenieria Electrónica</h3>
+                <span class="education__studies">Universidad de Jaén</span>
+                <span class="education__year">2013 - 2017</span>
+              </div>
+            </div>
+
+            <div class="education__content">
+              <div class="education__time">
+                <span class="education__rounder"> </span>
+              </div>
+
+              <div class="education__data bd-grid">
+                <h3 class="education__title">Master Mecatrónica</h3>
+                <span class="education__studies">Universidad de Jaén</span>
+                <span class="education__year">2013 - 2017</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--========== SKILLS  ==========-->
+        <section class="skills section" id="skills">
+          <h2 class="section-title">Habilidades</h2>
+          <div class="skills__content bd-grid">
+            <ul class="skills__data">
+              <li class="skills__name">
+                <span class="skills__circle"></span>HTML, CSS, JS
+              </li>
+              <li class="skills__name">
+                <span class="skills__circle"></span>JAVA
+              </li>
+              <li class="skills__name">
+                <span class="skills__circle"></span>PYTHON
+              </li>
+              <li class="skills__name">
+                <span class="skills__circle"></span>ETC
+              </li>
+            </ul>
+
+            <ul class="skills__data">
+              <li class="skills__name">
+                <span class="skills__circle"></span>Angular
+              </li>
+              <li class="skills__name">
+                <span class="skills__circle"></span>Firebase
+              </li>
+              <li class="skills__name">
+                <span class="skills__circle"></span>React
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <div class="resume__right">
+        <!--========== EXPERIENCE ==========-->
+        <section class="experience section" id="experience">
+          <h2 class="section-title">Experiencia Profesional</h2>
+
+          <div class="experience__container">
+            <div class="experience__content">
+              <div class="experience__time">
+                <div class="experience__content">
+                  <div class="experience__time">
+                    <span class="experience__rounder"></span>
+                    <span class="experience__line"></span>
+                  </div>
+
+                  <div class="experience__data bd-grid">
+                    <h3 class="experience__title">Desarrollador Junior</h3>
+                    <span class="experience__company">Sep 2020 - Dic 2021</span>
+                    <p class="experience__description">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Laborum ea harum odit facere, blanditiis neque eos aperiam
+                      quas consectetur dolore architecto voluptate esse ut!
+                      Repellendus porro magnam deleniti cum nulla.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="experience__content">
+                  <div class="experience__time">
+                    <span class="experience__rounder"></span>
+                    <span class="experience__line"></span>
+                  </div>
+
+                  <div class="experience__data bd-grid">
+                    <h3 class="experience__title">Responsable area técnica</h3>
+                    <span class="experience__company">Sep 2020 - Dic 2021</span>
+                    <p class="experience__description">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Laborum ea harum odit facere, blanditiis neque eos aperiam
+                      quas consectetur dolore architecto voluptate esse ut!
+                      Repellendus porro magnam deleniti cum nulla.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="experience__content">
+                  <div class="experience__time">
+                    <span class="experience__rounder"></span>
+                    <!-- <span class="experience__line"></span> -->
+                  </div>
+
+                  <div class="experience__data bd-grid">
+                    <h3 class="experience__title">Director Servico Tecnico</h3>
+                    <span class="experience__company">Sep 2020 - Dic 2021</span>
+                    <p class="experience__description">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Laborum ea harum odit facere, blanditiis neque eos aperiam
+                      quas consectetur dolore architecto voluptate esse ut!
+                      Repellendus porro magnam deleniti cum nulla.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--========== FORMATION ==========-->
+        <section class="formation section" id="formation">
+          <h2 class="section-title">Formación</h2>
+          <div class="formation__content">
+            <h3 class="formation__title">Curso ...</h3>
+            <p class="formation__description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+
+          <div class="formation__content">
+            <h3 class="formation__title">Curso ...</h3>
+            <p class="formation__description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+
+          <div class="formation__content">
+            <h3 class="formation__title">Curso ...</h3>
+            <p class="formation__description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </section>
+
+        <!--========== REFERENCES ==========-->
+        <section class="references section" id="references">
+          <h2 class="references__title">REFERENCIAS</h2>
+          <div class="references__content">
+            <h3 class="references__title">Referencia ...</h3>
+            <p class="references__description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </section>
+
+        <!--========== LANGUAGES ==========-->
+        <section class="languages section">
+          <h2 class="section-title">IDIOMAS</h2>
+
+          <div class="lenguages__container">
+            <ul class="lenguages__content bd-grid">
+              <li class="lenguages__name">
+                <span class="lenguages__circle"></span>Español
+              </li>
+              <li class="lenguages__name">
+                <span class="lenguages__circle"></span>Inlges
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!--========== INTERESTS ==========-->
+        <section class="interests section">
+          <h2 class="section-title">INTERESES</h2>
+          <div class="interests__container bd-grid">
+            <div class="interests__content">
+              <i class="bx bx-headphone interests__icon"></i>
+              <span class="interests_name">Music</span>
+            </div>
+
+            <div class="interests__content">
+              <i class="bx bx-basketball interests__icon"></i>
+              <span class="interests_name">Sports</span>
+            </div>
+
+            <div class="interests__content">
+              <i class="bx bxs-plane-alt interests__icon"></i>
+              <span class="interests_name">Travel</span>
+            </div>
+
+            <div class="interests__content">
+              <i class="bx bx-leaf interests__icon"> </i>
+              <span class="interests_name">Nature</span>
+            </div>
+
+            <div class="interests__content">
+              <i class="bx bx-basketball interests__icon"></i>
+              <span class="interests_name">Sports</span>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-    <section class="skills">
-      <h3 class="title">HABILIDADES</h3>
-      <ul>
-        <li>Python, HTML, CSS</li>
-        <li>Django, Flask</li>
-        <li>APIs, WTForms, Tkinter,</li>
-        <li>Pandas, NumPy, Matplotlib</li>
-        <li>Git, GitHub</li>
-        <li>SQL, SQLite</li>
-      </ul>
-    </section>
-    <section class="others">
-      <h3 class="title">OTROS</h3>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </section>
-  </aside>
+  </main>
 
-  <!--Contenido principal-->
-  <div class="resume-content">
-    <header>
-      <h1>{{title}}</h1>
-      <h2>{{subtitle}}</h2>
-      <p>{{description}}</p>
-    </header>
-    <section class="expirience">
-      <h3 class="title">EXPERIENCIA PROFESIONAL</h3>
+  <!--========== SCROLL TOP ==========-->
+  <a href="/resume#" class="scrolltop" id="scroll-top">
+    <i class="bx bxs-up-arrow-alt scrolltop__icon"></i>
+  </a>
 
-    </section>
-    <section class="education">
-      <h3 class="title">FORMACION</h3>
+  <!--========== HTML2PDF ==========-->
+  <!-- <script src="assets/js/html2pdf.bundle.min.js"></script> -->
 
-    </section>
-    <section class="lenguages">
-      <h3 class="title">IDIOMAS</h3>
-
-    </section>
-    <section class="hobbies">
-      <h3 class="title">INTERESES</h3>
-
-    </section>
-  </div>
-
-
-
-
+  <!--========== MAIN JS ==========-->
+  <!-- <script src="assets/js/main.js"></script> -->
 </div>

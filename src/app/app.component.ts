@@ -13,15 +13,17 @@ export class AppComponent {
   ngOnInit(): void {
 
     $(() => {
+
+      //
       $(".toggle").on("click",  () => {
-        if ($(".item").hasClass("active")) {
-          $(".item").removeClass("active");
+        if ($(".item").hasClass("active-nav")) {
+          $(".item").removeClass("active-nav");
           /* $(this).find("a").html("<i class='fas fa-bars'></i>"); */
           $(".toggle a i").removeClass("fa-solid fa-times");
           $(".toggle a i").addClass("fa-solid fa-bars");
 
         } else {
-          $(".item").addClass("active");
+          $(".item").addClass("active-nav");
          /*  $(this).find("a").html("<i class='fas fa-times'></i>"); */
          $(".toggle a i").removeClass("fa-solid fa-bars");
          $(".toggle a i").addClass("fa-solid fa-times");
@@ -37,6 +39,17 @@ export class AppComponent {
         } else {
           $(".acf").addClass("show");
           $("html, body").animate({ scrollTop: 0 }, "slow");
+        }
+      });
+
+
+      /*==================== REMOVE MAIN MENU  ====================*/
+      $("nav .item").on("click",  () => {
+        $("main").removeClass("dark-theme");
+        if ($(".item").hasClass("active-nav")) {
+          $(".item").removeClass("active-nav");
+        } else {
+          $(".item").addClass("active-nav");
         }
       });
 
