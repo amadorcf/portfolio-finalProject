@@ -62,7 +62,10 @@
   color: var(--text-color);
 }
 
-.cv-container h1,.cv-container h2,.cv-container h3,.cv-container ul,.cv-container p{
+.cv-container h1,
+.cv-container h2,
+.cv-container h3,
+.cv-container p{
   margin: 0;
 }
 
@@ -73,10 +76,10 @@
   font-weight: var(--font-medium);
 }
 
-.cv-container ul{
+/* .cv-container ul{
   padding: 0;
   list-style: none;
-}
+} */
 
 .cv-container a{
   text-decoration: none;
@@ -88,7 +91,7 @@
 }
 /*========== CLASS CSS ==========*/
 .section{
-  padding:  1.5rem 0;
+  padding:  1rem 0;
 }
 
 .section-title{
@@ -111,7 +114,7 @@
 
 .bd-grid{
   display: grid;
-  gap: 1.5rem;
+  /* gap: 1.5rem; */
 }
 
 .l-header{
@@ -283,8 +286,12 @@
 }
 
 .social__icon{
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-right: 0.25rem;
+}
+
+.social__icon:hover{
+  color: #f39431e6;
 }
 
 /*========== PROFILE ==========*/
@@ -295,7 +302,7 @@
 /*========== EDUCATION AND EXPERIENCE ==========*/
 .education__content, .experience__content{
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .education__time, .experience__time{
@@ -321,7 +328,7 @@
 }
 
 .education__data, .experience__data{
-  gap: .5rem;
+  gap: .2rem;
 
 }
 
@@ -338,10 +345,21 @@
   font-size: var(--small-font-size);
 }
 
+ul.experience__description{
+  list-style: circle;
+  margin-left: 1rem;
+  margin-bottom: var(--mb-1);
+
+}
+
 /*========== SKILLS AND LANGUAGES ==========*/
 .skills__content, .lenguages__content {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 0rem;
+}
+
+h3.skills__content{
+  margin-left: 1rem;
 }
 
 .lenguages__content{
@@ -350,8 +368,8 @@
 
 .skills__name, .lenguages__name{
   display: flex;
-  align-items: center;
-  margin-bottom: var(--mb-3);
+  align-items: baseline;
+  margin-bottom: var(--mb-1);
 }
 
 .skills__circle, .lenguages__circle{
@@ -362,16 +380,41 @@
   border-radius: 50%;
   margin-right: .75rem;
 }
-/*========== CERTIFICATES ==========*/
-.formation__content{
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-1);
+
+.skills .dev-icons{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
-/*========== REFERENCES ==========*/
+.skills .list-inline-item{
+  font-size: 2rem;
+}
 
+.skills ul{
+  padding: 0;
+  list-style: none;
+}
+
+/*========== CERTIFICATES ==========*/
+.formation__content{
+  margin-bottom: var(--mb-1);
+}
+h3.formation__title{
+  font-size: var(--h3-font-size);
+
+}
+
+p.formation__description{
+  font-size: var(--small-font-size);
+}
 
 /*========== INTERESTS ==========*/
+.interests__main-container{
+  display: flex;
+  justify-content: center;
+}
+
 .interests__container{
   grid-template-columns: repeat(3, 1fr);
   margin-top: var(--mb-2);
@@ -387,6 +430,10 @@
   font-size: 1.5rem;
   color: var(--text-color-light);
   margin-bottom: 0.25rem;
+}
+
+.interests__name{
+  text-align: center;
 }
 
 /* Scroll top */
@@ -422,6 +469,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem .5rem
   }
+
+  .skills .list-inline-item{
+    font-size: 2rem;
+  }
 }
 
 /* Classes modified for large screen size */
@@ -429,7 +480,6 @@
   .cv-container{
     margin: 3rem 0;
   }
-
 
   .bd-container{
     margin-left: auto;
@@ -460,7 +510,7 @@
   }
 
   .section-title, .profile__description{
-    text-align: initial;
+    text-align: center;
   }
 
   .home__container{
@@ -478,6 +528,16 @@
 
   .interests__container{
     grid-template-columns: repeat(4, max-content);
-    column-gap: 3.5rem;
+    column-gap: 2rem;
+    row-gap: 1rem;
   }
+
+  .skills .dev-icons{
+    gap: 10px;
+  }
+
+  .skills .list-inline-item{
+    font-size: 3rem;
+  }
+
 }

@@ -26,7 +26,7 @@ export class ProjectsComponent {
   ngOnInit(){
     this.projectFireService.getProjects().subscribe( projects => {
       this.projects = projects;
-      console.log("Metodo getProjects", projects)
+      //console.log("Metodo getProjects", projects)
     });
   }
 }

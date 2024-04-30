@@ -20,7 +20,7 @@
   --text-color: #403A3A;
   --text-color-light: #707070;
   --container-color: #FAFAFA;
-  --container-color-alt: #F0EFEF;
+  --container-color-alt: #F2F2F2;
   --body-color: #FCFCFC;
 
   /*========== Font and typography ==========*/
@@ -270,6 +270,7 @@ main.dark-theme{
 .container{
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0px auto;
 }
 
@@ -342,12 +343,15 @@ form input[disabled]{
 /*SECCION PROYECTOS*/
 
 .projects-container h2{
-  margin:0px 50px 10px 50px;
+  margin:0px 50px 0px 50px;
+  text-align: center;
+}
+
+.projects-container .line{
+  width: 150px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
-  text-align: center;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin: 0 auto;
 }
 
 .all-projects{
@@ -364,9 +368,10 @@ form input[disabled]{
   min-width: 400px;
   max-width: 300px;
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: var(--container-color-alt);
   border-radius: 40px;
   text-align: center;
+  filter: grayscale(0.5);
   transition: all 300ms;
 }
 
@@ -386,7 +391,7 @@ form input[disabled]{
 }
 
 .project:hover{
-  filter: grayscale(1);
+  filter: grayscale(0);
   transform: scale(1.05, 1.05);
 }
 

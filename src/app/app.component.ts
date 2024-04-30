@@ -45,7 +45,11 @@ export class AppComponent {
 
       /*==================== REMOVE MAIN MENU  ====================*/
       $("nav .item").on("click",  () => {
+        // Reset menu
         $("main").removeClass("dark-theme");
+        $(".toggle a i").removeClass("fa-solid fa-times");
+        $(".toggle a i").addClass("fa-solid fa-bars");
+
         if ($(".item").hasClass("active-nav")) {
           $(".item").removeClass("active-nav");
         } else {
