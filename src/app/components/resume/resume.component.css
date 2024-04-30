@@ -3,8 +3,6 @@
   box-sizing: border-box;
 }
 
-
-
 /*========== Variables Dark theme ==========*/
 .cv-container.dark-theme{
   --title-color: #F2F2F2;
@@ -255,8 +253,8 @@
   display: inline-block;
   border: 2px solid var(--container-color);
   color: var(--container-color);
-  padding: 1rem 2rem;
-  border-radius: .25rem;
+  padding: .5rem 2rem;
+  border-radius: .5rem;
   transition: 0.3s;
   font-weight: var(--font-medium);
   margin-top: var(--mb-3);
