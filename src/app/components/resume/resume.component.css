@@ -235,7 +235,8 @@
 }
 
 .home__address{
-  gap: 1rem;
+  gap: .1rem;
+  text-align: center;
 }
 
 .home__informarion{
@@ -253,11 +254,12 @@
   display: inline-block;
   border: 2px solid var(--container-color);
   color: var(--container-color);
-  padding: .5rem 2rem;
-  border-radius: .5rem;
+  padding: .2rem 1.5rem;
+  border-radius: .4rem;
   transition: 0.3s;
   font-weight: var(--font-medium);
-  margin-top: var(--mb-3);
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-2);
   background-color: var(--text-color);
 }
 
@@ -270,6 +272,7 @@
 .social__container{
   grid-template-columns: max-content;
   gap: 1rem;
+  text-align: center;
 }
 
 .social__link{
@@ -416,6 +419,7 @@ p.formation__description{
 .interests__container{
   grid-template-columns: repeat(3, 1fr);
   margin-top: var(--mb-2);
+  row-gap: .5rem;
 }
 
 .interests__content{

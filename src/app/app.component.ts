@@ -14,7 +14,7 @@ export class AppComponent {
 
     $(() => {
 
-      //
+      // Comportamiento boton del MENU
       $(".toggle").on("click",  () => {
         if ($(".item").hasClass("active-nav")) {
           $(".item").removeClass("active-nav");
@@ -30,19 +30,6 @@ export class AppComponent {
         }
       });
 
-
-
-      $(".show-button").on("click",  () => {
-        if ($(".acf").hasClass("show")) {
-          $(".acf").removeClass("show");
-          $("html, body").animate({ scrollTop: 0 }, "slow");
-        } else {
-          $(".acf").addClass("show");
-          $("html, body").animate({ scrollTop: 0 }, "slow");
-        }
-      });
-
-
       /*==================== REMOVE MAIN MENU  ====================*/
       $("nav .item").on("click",  () => {
         // Reset menu
@@ -55,6 +42,21 @@ export class AppComponent {
         } else {
           $(".item").addClass("active-nav");
         }
+      });
+
+
+      $(".show-button").on("click",  () => {
+        if ($(".acf").hasClass("show")) {
+          $(".acf").removeClass("show");
+          $("html, body").animate({ scrollTop: 0 }, "slow");
+        } else {
+          $(".acf").addClass("show");
+          $("html, body").animate({ scrollTop: 0 }, "slow");
+        }
+      });
+
+      $('#content input[type="submit"]').on("click",  () => {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
       });
 
     });

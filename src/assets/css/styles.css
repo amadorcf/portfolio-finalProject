@@ -126,8 +126,8 @@ main.dark-theme{
 }
 
 .menu li{
-  padding: 10px;
-  margin: 10px;
+  padding:0 10px;
+  margin:0 10px;
   list-style: none;
 }
 
@@ -199,7 +199,7 @@ main.dark-theme{
   margin: 0px auto;
   margin-bottom: 200px;
   margin-top: 30px;
-  min-height: 500px;
+  /* min-height: 500px; */
 }
 
 
@@ -345,6 +345,7 @@ form input[disabled]{
 .projects-container h2{
   margin:0px 50px 0px 50px;
   text-align: center;
+  text-transform:uppercase;
 }
 
 .projects-container .line{
@@ -399,9 +400,6 @@ form input[disabled]{
   text-decoration: none;
   color: black;
 }
-
-
-
 
 .confirm{
   width: 68%;

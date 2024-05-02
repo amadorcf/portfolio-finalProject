@@ -11,4 +11,11 @@
     margin-right: 0px;
   }
 
+  .project img{
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
 }

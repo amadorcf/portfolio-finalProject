@@ -13,7 +13,7 @@ form input[type="number"],
 form input[type="email"],
 form input[type="url"],
 form textarea{
-  width: 40%;
+  width: 90%;
   padding: 5px;
 }
 

@@ -12,53 +12,59 @@
   <div class="create__content">
     <form [formGroup]="projectForm" (ngSubmit)="onSubmit(projectForm)">
 
-      <p>
-        <label for="name">Nombre</label>
-        <input type="text" id="name" formControlName="name" required/>
-        <span class="form_error" *ngIf="projectFormControl['name'].touched && !projectFormControl['name'].valid">El nombre es obligatorio</span>
-      </p>
-  
-      <p>
-        <label for="description">Descripcion</label>
-        <textarea autocomplete="on" id="description" formControlName="description" required></textarea>
-        <span class="form_error" *ngIf="projectFormControl['description'].touched && !projectFormControl['description'].valid">La descripcion es obligatoria</span>
-      </p>
-  
-      <p>
-        <label for="category">Categoria</label>
-        <input type="text" id="category" formControlName="category" required/>
-        <span class="form_error" *ngIf="projectFormControl['category'].touched && !projectFormControl['category'].valid">La categoria es obligatoria</span>
-      </p>
-  
-      <p>
-        <label for="year">Año</label>
-        <input type="text" id="year" formControlName="year" required/>
-        <span class="form_error" *ngIf="projectFormControl['year'].touched && !projectFormControl['year'].valid">El año es obligatorio</span>
-      </p>
-  
-      <p>
-        <label for="langs">Lenguajes utilizados</label>
-        <input type="text" id="langs" formControlName="langs" required/>
-        <span class="form_error" *ngIf="projectFormControl['langs'].touched && !projectFormControl['langs'].valid">Los lenguajes son obligatorios</span>
-      </p>
-  
-      <p>
-        <label for="link">Enlace web</label>
-        <input type="url" id="link" formControlName="link"  />
-        <span class="form_error" *ngIf="projectFormControl['link'].touched && !projectFormControl['link'].valid">Los lenguajes son obligatorios</span>
-      </p>
-  
-      <p>
-        <label for="image">Imagen del proyecto</label>
-        <span *ngIf="project.image" style="float: none">
-          <img src="{{project.image}}" width="100px"/>
-        </span><br>
-        <input type="file" id="image" name="image" placeholder="Subir imagen" #filePicker (change)="fileChangeEvent($event)"/>
-      </p>
-  
-      <input type="submit" value="Enviar" [disabled]="!projectForm.valid">
-  
-  
+      <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" formControlName="name" required/>
+          <span class="form_error" *ngIf="projectFormControl['name'].touched && !projectFormControl['name'].valid">El nombre es obligatorio</span>
+      </div>
+
+
+      <div class="form-group">
+          <label for="description">Descripcion</label>
+          <textarea autocomplete="on" id="description" formControlName="description" required></textarea>
+          <span class="form_error" *ngIf="projectFormControl['description'].touched && !projectFormControl['description'].valid">La descripcion es obligatoria</span>
+      </div>
+
+
+      <div class="form-group">
+          <label for="category">Categoria</label>
+          <input type="text" id="category" formControlName="category" required/>
+          <span class="form_error" *ngIf="projectFormControl['category'].touched && !projectFormControl['category'].valid">La categoria es obligatoria</span>
+      </div>
+
+
+      <div class="form-group">
+          <label for="year">Año</label>
+          <input type="text" id="year" formControlName="year" required/>
+          <span class="form_error" *ngIf="projectFormControl['year'].touched && !projectFormControl['year'].valid">El año es obligatorio</span>
+      </div>
+
+      <div class="form-group">
+          <label for="langs">Lenguajes utilizados</label>
+          <input type="text" id="langs" formControlName="langs" required/>
+          <span class="form_error" *ngIf="projectFormControl['langs'].touched && !projectFormControl['langs'].valid">Los lenguajes son obligatorios</span>
+      </div>
+
+
+      <div class="form-group">
+          <label for="link">Enlace web</label>
+          <input type="url" id="link" formControlName="link"  />
+          <span class="form_error" *ngIf="projectFormControl['link'].touched && !projectFormControl['link'].valid">Los lenguajes son obligatorios</span>
+      </div>
+
+
+      <div class="form-group">
+          <label for="image">Imagen del proyecto</label>
+          <span *ngIf="project.image" style="float: none">
+            <img src="{{project.image}}" width="100px"/>
+          </span><br>
+          <input type="file" id="image" name="image" placeholder="Subir imagen" #filePicker (change)="fileChangeEvent($event)"/>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Enviar" [disabled]="!projectForm.valid">
+      </div>
+
     </form>
   </div>
 
