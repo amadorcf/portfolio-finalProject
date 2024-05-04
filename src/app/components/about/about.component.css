@@ -22,7 +22,7 @@
   color: #2e2e2e;
   font-weight: bold;
   width: 88px;
-  padding: 10px;
+  padding: 5px;
   font-size: 28px;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -32,6 +32,8 @@
 .about-contact-button:hover{
   transform: scale(1.1, 1.1);
   background-color: rgba(243, 148, 49, 0.5);
+  cursor: pointer;
+
 }
 
 .about-contact-button a{
@@ -54,7 +56,7 @@
 
   #title{
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   #title h1 {
@@ -120,7 +122,7 @@
 .row .sub-title h2{
 	position: relative;
 	color: #242223;
-	font-size: 22px;
+	font-size: 24px;
 	display: inline-block;
 	margin-bottom: 30px;
   font-family: yanone;
@@ -145,7 +147,7 @@
 	background-color: #f39431e6;
 }
 .subject{
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: thin;
 	padding-bottom: 15px;
 	text-transform: uppercase;
@@ -168,11 +170,11 @@
 .progress-line{
 	position: absolute;
 	width: 0%;
-	height: 7px;
+	height: 8px;
 	background-color: #f39431e6;
   border: 1px solid black;
 	border-radius: 15px;
-	top: -1px;
+	top: -2px;
 	animation: animate 1.5s cubic-bezier(1, 0.2, 0.2, 1) forwards;
 }
 @keyframes animate{

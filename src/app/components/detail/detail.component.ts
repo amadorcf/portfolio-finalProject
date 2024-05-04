@@ -48,6 +48,8 @@ export class DetailComponent implements OnInit {
   ngOnInit(){
 
     $(() => {
+      $(window).scrollTop(0);
+
       $('.bxslider').bxSlider({
         adaptiveHeight: true,
         /* slideWidth: 250, */

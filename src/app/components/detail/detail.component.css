@@ -36,7 +36,7 @@
   display: flex;
   justify-content: center;
   gap: 5px;
-  padding: 20px;
+  padding: 24px;
   color: var(--container-color-alt);
   background-color: #2e2e2e;
   box-shadow: 0 8px 5px rgba(0, 0, 0, 0.4);
@@ -86,6 +86,7 @@
   display: grid;
   grid-template-columns: .3fr 1fr;
   gap: 2rem;
+  margin: var(--mb-1);
   justify-items: start;
   align-items: start;
 }
@@ -100,6 +101,18 @@
   text-align: center;
   margin-left: 200px;
   margin-right: 200px;
+}
+
+.projects__button{
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.projects__button a{
+  align-self: center;
+  text-decoration: none;
+  color: #2e2e2e;
 }
 
 /* Mobile version */

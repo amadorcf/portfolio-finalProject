@@ -244,7 +244,7 @@ main.dark-theme{
 }
 
 .about{
-  width: 70%;
+  width: 80%;
   margin: 0px auto;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -263,7 +263,7 @@ main.dark-theme{
 
 .about p{
   padding-top: 10px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   text-align: justify;
 }
 
