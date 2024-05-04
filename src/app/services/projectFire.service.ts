@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Firestore, collection, addDoc, collectionData, doc, getDoc, deleteDoc, updateDoc } from "@angular/fire/firestore";
+import { Firestore, collection, addDoc, collectionData, doc, getDoc, deleteDoc, updateDoc, orderBy, query } from "@angular/fire/firestore";
 import Project from "../interfaces/project.fire.interface";
 import { Observable } from "rxjs";
 
@@ -10,7 +10,9 @@ const PATH = 'projects';
 })
 export class ProjectFireService{
 
+  //private _collection = collection(this.firestore, PATH);
   private _collection = collection(this.firestore, PATH);
+
 
   constructor(private firestore: Firestore){
   }
@@ -22,7 +24,9 @@ export class ProjectFireService{
   }
 
   getProjects(): Observable<Project[]>{
-    return collectionData(this._collection, {idField: 'id'}) as Observable<Project[]>;
+    const orderedQuery = query(this._collection, orderBy('year'));
+
+    return collectionData(orderedQuery, {idField: 'id'}) as Observable<Project[]>;
   }
 
   async getProject(id: string){

@@ -203,8 +203,8 @@ main.dark-theme{
   width: 80%;
   margin: 0px auto;
   margin-bottom: 200px;
-  margin-top: 30px;
-  /* min-height: 500px; */
+  margin-top: 20px;
+  min-height: 500px;
 }
 
 
