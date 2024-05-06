@@ -71,7 +71,7 @@
 .cv-container h2,
 .cv-container h3{
   color: var(--title-color);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semi-bold);
 }
 
 /* .cv-container ul{
