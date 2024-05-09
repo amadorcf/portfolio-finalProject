@@ -6,10 +6,9 @@
 ## 2 Hacer las diferentes secciones, cada una con una pagina distinta
   - Sobre Mi
   - Proyectos
-  - Crear proyectos
+  - CV
   - Contacto
-## 3 Desarrollo de la seccion de Crear Proyectos: hacer formulario para guardar nuevos proyectos en el backend usando la API Rest (NodeJS)
-## 4 Desarrollo de la seccion Proyectos: listar los diferentes proyectos
-## 5 Pagina individual para cada proyecto
-## 6 Boton editar proyecto
-## 7 Boton borrar proyecto
+## 3 Desarrollo de la seccion Proyectos: listar los diferentes proyectos
+## 4 Pagina individual con los detelles cada proyecto
+## 5 Dar estilos y convertir en responsive toda la web app
+
