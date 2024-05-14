@@ -42,6 +42,27 @@
   color: #2e2e2e;
 }
 
+#title a{
+  align-self: center;
+  text-decoration: none;
+  color: #2e2e2e;
+  font-weight: bold;
+}
+
+#title #mail{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+#title .about-icons{
+  display: flex;
+  font-size: 2rem;
+  margin-right: 0.25rem;
+  padding: 1rem;
+  gap: 10px;
+}
+
 
 @media all and (max-width: 950px) {
 
@@ -71,6 +92,7 @@
 	width: 100%;
 	min-height: 100vh;
 }
+
 .skills__progressBar .main-title{
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
@@ -116,9 +138,28 @@
 	justify-content: space-between;
 	margin-top: 30px;
 }
+
+.skill{
+  display: flex;
+  align-items: end;
+  padding: .5rem;
+}
+
+.skill .skill-icon{
+  font-size: 3rem;
+  padding: .5rem;
+}
+
+.skill .skill-content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .row .col{
 	flex-basis: 46%;
 }
+
 .row .sub-title h2{
 	position: relative;
 	color: #242223;
@@ -128,6 +169,7 @@
   font-family: yanone;
   text-transform: uppercase;
 }
+
 .row .sub-title h2::before{
 	content: '';
 	position: absolute;
@@ -137,6 +179,7 @@
 	left: 0;
 	background-color: #808080;
 }
+
 .row .sub-title h2::after{
 	content: '';
 	position: absolute;
@@ -146,12 +189,15 @@
 	left: 0;
 	background-color: #f39431e6;
 }
+
 .subject{
 	font-size: 20px;
 	font-weight: thin;
 	padding-bottom: 15px;
 	text-transform: uppercase;
+
 }
+
 .progress-bar{
 	position: relative;
 	width: 100%;
@@ -160,6 +206,7 @@
 	border-radius: 15px;
 	margin-bottom: 20px;
 }
+
 .progress-bar::after{
 	position: absolute;
 	content: attr(value);
@@ -167,6 +214,7 @@
 	right: 0;
 	font-size: 18px;
 }
+
 .progress-line{
 	position: absolute;
 	width: 0%;
@@ -177,11 +225,13 @@
 	top: -2px;
 	animation: animate 1.5s cubic-bezier(1, 0.2, 0.2, 1) forwards;
 }
+
 @keyframes animate{
 	100%{
 		width: 100%;
 	}
 }
+
 .progress-line::after{
 	content: '';
 	position: absolute;
