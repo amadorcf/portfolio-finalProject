@@ -53,14 +53,22 @@
   display: flex;
   align-items: center;
   gap: .5rem;
+  color: var(--text-color);
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 #title .about-icons{
   display: flex;
   font-size: 2rem;
-  margin-right: 0.25rem;
-  padding: 1rem;
+
+  padding: .5rem;
   gap: 10px;
+}
+
+#title .about-icons a:hover{
+  transition: all 500ms;
+  color: #f39431e6;
 }
 
 
@@ -90,7 +98,7 @@
 .skills__progressBar{
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	/* min-height: 100vh; */
 }
 
 .skills__progressBar .main-title{
@@ -142,18 +150,23 @@
 .skill{
   display: flex;
   align-items: end;
-  padding: .5rem;
 }
 
 .skill .skill-icon{
   font-size: 3rem;
   padding: .5rem;
+  transition: all 500ms;
+}
+.skill .skill-icon:hover{
+  color:#f39431e6;
+  transform: scale(1.15, 1.15);
 }
 
 .skill .skill-content{
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: .5rem;
 }
 
 .row .col{

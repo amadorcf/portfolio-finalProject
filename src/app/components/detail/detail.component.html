@@ -50,7 +50,7 @@
         <h3 class="tag">tecnologias</h3>
         <p>{{project.langs}}</p>
       </div>
-      <div class="project__link project-field">
+      <div class="project__link project-field" *ngIf="project.link">
         <h3 class="tag">link</h3>
         <p><a type="url" href="{{project.link}}">{{project.name}}</a></p>
       </div>
