@@ -5,10 +5,16 @@
       <h1>{{project.name}}</h1>
     </div>
     <div class="bxslider">
-      <div *ngIf="project.image"><img src="{{project.image}}" alt="asd"></div>
+      <div *ngIf="project.image"><img src="{{project.image}}" alt="Imagen principal"></div>
+
       <!-- En construccion -->
-<!--       <div><img src="https://picsum.photos/600/400" /></div>
-      <div><img src="https://picsum.photos/600/500" /></div> -->
+      <ng-container *ngIf="urlYes" >
+        <div *ngFor="let img of images">
+          <img [src]= " '../../../assets/img/project/' + imgUrl +'/'+ img " >
+        </div>
+      </ng-container>
+
+
     </div>
 
     <ul class="list-inline dev-icons">

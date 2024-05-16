@@ -3,6 +3,7 @@ import { ProjectFireService } from './../../services/projectFire.service';
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Storage, ref, uploadBytes, getDownloadURL, listAll } from '@angular/fire/storage';
 declare var $: any;
 
 @Component({
@@ -19,11 +20,15 @@ export class DetailComponent implements OnInit {
 
   project: Project;
   projects: Project[];
+  images: String[] = [];
+  urlYes: boolean;
+  imgUrl: String | undefined;
 
   constructor(
     private projectFireService: ProjectFireService,
     private _router: Router,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private storage: Storage
   ) {
     this.project = {
       name: 'test',
@@ -43,43 +48,44 @@ export class DetailComponent implements OnInit {
       link: 'test',
       image: 'test',
     }];
+    this.urlYes = false;
   }
 
   ngOnInit(){
 
-    $(() => {
-      $(window).scrollTop(0);
-
-      $('.bxslider').bxSlider({
-        adaptiveHeight: true,
-        /* slideWidth: 250, */
-        pager:false,
-        responsive: true,
-        adaptiveHeightSpeed: 0
-      });
-
-      $('.bx-wrapper').css({
-        'border': '0px',
-        'background-color': 'transparent',
-        'border-radius': '10px',
-        'margin': 'auto',
-        'margin-bottom': '0',
-        'align-self': 'center',
-      });
-
-
-    });
 
     this._route.params.subscribe(params => {
 
       //Modificado para que coja el nombre en lugar del id y asi fugure en la url
   		let id = params['id'];
 
+      this.existeRuta(id);
+      this.getImages(id);
       this.getProject(id);
 
+      $(() => {
+        $(window).scrollTop(0);
+
+        $('.bxslider').bxSlider({
+          adaptiveHeight: true,
+          /* slideWidth: 250, */
+          pager:false,
+          responsive: true,
+          adaptiveHeightSpeed: 0
+        });
+
+        $('.bx-wrapper').css({
+          'border': '0px',
+          'background-color': 'transparent',
+          'border-radius': '10px',
+          'margin': 'auto',
+          'margin-bottom': '0',
+          'align-self': 'center',
+        });
+
+      });
+
     });
-
-
 
   }
 
@@ -108,6 +114,51 @@ export class DetailComponent implements OnInit {
     this.projectFireService.deleteProject(id);
     this._router.navigate(['/projects']);
     console.log("Proyecto borrado correctamente")
+
+  }
+
+  private existeRuta(path: string) {
+    path = path.split(' ').join('');
+
+    const rutas = ["YourApp", "WebDevelopmentBootcamp"];
+
+    if(rutas.includes(path)){
+      this.urlYes = true;
+      this.imgUrl = path;
+    }
+
+  }
+
+  getImages(projectName:any){
+
+    this.images = [];
+
+    for(let i = 0; i <=3; i++){
+      let ele =(i+1)+ ".png";
+      this.images.push(ele);
+    }
+
+    return this.images
+
+    /* const path = 'images/projects-images/'+ projectName;
+    console.log(path)
+
+    const imagesRef = ref(this.storage, path);
+
+    listAll(imagesRef)
+      .then(async (response) => {
+        this.images = [];
+        console.log(response)
+        for (let item of response.items) {
+          const url = await getDownloadURL(item);
+
+          this.images.push(url);
+        }
+        console.log(this.images)
+        return this.images;
+      })
+      .catch((error) => console.log(error)); */
+
 
   }
 
