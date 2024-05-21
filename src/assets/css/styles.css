@@ -148,7 +148,7 @@ main.dark-theme{
   display: inline-flex;
   justify-content: center;
   width: 88px;
-  padding: 5px;
+  padding: 5px 10px;
   color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 24px;

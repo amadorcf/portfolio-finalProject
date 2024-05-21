@@ -1,0 +1,103 @@
+<div class="carta-container">
+
+  <!-- <div class="header">
+    <h2>cartao</h2>
+  </div> -->
+
+  <div class="content" >
+
+    <div  class="cartaForm">
+
+      <div class="message failed" *ngIf="status == 'failed'">
+        El mensaje no se ha podido enviar, por favor intentelo de nuevo.
+      </div>
+      <div class="message success" *ngIf="status == 'success'">
+        Tu mensaje ha sido enviado correctamente, ¡gracias!
+      </div>
+
+      <form  action="javascript:void(0)" (submit)="send()">
+
+        <div class="form-group">
+          <label class="label" for="name">Nombre / Empresa</label>
+          <input formControlName="from_name" type="text" class="form-control" name="name" id="name">
+          <span class="form_error"
+          *ngIf="(registerFormControl['from_name'].touched ) && registerFormControl['from_name'].errors?.['required']">
+          El nombre es obligatorio
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="label" for="subject">Asunto</label>
+          <input formControlName="subject" type="text" class="form-control" name="subject" id="subject" required
+          value="Carta de presentación">
+          <span class="form_error"
+          *ngIf="(registerFormControl['subject'].touched ) && registerFormControl['subject'].errors?.['required']">
+          El asunto es obligatorio
+          </span>
+        </div>
+
+
+        <div class="form-group">
+          <label class="label" for="message" >Mensaje</label>
+          <textarea formControlName="message" name="message" class="form-control" id="message" required>
+¡Hola!
+
+Me llamo Amador y soy ingeniero electrónico, en búsqueda de nuevas oportunidades como desarrollador de software y aplicaciones web. Mi meta es convertirme en desarrollador Full-Stack. Aunque estoy iniciando mi camino en este campo, mi atención al detalle, dedicación y afán de aprendizaje me permiten trabajar de manera eficiente en equipo y con clientes, logrando resultados de alta calidad.
+
+En mi portafolio (disponible en mi página web), además de mi currículum, podrás encontrar una selección de mis primeros proyectos. Estos muestran mi capacidad para diseñar y desarrollar aplicaciones atractivas e intuitivas, así como para crear soluciones innovadoras y eficientes que transforman ideas en realidades tangibles.
+
+Estoy en busca de un entorno donde pueda aplicar mis conocimientos y continuar creciendo como desarrollador. Si necesitas a alguien comprometido, apasionado y con gran potencial, estaré encantado de que te pongas en contacto conmigo. Estoy siempre abierto a nuevas oportunidades de aprendizaje y colaboración.
+
+¡Muchas gracias por su tiempo y consideración!
+
+Saludos cordiales,
+
+
+Amador Cano Fernández
+{{formatDate}}
+          </textarea>
+          <span class="form_error"
+          *ngIf="(registerFormControl['message'].touched ) && registerFormControl['message'].errors?.['required']">
+          El mensaje es obligatorio
+          </span>
+        </div>
+
+        <!-- {{form.value | json}} -->
+
+        <div class="form-group">
+          <input type="submit" value="Enviar" class="btn btn-primary" >
+        </div>
+      </form>
+    </div>
+
+    <div class="info">
+      <div class="info-header">
+        <h2>Amador Cano Fernández</h2>
+        <p class="mb-4">Futuro Desarrollador Full-Stack</p>
+      </div>
+
+      <div class="info-item">
+          <a href="https://www.linkedin.com/in/amadorcf/"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <p><a href="https://www.linkedin.com/in/amadorcf/">LinkedIn</a></p>
+      </div>
+
+      <div class="info-item">
+          <a href="https://github.com/amadorcf"><ion-icon name="logo-github"></ion-icon></a>
+          <p><a href="https://github.com/amadorcf">GitHub</a></p>
+      </div>
+
+      <div class="info-item">
+          <a href="mailto:amadorcf@outlook.com"><ion-icon name="mail"></ion-icon></a>
+          <p><a href="mailto:amadorcf@outlook.com">amadorcf&#64;outlook.com</a></p>
+      </div>
+
+      <div class="info-item">
+        <a href="https://amadorcf.es"><ion-icon name="globe-sharp"></ion-icon></a>
+        <p><a href="https://amadorcf.es">amadorcf.es</a></p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

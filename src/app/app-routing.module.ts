@@ -15,6 +15,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { SecurityComponent } from './components/security/security.component';
 import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-bootcamp.component';
 import { ResumeComponent } from './components/resume/resume.component';
+import { CartaComponent } from './components/carta/carta.component';
 
 // Array de rutas
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'projects', component: ProjectsComponent},
   {path:'create', component: CreateComponent},
   {path:'contact', component: ContactComponent},
+  {path:'carta', component: CartaComponent},
   {path:'project/:id', component: DetailComponent},
   {path:'edit-project/:id', component: EditComponent},
   {path:'projects/spring-security/:id', component: SecurityComponent},

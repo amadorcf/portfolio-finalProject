@@ -9,6 +9,7 @@ import { AboutComponent } from './components/about/about.component';
 import { CreateComponent } from './components/create/create.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CartaComponent } from './components/carta/carta.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
@@ -31,6 +32,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     CreateComponent,
     ErrorComponent,
     ContactComponent,
+    CartaComponent,
     ProjectsComponent,
     DetailComponent,
     EditComponent,
