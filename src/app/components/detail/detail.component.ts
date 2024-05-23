@@ -71,7 +71,9 @@ export class DetailComponent implements OnInit {
           /* slideWidth: 250, */
           pager:false,
           responsive: true,
-          adaptiveHeightSpeed: 0
+          adaptiveHeightSpeed: 0,
+          auto: true,
+          autoHover: true,
         });
 
         $('.bx-wrapper').css({
@@ -81,6 +83,7 @@ export class DetailComponent implements OnInit {
           'margin': 'auto',
           'margin-bottom': '0',
           'align-self': 'center',
+          'cursor': 'pointer',
         });
 
       });

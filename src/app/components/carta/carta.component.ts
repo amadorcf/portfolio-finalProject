@@ -46,7 +46,7 @@ export class CartaComponent implements OnInit {
   async send(){
     /* emailjs.init('loguy9uRd-2e6dMXW'); */
 
-    alert("CONTRATAME 😜")
+    alert("ESCRIBEME 😜")
   };
 
 
