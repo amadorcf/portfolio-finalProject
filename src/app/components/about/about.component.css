@@ -14,7 +14,22 @@
   color: black;
 }
 
-.about-contact-button{
+
+.about-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-weight: bold;
+}
+
+.about-buttons a{
+  align-self: center;
+  text-decoration: none;
+  color: #2e2e2e;
+}
+
+.contact-button{
   align-self: center;
   text-align: center;
   background: rgba(243, 148, 49, 0.9);
@@ -29,18 +44,33 @@
   transition: all 500ms;
 }
 
-.about-contact-button:hover{
+.contact-button:hover{
   transform: scale(1.1, 1.1);
   background-color: rgba(243, 148, 49, 0.5);
   cursor: pointer;
-
 }
 
-.about-contact-button a{
+.resume-button{
   align-self: center;
-  text-decoration: none;
-  color: #2e2e2e;
+  text-align: center;
+  background: rgba(30, 215, 96, 1);
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.9);
+  color: #fff;
+  font-weight: bold;
+  width: 88px;
+  padding: 5px;
+  font-size: 28px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: all 500ms;
 }
+
+.resume-button:hover{
+  transform: scale(1.1, 1.1);
+  background-color: rgba(30, 215, 96, 0.5);
+  cursor: pointer;
+}
+
 
 #title a{
   align-self: center;

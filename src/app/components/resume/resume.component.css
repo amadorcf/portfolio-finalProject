@@ -238,6 +238,7 @@
 .home__address{
   gap: .1rem;
   text-align: center;
+  font-family: var(--body-font);;
 }
 
 .home__informarion{
