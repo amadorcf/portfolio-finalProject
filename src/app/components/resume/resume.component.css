@@ -247,6 +247,14 @@
   font-size: var(--small-font-size);
 }
 
+.home__address a{
+  color: var(--text-color);
+}
+
+.home__address a:hover{
+  font-weight: bold;
+}
+
 .home__icon{
   font-size: 1rem;
   margin-right: .25rem;

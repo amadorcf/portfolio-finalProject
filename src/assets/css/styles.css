@@ -382,16 +382,11 @@ form input[disabled]{
   background-color: var(--container-color-alt);
   border-radius: 40px;
   text-align: center;
-  filter: grayscale(0.5);
+  filter: grayscale(0.2);
   transition: all 300ms;
+  position: relative;
 }
 
-@media (max-width: 500px) {
-  .all-projects {
-    flex-direction: column;
-    height: 100%;
-  }
-}
 
 .project img{
   width: 300px;

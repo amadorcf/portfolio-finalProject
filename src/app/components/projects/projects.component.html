@@ -1,16 +1,27 @@
 <div class="projects-container">
 
   <h2>Proyectos</h2>
-  <div class="line"></div><div class="all-projects">
 
-    <div class="project" *ngFor="let project of projects">
-      <a [routerLink]="['/project', project.name]"> <!-- Se coge el name en lugar del id para que figure en la url -->
-        <!-- <img src="{{ url + 'get-image/' + project.image }}" *ngIf="project.image"/> -->
-        <img src="{{project.image}}" *ngIf="project.image">
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.langs }}</p>
-      </a>
-    </div>
+  <div class="all-projects">
+
+      <div class="project" *ngFor="let project of projects">
+
+          <a [routerLink]="['/project', project.name]"> <!-- Se coge el name en lugar del id para que figure en la url -->
+            <!-- <img src="{{ url + 'get-image/' + project.image }}" *ngIf="project.image"/> -->
+            <div class="project-card">
+              <img src="{{project.image}}" *ngIf="project.image">
+              <h3>{{ project.name }}</h3>
+              <p>{{ project.langs }}</p>
+            </div>
+
+            <div class="project-info">
+              <h3>{{ project.name }}</h3>
+              <p>{{ project.description }}</p>
+            </div>
+          </a>
+
+      </div>
+
 
   </div>
 
