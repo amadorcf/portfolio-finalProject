@@ -255,14 +255,14 @@
 .home__button-movil{
   display: inline-block;
   border: 2px solid var(--container-color);
-  color: var(--container-color);
+  color: var(--title-color);
   padding: .2rem 1.5rem;
   border-radius: .4rem;
   transition: 0.3s;
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semi-bold);
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-2);
-  background-color: var(--text-color);
+  background-color: rgba(30, 215, 96, 1);;
 }
 
 .home__button-movil:hover{

@@ -123,6 +123,7 @@ export class DetailComponent implements OnInit {
   private existeRuta(path: string) {
     path = path.split(' ').join('');
 
+    // Para imagenes de nuevos proyectos, crear carpeta y agregar nombre del proyecto a -rutas-
     const rutas = ["YourApp", "WebDevelopmentBootcamp"];
 
     if(rutas.includes(path)){

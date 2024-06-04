@@ -24,7 +24,7 @@ export class ProjectFireService{
   }
 
   getProjects(): Observable<Project[]>{
-    const orderedQuery = query(this._collection, orderBy('year','asc'));
+    const orderedQuery = query(this._collection, orderBy('year','desc'));
 
     return collectionData(orderedQuery, {idField: 'id'}) as Observable<Project[]>;
   }
