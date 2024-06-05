@@ -74,6 +74,7 @@ export class DetailComponent implements OnInit {
           adaptiveHeightSpeed: 0,
           auto: true,
           autoHover: true,
+          pause: 2500,
         });
 
         $('.bx-wrapper').css({

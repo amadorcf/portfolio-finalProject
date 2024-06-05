@@ -33,7 +33,7 @@
 }
 
 .project a:hover > .project-card{
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .project a .project-info{
@@ -42,7 +42,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(46,46,46,0.8);
+  background: rgba(46,46,46,0.9);
   border-radius: 40px;
   transition: all 400ms ease-out;
   opacity: 0;
@@ -57,11 +57,16 @@
 }
 
 .project a .project-info h3{
+  position: relative;
   color: #fff;
   font-weight: bold;
   margin-top: 45px;
   margin-bottom: 120px;
   transition: all 400ms ease-out;
+  border-bottom: 1px solid #fff;
+  padding-bottom: .5rem;
+  left: 25%;
+  width: 50%;
 }
 
 .project a .project-info p{

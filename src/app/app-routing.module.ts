@@ -20,16 +20,16 @@ import { CartaComponent } from './components/carta/carta.component';
 // Array de rutas
 const routes: Routes = [
   {path:'', component: AboutComponent},
-  {path:'about', component: AboutComponent},
-  {path:'resume', component: ResumeComponent},
-  {path:'projects', component: ProjectsComponent},
-  {path:'create', component: CreateComponent},
-  {path:'contact', component: ContactComponent},
-  {path:'carta', component: CartaComponent},
+  {path:'about', component: AboutComponent, title:'amadorcf - Sobre mi'},
+  {path:'resume', component: ResumeComponent, title:'amadorcf - Curriculum'},
+  {path:'projects', component: ProjectsComponent, title:'amadorcf - Proyectos'},
+  {path:'create', component: CreateComponent, title:'Crear Proyectos'},
+  {path:'contact', component: ContactComponent, title:'amadorcf - Contacto'},
+  {path:'carta', component: CartaComponent, title:'amadorcf - Carta de presentacion'},
   {path:'project/:id', component: DetailComponent},
   {path:'edit-project/:id', component: EditComponent},
-  {path:'projects/spring-security/:id', component: SecurityComponent},
-  {path:'projects/web-dev-bootcamp/:id', component: WebDevBootcampComponent},
+  {path:'projects/spring-security/:id', component: SecurityComponent, title:'Proyecto: Spring Security'},
+  {path:'projects/web-dev-bootcamp/:id', component: WebDevBootcampComponent, title:'Proyecto: Web Development Bootcamp'},
   {path:'**', component: ErrorComponent}
 
 ];
