@@ -1,7 +1,11 @@
 .about{
   display: flex;
   flex-direction: column;
-  gap: 20px
+  gap: 40px;
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .about-content{
@@ -14,6 +18,17 @@
   color: black;
 }
 
+.about #cartoon{
+  width: 200px;
+  height: auto;
+  border-radius: 100%;
+
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0, .4);
+}
+
+.about .my-img{
+  padding-bottom: 20px;
+}
 
 .about-buttons {
   display: flex;
@@ -72,14 +87,14 @@
 }
 
 
-#title a{
+.cardContainer a{
   align-self: center;
   text-decoration: none;
   color: #2e2e2e;
   font-weight: bold;
 }
 
-#title #mail{
+.cardContainer #mail{
   display: flex;
   align-items: center;
   gap: .5rem;
@@ -88,7 +103,11 @@
   padding-bottom: 10px;
 }
 
-#title .about-icons{
+.cardContainer #mail:hover{
+  color: #f39431e6;
+}
+
+.cardContainer .about-icons{
   display: flex;
   font-size: 2rem;
 
@@ -96,33 +115,12 @@
   gap: 10px;
 }
 
-#title .about-icons a:hover{
+.cardContainer .about-icons a:hover{
   transition: all 500ms;
   color: #f39431e6;
 }
 
 
-@media all and (max-width: 950px) {
-
-  .about{
-    margin-top: 0;
-  }
-
-  .about img{
-    width: 120px;
-    height: auto;
-  }
-
-  #title{
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  #title h1 {
-    font-size: 34px;
-  }
-
-}
 
 /* Skills Progress Bar */
 .skills__progressBar{
@@ -289,6 +287,31 @@
 }
 
 
+/* MOBILE VERSION */
+@media all and (max-width: 950px) {
+
+  .about{
+    margin-top: 0;
+  }
+
+  .about #cartoon{
+    width: 150px;
+    height: auto;
+  }
+
+  #title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #title h1 {
+    font-size: 42px;
+  }
+
+}
+
+
+/* TABLET VERSION */
 @media(max-width: 568px){
 	.skills__progressBar .row{
 		flex-direction: column;
