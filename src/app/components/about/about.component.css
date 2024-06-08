@@ -325,4 +325,20 @@
 	.row .col:nth-child(2){
 		margin-top: 20px;
 	}
+
+  .cardContainer{
+    box-shadow: none;
+  }
+
+  .about p {
+    text-align: center;
+  }
+
+  .about .h2-title{
+    text-align: center;
+  }
+
+  .cardContainer h1 {
+    font-size: 46px;
+  }
 }

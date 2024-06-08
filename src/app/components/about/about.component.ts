@@ -40,8 +40,8 @@ export class AboutComponent {
     const dxNorm = Math.min(Math.max(xOffset, -0.6), 0.6);
 
     this.renderer.setStyle(card, 'transform', `perspective(1000px)
-      rotateY(${dxNorm * 75}deg)
-      rotateX(${yPosition * 75}deg)`);
+      rotateY(${dxNorm * 55}deg)
+      rotateX(${yPosition * 1}deg)`);
   }
 
   onMouseOut(): void {
