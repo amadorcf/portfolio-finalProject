@@ -2,7 +2,10 @@
 /* nav ul li:nth-child(6) {
   display: none;
 } */
-
+.dark-back {
+  background-color: var(--text-color);
+  color: #fafafa;
+}
 
 .show-button{
   padding: 20px;

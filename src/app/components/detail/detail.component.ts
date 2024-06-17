@@ -125,7 +125,7 @@ export class DetailComponent implements OnInit {
     path = path.split(' ').join('');
 
     // Para imagenes de nuevos proyectos, crear carpeta y agregar nombre del proyecto a -rutas-
-    const rutas = ["YourApp", "WebDevelopmentBootcamp"];
+    const rutas = ["YourApp", "WebDevelopmentBootcamp", "amadorcf.es"];
 
     if(rutas.includes(path)){
       this.urlYes = true;
@@ -139,7 +139,7 @@ export class DetailComponent implements OnInit {
     this.images = [];
 
     for(let i = 0; i <=3; i++){
-      let ele =(i+1)+ ".png";
+      let ele = (i+1)+ ".png";
       this.images.push(ele);
     }
 

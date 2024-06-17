@@ -312,7 +312,7 @@
 
 
 /* TABLET VERSION */
-@media(max-width: 568px){
+@media(width < 568px){
 	.skills__progressBar .row{
 		flex-direction: column;
 	}

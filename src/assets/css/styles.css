@@ -33,7 +33,7 @@
 
   /*========== Colors ==========*/
   --title-color: #0B0A0A;
-  --text-color: #403A3A;
+  --text-color: #2e2e2e;
   --text-color-light: #707070;
   --container-color: #FAFAFA;
   --container-color-alt: #F2F2F2;
@@ -240,7 +240,7 @@ main.dark-theme{
   border-radius: 40px;
   padding: 20px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  
+
 }
 
 .cardContainer h1{
