@@ -59,6 +59,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
         apiKey: 'AIzaSyBNjG5atEMjCtIHRBbrd2W0iqR8OH8fFTM',
         authDomain: 'portfolio-project-d906b.firebaseapp.com',
         messagingSenderId: '341349842167',
+        measurementId: 'G-EMB227FBZP'
       })
     ),
   ],

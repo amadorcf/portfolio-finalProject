@@ -23,6 +23,7 @@
     "@fortawesome/angular-fontawesome": "^0.14.1",
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@ionic/angular": "^7.7.4",
+    "angular-gtag": "^1.0.4",
     "bxslider": "^4.2.14",
     "datatables.net-dt": "^2.0.0",
     "jquery": "^3.7.1",

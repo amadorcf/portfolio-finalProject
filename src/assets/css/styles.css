@@ -37,7 +37,7 @@
   --text-color-light: #707070;
   --container-color: #FAFAFA;
   --container-color-alt: #F2F2F2;
-  --body-color: #FCFCFC;
+  --body-color: rgb(252, 252, 252);
 
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
@@ -274,7 +274,7 @@ main.dark-theme{
   padding-bottom: 20px;
   text-align: justify;
   font-size: 16px;
-  font-family: Poppins;
+  font-family: var(--body-font);
 }
 
 /* .about img{
@@ -380,7 +380,7 @@ form input[disabled]{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   margin-top: 30px;
 }
 

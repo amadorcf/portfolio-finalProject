@@ -7,7 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;;
+  margin: 0 auto;
+  font-size: 15px;
+  font-family: var(--body-font);
 }
 
 .project__images{
@@ -84,7 +86,7 @@
 
 .project-details .data .project-field{
   display: grid;
-  grid-template-columns: .3fr 1fr;
+  grid-template-columns: .44fr 1fr;
   gap: 2rem;
   margin: var(--mb-1);
   justify-items: start;
