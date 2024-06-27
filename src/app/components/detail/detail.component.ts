@@ -23,6 +23,7 @@ export class DetailComponent implements OnInit {
   images: String[] = [];
   urlYes: boolean;
   imgUrl: String | undefined;
+  formatedDescription: string = '';
 
   constructor(
     private projectFireService: ProjectFireService,
@@ -49,10 +50,10 @@ export class DetailComponent implements OnInit {
       image: 'test',
     }];
     this.urlYes = false;
+
   }
 
   ngOnInit(){
-
 
     this._route.params.subscribe(params => {
 
@@ -62,6 +63,8 @@ export class DetailComponent implements OnInit {
       this.existeRuta(id);
       this.getImages(id);
       this.getProject(id);
+
+
 
       $(() => {
         $(window).scrollTop(0);
@@ -93,6 +96,12 @@ export class DetailComponent implements OnInit {
 
   }
 
+  formatContent(content: string): string {
+    content = content.replace(/\n/g, "<br/>");
+    //console.log(content)
+    return content;
+  }
+
    getProject(name:any) {
     this.projectFireService.getProjects().subscribe( projects => {
       this.projects = projects;
@@ -101,6 +110,10 @@ export class DetailComponent implements OnInit {
         if ( project.name == name){
           this.project = project;
           /* console.log("Detail Project", project) */
+
+          //Formatear descripcion
+          this.formatedDescription = this.formatContent(project.description)
+
         }
       }
 

@@ -42,7 +42,7 @@
       <!-- <h1>{{project.name}}</h1> -->
       <div class="project__description project-field">
         <h3 class="tag">descripcion</h3>
-        <p>{{project.description}}</p>
+        <p id="fDescription" [innerHTML]="formatedDescription"></p>
       </div>
       <div class="project__category project-field">
         <h3 class="tag">categoria</h3>
@@ -62,16 +62,25 @@
       </div>
 
       <div class="detail-config">
-        <p *ngIf="confirm == false">
-          <a [routerLink]="['/edit-project', project.id]" class="button-edit acf show">Editar</a>
-          <a (click)="setConfirm(true)" class="button-delete acf show">Borrar</a>
-        </p>
+        <div>
+          <p *ngIf="confirm == false">
+            <a [routerLink]="['/edit-project', project.id]" class="button-edit acf show">Editar</a>
+            <a (click)="setConfirm(true)" class="button-delete acf show">Borrar</a>
+          </p>
+        </div>
 
-        <p *ngIf="confirm == true">
-          <span class="confirm">¿Estas seguro de eliminar este proyecto?</span>
-          <a (click)="setConfirm(false)" class="button-edit acf show">Cancelar</a>
-          <a (click)="deleteProject(project.id)" class="button-delete acf show">Eliminar definitivamente</a>
-        </p>
+        <div>
+          <p *ngIf="confirm == true">
+            <span class="confirm">¿Estas seguro de eliminar este proyecto?</span>
+            <a (click)="setConfirm(false)" class="button-edit acf show">Cancelar</a>
+            <a (click)="deleteProject(project.id)" class="button-delete acf show">Eliminar definitivamente</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="projects__button">
+        <a href="/projects"> <i class='bx bxs-chevron-left-circle'></i>  VOLVER</a>
       </div>
 
     </div>
@@ -79,6 +88,4 @@
 
 </div>
 
-<div class="projects__button">
-  <a href="/projects"> <i class='bx bxs-chevron-left-circle'></i>  VOLVER</a>
-</div>
+
