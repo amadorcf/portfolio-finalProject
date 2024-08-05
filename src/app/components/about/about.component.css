@@ -308,6 +308,9 @@
     font-size: 42px;
   }
 
+  .cardContainer{
+    padding: 0;
+  }
 }
 
 

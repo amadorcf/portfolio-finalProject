@@ -33,7 +33,7 @@
 }
 
 .project a:hover > .project-card{
-  opacity: 0;
+  opacity: 0.1;
 }
 
 .project a .project-info{

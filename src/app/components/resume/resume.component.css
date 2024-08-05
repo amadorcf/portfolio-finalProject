@@ -325,7 +325,7 @@
   display: block;
   width: 16px;
   height: 16px;
-  background-color: var(--text-color-light);
+  background-color: var(--text-color);
   border-radius: 50%;
   margin-top: .25rem;
 }
@@ -334,7 +334,7 @@
   display: block;
   width: 2px;
   height: 100%;
-  background-color: var(--text-color-light);
+  background-color: var(--text-color);
   transform: translate(7px, 0);
 }
 
@@ -510,7 +510,7 @@ p.formation__description{
   }
 
   .resume__left{
-    background-color: var(--container-color-alt);
+    background-color: #f39431e6;
   }
 
   .resume__left,.resume__right{
