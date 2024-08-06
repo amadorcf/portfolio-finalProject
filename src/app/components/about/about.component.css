@@ -86,6 +86,26 @@
   cursor: pointer;
 }
 
+.projects-button{
+  align-self: center;
+  text-align: center;
+  background: rgb(130, 228, 223, 1);
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.9);
+  color: #fff;
+  font-weight: bold;
+  width: 88px;
+  padding: 5px;
+  font-size: 28px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: all 500ms;
+}
+
+.projects-button:hover{
+  transform: scale(1.1, 1.1);
+  background-color: rgb(130, 228, 223, .5);
+  cursor: pointer;
+}
 
 .cardContainer a{
   align-self: center;
@@ -291,7 +311,7 @@
 @media all and (max-width: 950px) {
 
   .about{
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .about #cartoon{
@@ -300,7 +320,7 @@
   }
 
   #title{
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
   }
 
@@ -310,6 +330,10 @@
 
   .cardContainer{
     padding: 0;
+  }
+
+  .about-buttons{
+    flex-direction: column;
   }
 }
 
