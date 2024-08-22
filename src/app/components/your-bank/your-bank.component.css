@@ -1,0 +1,13 @@
+.video_player{
+  display: flex;
+  justify-content: center;
+}
+
+vg-player{
+  justify-content: center;
+  border-radius: 40px;
+  box-shadow: 0 8px 5px rgba(0, 0, 0, 0.4);
+  width: 854px;
+  height: 480px;
+}
+

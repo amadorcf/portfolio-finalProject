@@ -13,6 +13,7 @@ export class YourBankComponent {
   public url:string | undefined;
 
   projects: Project[];
+  project: Project | undefined;
 
   constructor(
     private projectFireService: ProjectFireService
@@ -24,7 +25,22 @@ export class YourBankComponent {
   ngOnInit(){
     this.projectFireService.getProjects().subscribe( projects => {
       this.projects = projects;
+      this.getProject();
       console.log("Metodo getProjects", projects)
     });
   }
+
+  getProject() {
+    this.projectFireService.getProjects().subscribe( projects => {
+      this.projects = projects;
+
+      for(let project of projects){
+        if ( project.name == "YourBank"){
+          this.project = project;
+          /* console.log("Detail Project", project); */
+        }
+      }
+
+      });
+    }
 }

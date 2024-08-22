@@ -102,20 +102,20 @@ export class DetailComponent implements OnInit {
     return content;
   }
 
-   getProject(name:any) {
-    this.projectFireService.getProjects().subscribe( projects => {
-      this.projects = projects;
+  getProject(name:any) {
+  this.projectFireService.getProjects().subscribe( projects => {
+    this.projects = projects;
 
-      for(let project of projects){
-        if ( project.name == name){
-          this.project = project;
-          /* console.log("Detail Project", project) */
+    for(let project of projects){
+      if ( project.name == name){
+        this.project = project;
+        /* console.log("Detail Project", project) */
 
-          //Formatear descripcion
-          this.formatedDescription = this.formatContent(project.description)
+        //Formatear descripcion
+        this.formatedDescription = this.formatContent(project.description)
 
-        }
       }
+    }
 
     });
 

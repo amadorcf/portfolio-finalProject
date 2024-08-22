@@ -24,7 +24,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { YourBankComponent } from './components/your-bank/your-bank.component';
-
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
 
 @NgModule({
   declarations: [
@@ -50,6 +50,7 @@ import { YourBankComponent } from './components/your-bank/your-bank.component';
     HttpClientModule,
     IonIcon,
     ReactiveFormsModule,
+    VgCoreModule,
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
