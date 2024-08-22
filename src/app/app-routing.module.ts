@@ -16,6 +16,7 @@ import { SecurityComponent } from './components/security/security.component';
 import { WebDevBootcampComponent } from './components/web-dev-bootcamp/web-dev-bootcamp.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { CartaComponent } from './components/carta/carta.component';
+import { YourBankComponent } from './components/your-bank/your-bank.component';
 
 // Array de rutas
 const routes: Routes = [
@@ -28,8 +29,9 @@ const routes: Routes = [
   {path:'carta', component: CartaComponent, title:'amadorcf - Carta de presentacion'},
   {path:'project/:id', component: DetailComponent},
   {path:'edit-project/:id', component: EditComponent},
-  {path:'projects/spring-security/:id', component: SecurityComponent, title:'Proyecto: Spring Security'},
   {path:'projects/web-dev-bootcamp/:id', component: WebDevBootcampComponent, title:'Proyecto: Web Development Bootcamp'},
+  {path:'projects/spring-security/:id', component: SecurityComponent, title:'Proyecto: Spring Security'},
+  {path:'projects/your-bank', component: YourBankComponent, title:'Proyecto: YourBank'},
   {path:'**', component: ErrorComponent}
 
 ];

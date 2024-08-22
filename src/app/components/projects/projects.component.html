@@ -6,24 +6,28 @@
 
       <div class="project" *ngFor="let project of projects" >
 
-          <a [routerLink]="['/project', project.name]"> <!-- Se coge el name en lugar del id para que figure en la url -->
-            <!-- <img src="{{ url + 'get-image/' + project.image }}" *ngIf="project.image"/> -->
-            <div class="project-card">
-              <img src="{{project.image}}" *ngIf="project.image">
-              <h3>{{ project.name }}</h3>
-              <p>{{ project.langs }}</p>
-            </div>
+        <!-- <a [routerLink]="['/project', project.name]"> -->
+          <!-- Se coge el name en lugar del id para que figure en la url -->
+           
+        <a [routerLink]="project.name !== 'YourBank' ? ['/project', project.name] : null"
+          (click)="checkRedirect(project.name, $event)">
+          <!-- <img src="{{ url + 'get-image/' + project.image }}" *ngIf="project.image"/> -->
+          <div class="project-card">
+            <img src="{{project.image}}" *ngIf="project.image">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.langs }}</p>
+          </div>
 
-            <div class="project-info" *ngIf="project.name != 'YourBank'">
-              <h3>{{ project.name }}</h3>
-              <p>{{ project.description }}</p>
-            </div>
+          <div class="project-info" *ngIf="project.name != 'YourBank'">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+          </div>
 
-            <div class="in-development" *ngIf="project.name == 'YourBank'">
-              <h1> 🚧  EN DESARROLLO... </h1>
-            </div>
+          <div class="in-development" *ngIf="project.name == 'YourBank'">
+            <h1> 🚧  EN DESARROLLO... </h1>
+          </div>
 
-          </a>
+        </a>
 
       </div>
 

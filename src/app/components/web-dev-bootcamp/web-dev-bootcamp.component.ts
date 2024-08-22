@@ -11,6 +11,7 @@ import { Global } from '../../services/global';
   providers: [ProjectService],
 })
 export class WebDevBootcampComponent {
+  
   public url: string;
   public project: Project | undefined;
   public confirm: boolean = false;

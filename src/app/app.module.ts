@@ -23,6 +23,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { YourBankComponent } from './components/your-bank/your-bank.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     WebDevBootcampComponent,
     FooterComponent,
     ResumeComponent,
+    YourBankComponent,
   ],
   imports: [
     BrowserModule,
