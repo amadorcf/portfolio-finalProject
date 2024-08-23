@@ -26,7 +26,7 @@ export class YourBankComponent {
     this.projectFireService.getProjects().subscribe( projects => {
       this.projects = projects;
       this.getProject();
-      console.log("Metodo getProjects", projects)
+      //console.log("Metodo getProjects", projects)
     });
   }
 

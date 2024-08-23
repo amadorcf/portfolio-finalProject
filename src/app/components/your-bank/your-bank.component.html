@@ -1,16 +1,70 @@
+<section class="project__section" *ngIf="project" id="inicio">
 
-<!-- <video src="../../../assets/img/project/YourBank/demo_v1.mp4"></video> -->
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav class="sidenav" #sidenav mode="side" opened>
+      <h1>Proyecto: {{project.name}}</h1>
 
+      <mat-nav-list>
 
-<div class="video_player">
-  <vg-player>
+        <mat-list-item>
+          <a mat-line href="projects/your-bank#inicio">Introducción</a>
+        </mat-list-item>
 
-    <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" controls > <!-- AUTOPLAY -> (canplay)="media.play()" -->
-        <source src="../../../assets/img/project/YourBank/demo_v1.mp4" type="video/mp4">
-    </video>
+        <mat-list-item>
+          <a mat-line href="projects/your-bank#intro">Tecnologías utilizadas</a>
+        </mat-list-item>
 
-  </vg-player>
-</div>
+        <mat-list-item>
+          <a mat-line href="projects/your-bank#arch">Arquitectura</a>
+        </mat-list-item>
 
+        <mat-list-item>
+          <a mat-line href="projects/your-bank#micro">Microservicios</a>
+        </mat-list-item>
 
+        <mat-list-item>
+          <a mat-line href="projects/your-bank#doc">Documentacion</a>
+        </mat-list-item>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <!-- Contenido principal -->
+      <div class="content__section">
+
+        <div class="video_player">
+          <vg-player>
+            <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" controls>
+              <!-- AUTOPLAY -> (canplay)="media.play()" -->
+              <source src="../../../assets/img/project/YourBank/demo_v1.mp4" type="video/mp4">
+            </video>
+          </vg-player>
+        </div>
+
+        <div id="intro">
+          <h1>Introduccion</h1>
+        </div>
+
+        <div id="tech">
+          <h1>Tecnologías utilizadas</h1>
+        </div>
+
+        <div id="arch">
+          <h1>Arquitectura</h1>
+        </div>
+
+        <div id="micro">
+          <h1>Microservicios</h1>
+        </div>
+
+        <div id="doc">
+          <h1>Documentacion</h1>
+        </div>
+
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</section>
 

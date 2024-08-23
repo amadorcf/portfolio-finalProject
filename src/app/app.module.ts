@@ -24,7 +24,15 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { YourBankComponent } from './components/your-bank/your-bank.component';
-import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -51,6 +59,12 @@ import {VgCoreModule} from '@videogular/ngx-videogular/core';
     IonIcon,
     ReactiveFormsModule,
     VgCoreModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
@@ -62,11 +76,11 @@ import {VgCoreModule} from '@videogular/ngx-videogular/core';
         apiKey: 'AIzaSyBNjG5atEMjCtIHRBbrd2W0iqR8OH8fFTM',
         authDomain: 'portfolio-project-d906b.firebaseapp.com',
         messagingSenderId: '341349842167',
-        measurementId: 'G-EMB227FBZP'
+        measurementId: 'G-EMB227FBZP',
       })
     ),
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
