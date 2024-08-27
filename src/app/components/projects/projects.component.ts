@@ -37,5 +37,10 @@ export class ProjectsComponent {
       event.preventDefault(); // Evita que se siga el enlace predeterminado.
       this.router.navigate(['/projects/your-bank']); // Redirige a otro enlace.
     }
+
+    if (projectName === 'YourMovies') {
+      event.preventDefault(); // Evita que se siga el enlace predeterminado.
+      window.open('https://amadorcf.github.io/Movies_JSProject/', '_blank');
+    }
   }
 }
