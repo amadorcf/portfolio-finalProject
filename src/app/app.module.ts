@@ -33,6 +33,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
+import { ImageModule } from 'primeng/image';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MatListModule } from '@angular/material/list';
     routing,
     HttpClientModule,
     IonIcon,
+    ImageModule,
     ReactiveFormsModule,
     VgCoreModule,
     BrowserAnimationsModule,

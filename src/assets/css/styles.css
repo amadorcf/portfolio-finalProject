@@ -92,6 +92,8 @@ body {
   */
 }
 
+
+
 header,
 footer {
   flex: 0 0 auto;
@@ -526,5 +528,23 @@ details[open] summary{
   border: #ccc 0px solid;
 }
 
+.p-image-preview {
+  max-width: 80vw;
+  max-height: 80vh;
+}
 
+.p-image-preview-container:hover>.p-image-preview-indicator {
+  opacity: .3;
+  cursor: pointer;
+  background-color: #2e2e2e;
+  color: #FAFAFA;
+  border-radius: 20px;
+}
 
+.p-image-preview-icon.p-icon {
+  scale: 2.5;
+}
+
+.p-image-mask{
+  background-color: rgb(46, 46, 46, .8);
+}

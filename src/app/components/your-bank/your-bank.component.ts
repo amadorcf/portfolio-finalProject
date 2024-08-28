@@ -6,6 +6,7 @@ import { Global } from '../../services/global';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
+
 @Component({
   selector: 'app-your-bank',
   templateUrl: './your-bank.component.html',

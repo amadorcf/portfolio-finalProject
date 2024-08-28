@@ -164,6 +164,23 @@ mat-list-item a.active {
   margin-left: 40px;
 }
 
+.doc-icons i{
+  font-size: 30px;
+  display: inline;
+  padding: .25rem;
+}
+
+
+
+ul.doc-icons{
+  list-style: none;
+}
+
+.doc-icons li{
+    display: flex;
+    align-items: center; /* Alinea verticalmente los hijos */
+}
+
 .content__section h2{
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
@@ -176,6 +193,15 @@ mat-list-item a.active {
 .content__section h5 {
   font-family: var(--body-font);
   padding-top: 10px;
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+}
+
+.content__section img {
+  max-width: 600px;
 }
 
 .video_player{
@@ -202,7 +228,7 @@ vg-player{
 
 vg-player:hover{
   cursor: pointer;
-  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.6);
 /*   width: 854px;
   height: 480px; */
 }
@@ -259,7 +285,11 @@ vg-player:hover{
   text-decoration: none;
 }
 
-
+/* .show-scroll-toggle{
+  visibility: visible;
+  bottom: 5rem;
+  right: 2rem;
+} */
 
 .projects__button{
   margin-top: 50px;
@@ -291,6 +321,7 @@ vg-player:hover{
   ::ng-deep main, .sidenav-content, .sidenav-container {
     background-color: #90e5a3; /* Cambia este color al que desees */
   }
+
 
   .project__section{
     margin-top: 0px;
@@ -337,6 +368,9 @@ vg-player:hover{
     text-align: start;
   }
 
+  .content__section img {
+    max-width: 200px;
+  }
   .video_player{
     padding: 0;
     margin-bottom: 20px;

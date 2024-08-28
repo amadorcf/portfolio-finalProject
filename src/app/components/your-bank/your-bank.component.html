@@ -1,23 +1,32 @@
 <section class="project__section" *ngIf="project" id="inicio">
-
   <mat-sidenav-container class="sidenav-container">
-
-    <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="isSidenavOpen">
+    <mat-sidenav
+      class="sidenav"
+      #sidenav
+      mode="side"
+      [(opened)]="isSidenavOpen"
+    >
       <div class="sidenav-title">
-        <h1> Proyecto: {{project.name}}</h1>
-        <button mat-button (click)="sidenav.toggle()" class="toggle-button" [ngClass]="{'active-button': isSidenavOpen}">
+        <h1>Proyecto: {{ project.name }}</h1>
+        <button
+          mat-button
+          (click)="sidenav.toggle()"
+          class="toggle-button"
+          [ngClass]="{ 'active-button': isSidenavOpen }"
+        >
           <i class="fas fa-bars"></i>
         </button>
       </div>
 
       <mat-nav-list>
-
         <mat-list-item class="sidebar-link" (click)="navigateTo('intro')">
-          <a  mat-line href="projects/your-bank#intro">1. Introducción</a>
+          <a mat-line href="projects/your-bank#intro">1. Introducción</a>
         </mat-list-item>
 
         <mat-list-item class="sidebar-link" (click)="navigateTo('tech')">
-          <a mat-line href="projects/your-bank#tech">2. Tecnologías utilizadas</a>
+          <a mat-line href="projects/your-bank#tech"
+            >2. Tecnologías utilizadas</a
+          >
         </mat-list-item>
 
         <mat-list-item class="sidebar-link" (click)="navigateTo('arch')">
@@ -31,39 +40,61 @@
         <mat-list-item class="sidebar-link" (click)="navigateTo('doc')">
           <a mat-line href="projects/your-bank#doc">5. Recursos</a>
         </mat-list-item>
-
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav-content">
-
       <div class="video_player" *ngIf="!isSidenavOpen || !isMobile">
         <vg-player>
           <video [vgMedia]="$any(media)" #media id="singleVideo" controls>
             <!-- preload="auto" -->
             <!-- AUTOPLAY -> (canplay)="media.play()" -->
-            <source src="../../../assets/img/project/YourBank/demo_v1.mp4" type="video/mp4">
+            <source
+              src="../../../assets/img/project/YourBank/demo_v1.mp4"
+              type="video/mp4"
+            />
           </video>
         </vg-player>
       </div>
 
       <div class="togglebtnwrapper">
-        <h1> Proyecto: {{project.name}}</h1>
-        <button mat-button (click)="sidenav.toggle()" class="toggle-button" [ngClass]="{'active-button': isSidenavOpen}" *ngIf="!isSidenavOpen || !isMobile">
+        <h1>Proyecto: {{ project.name }}</h1>
+        <button
+          mat-button
+          (click)="sidenav.toggle()"
+          class="toggle-button"
+          [ngClass]="{ 'active-button': isSidenavOpen }"
+          *ngIf="!isSidenavOpen || !isMobile"
+        >
           <i class="fas fa-bars"></i>
         </button>
       </div>
 
       <!-- Contenido principal -->
       <div class="content__section">
-
         <section id="intro">
           <h2>1. Introducción</h2>
-          <p>La aplicación bancaria se ha desarrollado utilizando una arquitectura de microservicios, aprovechando el marco Spring Boot y un conjunto de tecnologías del ecosistema Spring, como Spring Data JPA, Spring Cloud y Spring Security. Para la gestión de dependencias, se utiliza Maven, que facilita la integración y administración de las bibliotecas necesarias.
-          <br><br>
-          Estas tecnologías permiten la creación y orquestación de componentes críticos como el Service Registry, el API Gateway, entre otros, proporcionando una infraestructura sólida para la implementación de microservicios. Cada microservicio, como el servicio de usuario para la gestión de usuarios, el servicio de cuenta para la creación y administración de cuentas, el servicio de transferencia de fondos para operaciones financieras, y el servicio de transacciones para la consulta de movimientos y gestión de retiros y depósitos, se desarrolla de manera independiente.
-          <br><br>
-          Este enfoque modular no solo optimiza el desarrollo, sino que también mejora significativamente la escalabilidad y mantenibilidad de la aplicación, asegurando un sistema robusto, flexible y eficiente en términos operativos y de recursos.
+          <p>
+            La aplicación bancaria se ha desarrollado utilizando una
+            arquitectura de microservicios, aprovechando el marco Spring Boot y
+            un conjunto de tecnologías del ecosistema Spring, como Spring Data
+            JPA, Spring Cloud y Spring Security. Para la gestión de
+            dependencias, se utiliza Maven, que facilita la integración y
+            administración de las bibliotecas necesarias. <br /><br />
+            Estas tecnologías permiten la creación y orquestación de componentes
+            críticos como el Service Registry, el API Gateway, entre otros,
+            proporcionando una infraestructura sólida para la implementación de
+            microservicios. Cada microservicio, como el servicio de usuario para
+            la gestión de usuarios, el servicio de cuenta para la creación y
+            administración de cuentas, el servicio de transferencia de fondos
+            para operaciones financieras, y el servicio de transacciones para la
+            consulta de movimientos y gestión de retiros y depósitos, se
+            desarrolla de manera independiente.
+            <br /><br />
+            Este enfoque modular no solo optimiza el desarrollo, sino que
+            también mejora significativamente la escalabilidad y mantenibilidad
+            de la aplicación, asegurando un sistema robusto, flexible y
+            eficiente en términos operativos y de recursos.
           </p>
         </section>
 
@@ -71,55 +102,134 @@
           <h2>2. Tecnologías utilizadas</h2>
           <p>Se han utilizado las siguientes tecnologías:</p>
           <ul>
-            <li><strong>Spring Boot:</strong> para un desarrollo rápido y una configuración sencilla del proyecto.</li>
-            <li><strong>Spring Security:</strong> para manejar la autenticación y autorización del usuario.</li>
-            <li><strong>JSON Web Tokens (JWT):</strong> para autenticación de usuario segura y autorización basada en token.</li>
-            <li><strong>Base de datos MySQL:</strong> para almacenar datos de usuarios y transacciones.</li>
+            <li>
+              <strong>Spring Boot:</strong> para un desarrollo rápido y una
+              configuración sencilla del proyecto.
+            </li>
+            <li>
+              <strong>Spring Security:</strong> para manejar la autenticación y
+              autorización del usuario.
+            </li>
+            <li>
+              <strong>JSON Web Tokens (JWT):</strong> para autenticación de
+              usuario segura y autorización basada en token.
+            </li>
+            <li>
+              <strong>Base de datos MySQL:</strong> para almacenar datos de
+              usuarios y transacciones.
+            </li>
           </ul>
         </section>
 
         <section id="arch">
           <h2>3. Arquitectura</h2>
+          <div class="img" (click)="this.sidenav.toggle()" *ngIf="!isMobile">
+
+            <p-image
+              src="../../../assets/img/project/YourBank/arquitectura.png"
+              alt="arquitectura"
+              width="600"
+              [preview]="true">
+            </p-image>
+
+          </div>
+
+          <ul>
+            <li>
+              <strong>Registro de servicios:</strong> los microservicios
+              utilizan el servicio de descubrimiento para el registro y el
+              descubrimiento de servicios, lo que ayuda a los microservicios a
+              descubrir y comunicarse con otros servicios, sin necesidad de
+              codificar los puntos finales mientras se comunican con otros
+              microservicios.
+            </li>
+            <li>
+              <strong>API Gateway:</strong> este microservicio utiliza la puerta
+              de enlace API para centralizar el punto final API, donde todos los
+              puntos finales tienen un punto de entrada común a todos los puntos
+              finales.
+            </li>
+            <li>
+              <strong>Base de datos por microservicio:</strong> cada uno de los
+              microservicios tiene su propia base de datos dedicada. Aquí, para
+              esta aplicación para todos los microservicios, estamos
+              incorporando la base de datos MySQL. Esto nos ayuda a aislar cada
+              uno de los servicios entre sí, lo que facilita que cada servicio
+              tenga sus propios esquemas de datos y escale cada una de las bases
+              de datos cuando sea necesario.
+            </li>
+          </ul>
         </section>
 
         <section id="micro">
           <h2>4. Microservicios</h2>
-          <h5>👤 Servicio de usuario: </h5>
-          <p>El microservicio de usuario proporciona funcionalidades para la gestión de usuarios. Esto incluye el registro del usuario, la actualización de los detalles del usuario, la visualización de la información del usuario y el acceso a todas las cuentas asociadas con el usuario. Además, este microservicio maneja los procesos de autenticación y autorización de usuarios.</p>
+          <h5>👤 Servicio de usuario:</h5>
+          <p>
+            El microservicio de usuario proporciona funcionalidades para la
+            gestión de usuarios. Esto incluye el registro del usuario, la
+            actualización de los detalles del usuario, la visualización de la
+            información del usuario y el acceso a todas las cuentas asociadas
+            con el usuario. Además, este microservicio maneja los procesos de
+            autenticación y autorización de usuarios.
+          </p>
 
-          <h5>💼 Servicio de cuenta: </h5>
-          <p>El microservicio de cuenta administra las API relacionadas con la cuenta. Permite a los usuarios modificar los detalles de la cuenta, ver todas las cuentas vinculadas al perfil del usuario, acceder a los historiales de transacciones de cada cuenta y apoyar el proceso de cierre de la cuenta.</p>
+          <h5>💼 Servicio de cuenta:</h5>
+          <p>
+            El microservicio de cuenta administra las API relacionadas con la
+            cuenta. Permite a los usuarios modificar los detalles de la cuenta,
+            ver todas las cuentas vinculadas al perfil del usuario, acceder a
+            los historiales de transacciones de cada cuenta y apoyar el proceso
+            de cierre de la cuenta.
+          </p>
 
-          <h5>💸 Servicio de transferencia de fondos: </h5>
-          <p>El microservicio de transferencia de fondos facilita diversas funcionalidades relacionadas con la transferencia de fondos. Los usuarios pueden iniciar transferencias de fondos entre diferentes cuentas, acceder a registros detallados de transferencias de fondos y ver detalles específicos de cualquier transacción de transferencia de fondos.</p>
+          <h5>💸 Servicio de transferencia de fondos:</h5>
+          <p>
+            El microservicio de transferencia de fondos facilita diversas
+            funcionalidades relacionadas con la transferencia de fondos. Los
+            usuarios pueden iniciar transferencias de fondos entre diferentes
+            cuentas, acceder a registros detallados de transferencias de fondos
+            y ver detalles específicos de cualquier transacción de transferencia
+            de fondos.
+          </p>
 
-          <h5>💳 Servicio de transacciones: </h5>
-          <p>El servicio de transacciones ofrece una gama de servicios relacionados con transacciones. Los usuarios pueden ver transacciones basadas en cuentas específicas o ID de referencia de transacciones, así como realizar depósitos o retiros de sus cuentas.</p>
-
+          <h5>💳 Servicio de transacciones:</h5>
+          <p>
+            El servicio de transacciones ofrece una gama de servicios
+            relacionados con transacciones. Los usuarios pueden ver
+            transacciones basadas en cuentas específicas o ID de referencia de
+            transacciones, así como realizar depósitos o retiros de sus cuentas.
+          </p>
         </section>
 
         <section id="doc">
           <h2>5. Recursos</h2>
+          <ul class="doc-icons">
+            <!-- <li ><i class="bx bxl-github"></i>Github: <a href=""></a></li> -->
+            <li>
+              <i class="bx bxs-file-doc"></i>Documentación: <a href=""></a>
+            </li>
+          </ul>
         </section>
-
       </div>
     </mat-sidenav-content>
-
   </mat-sidenav-container>
 
   <!--========== SCROLL TOP ==========-->
   <a href="/projects/your-bank#" class="scrolltop" id="scroll-top">
     <i class="bx bxs-up-arrow-alt scrolltop__icon"></i>
   </a>
-  <button class="scrolltop scroll-toggle-button" id="scroll-toggle-button" (click)="sidenav.toggle()">
+
+  <button
+    class="scrolltop scroll-toggle-button"
+    id="scroll-toggle-button"
+    (click)="sidenav.toggle()"
+  >
     <a href="/projects/your-bank#">
       <i class="bx bx-menu scrolltop__icon"></i>
     </a>
   </button>
-
 </section>
 
 <div class="projects__button">
-  <a href="/projects"> <i class='bx bxs-chevron-left-circle'></i>  VOLVER</a>
+  <a href="/projects"> <i class="bx bxs-chevron-left-circle"></i> VOLVER</a>
 </div>
-
