@@ -108,4 +108,14 @@ export class YourBankComponent {
     const sections = $('section[id]')
 
   }
+
+  isPlaying = false;
+
+  onPlay() {
+    this.isPlaying = true;
+  }
+
+  onPause() {
+    this.isPlaying = false;
+  }
 }
