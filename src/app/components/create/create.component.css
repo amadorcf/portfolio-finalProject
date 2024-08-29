@@ -53,6 +53,11 @@
   font-size: 17px;
 }
 
+.form-group #date{
+  font-family: Yanone;
+  font-size: 20px;
+}
+
 form label{
   display: block;
   margin-top: 10px;

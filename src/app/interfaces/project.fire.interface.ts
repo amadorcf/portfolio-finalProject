@@ -4,6 +4,7 @@ export default interface Project{
   description: string,
   category: string,
   year: number,
+  date: Date,
   langs: string,
   link: string,
   image: string

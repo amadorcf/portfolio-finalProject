@@ -34,14 +34,15 @@ export class CreateComponent {
       name: new FormControl(),
       description: new FormControl(),
       category: new FormControl(),
-      year: new FormControl(),
+      date: new FormControl(new Date().toISOString().substring(0, 10)),
+      year: new FormControl(new Date().getFullYear()),
       langs: new FormControl(),
       link: new FormControl(),
       image: new FormControl(),
     });
 
     this.title = 'Crear proyecto';
-    this.project = new Project('', '', '', '', 2024, '', '', '');
+    this.project = new Project('', '', '', '', new Date(), 2024, '', '', '');
     this.images = [];
     this.url = Global.url;
     this.image = '';
@@ -116,4 +117,5 @@ export class CreateComponent {
       })
       .catch((error) => console.log(error));
   }
+
 }

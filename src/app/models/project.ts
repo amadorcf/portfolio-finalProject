@@ -4,6 +4,7 @@ export class Project{
     public name: string,
     public description: string,
     public category: string,
+    public date: Date,
     public year: number,
     public langs: string,
     public link: string,

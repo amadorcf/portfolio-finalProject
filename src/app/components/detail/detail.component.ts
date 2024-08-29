@@ -36,6 +36,7 @@ export class DetailComponent implements OnInit {
       description: 'test',
       category: 'test',
       year: 2024,
+      date: new Date(),
       langs: 'test',
       link: 'test',
       image: 'test'
@@ -45,6 +46,7 @@ export class DetailComponent implements OnInit {
       description: 'test',
       category: 'test',
       year: 2024,
+      date: new Date(),
       langs: 'test',
       link: 'test',
       image: 'test',

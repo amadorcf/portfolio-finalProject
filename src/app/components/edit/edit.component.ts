@@ -51,6 +51,7 @@ export class EditComponent implements OnInit { public title: string | undefined;
       description: 'test',
       category: 'test',
       year: 2024,
+      date: new Date(),
       langs: 'test',
       link: 'test',
       image: 'test'
@@ -60,6 +61,7 @@ export class EditComponent implements OnInit { public title: string | undefined;
       description: 'test-pro',
       category: 'test-pro',
       year: 2222,
+      date: new Date(),
       langs: 'test-pro',
       link: 'test-pro',
       image: 'test-pro',
