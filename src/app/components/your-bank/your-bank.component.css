@@ -17,7 +17,7 @@
   padding: 40px 20px;
   background-color: var(--text-color);
   height: auto;
-  color: var(--body-color);
+  color: #90e5a3
 }
 
 .sidenav-title{
@@ -170,8 +170,6 @@ mat-list-item a.active {
   padding: .25rem;
 }
 
-
-
 ul.doc-icons{
   list-style: none;
 }
@@ -179,6 +177,10 @@ ul.doc-icons{
 .doc-icons li{
     display: flex;
     align-items: center; /* Alinea verticalmente los hijos */
+}
+
+.doc-icons a{
+  margin-left: 10px;
 }
 
 .content__section h2{

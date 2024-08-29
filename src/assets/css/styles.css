@@ -533,11 +533,11 @@ details[open] summary{
   max-height: 80vh;
 }
 
-.p-image-preview-container:hover>.p-image-preview-indicator {
-  opacity: .3;
-  cursor: pointer;
-  background-color: #2e2e2e;
-  color: #FAFAFA;
+.p-image-preview-container:hover> .p-image-preview-indicator {
+  opacity: .5;
+  cursor: zoom-in;
+  background-color: #44c2af;
+  color: #ffffff;
   border-radius: 20px;
 }
 
