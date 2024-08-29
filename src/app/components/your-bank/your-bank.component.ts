@@ -22,6 +22,8 @@ export class YourBankComponent {
   project: Project | undefined;
   isSidenavOpen = true; // Set the initial state to visible
   isMobile = true;
+  isPlaying = false;
+  autoplay: boolean = true;
 
   constructor(
     private projectFireService: ProjectFireService,
@@ -42,6 +44,7 @@ export class YourBankComponent {
       if(screenSize.matches){
         this.isMobile = true;
         this.isSidenavOpen = false;
+        this.autoplay = false;
       } else {
         this.isMobile = false;
       }
@@ -109,7 +112,7 @@ export class YourBankComponent {
 
   }
 
-  isPlaying = false;
+
 
   onPlay() {
     this.isPlaying = true;

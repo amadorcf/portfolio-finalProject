@@ -164,6 +164,7 @@ mat-list-item a.active {
   margin-left: 40px;
 }
 
+
 .doc-icons i{
   font-size: 30px;
   display: inline;
@@ -397,6 +398,15 @@ vg-player.darkened{
     visibility: visible;
     bottom: 4.5rem;
     right: 1rem;
+  }
+
+  .doc-icons li{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content__section>#doc ul.doc-icons{
+    margin-left: 0;
   }
 }
 

@@ -46,7 +46,7 @@
     <mat-sidenav-content class="sidenav-content">
       <div class="video_player" *ngIf="!isSidenavOpen || !isMobile" >
         <vg-player  [ngClass]="{'darkened': isPlaying}">
-          <video [vgMedia]="$any(media)" #media id="singleVideo" controls crossorigin autoplay (play)="onPlay()" (pause)="onPause()" (ended)="onPause()">
+          <video [vgMedia]="$any(media)" #media id="singleVideo" controls crossorigin [attr.autoplay]="autoplay ? true : null" (play)="onPlay()" (pause)="onPause()" (ended)="onPause()">
             <!-- preload="auto" -->
             <!-- AUTOPLAY -> (canplay)="media.play()" -->
             <source
