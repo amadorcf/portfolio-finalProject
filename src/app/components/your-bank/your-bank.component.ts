@@ -6,6 +6,8 @@ import { Global } from '../../services/global';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
+import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-your-bank',
@@ -27,17 +29,33 @@ export class YourBankComponent {
 
   constructor(
     private projectFireService: ProjectFireService,
-    private observer: BreakpointObserver
+    private observer: BreakpointObserver,
+    private meta: Meta,
+    private titleService: Title,
+    private route: ActivatedRoute
   ) {
     this.projects = [];
     this.url = Global.url;
   }
 
   ngOnInit(){
+    // Cambiar dinámicamente el título de la página
+    this.titleService.setTitle('YourBank Project');
+
+    // Actualizar las meta etiquetas
+    this.meta.updateTag({ property: 'og:title', content: 'YourBank Project' });
+    this.meta.updateTag({ name: 'description', content: 'YourBank App' });
+    this.meta.updateTag({ property: 'og:description', content: 'YourBank Project' });
+    this.meta.updateTag({ property: 'og:image', content: 'https://firebasestorage.googleapis.com/v0/b/portfolio-project-d906b.appspot.com/o/images%2FYourBank_v3.1.png?alt=media&token=dd2cd3d2-8957-4f79-9390-acf4ac1a6cad' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://amadorcf.es/projects/your-bank' });
+
+
     this.projectFireService.getProjects().subscribe( projects => {
       this.projects = projects;
       this.getProject();
       //console.log("Metodo getProjects", projects)
+
+
     });
 
     this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {

@@ -250,13 +250,14 @@ vg-player.darkened{
   right: 2rem;
   bottom: -20%;
   padding: .3rem;
-  background-color: var(--container-color);
-  border: .5px solid var(--text-color);
+  background-color: var(--text-color);
+  /* border: .5px solid var(--text-color); */
   border-radius: .4rem;
   z-index: var(--z-tooltip);
   transition: .4s;
   visibility: hidden;
   text-decoration: none;
+  box-shadow: 0 0 8px rgba(12, 12, 12, .3);
 }
 
 .scrolltop:hover{
@@ -264,7 +265,7 @@ vg-player.darkened{
 }
 
 .scrolltop__icon{
-  color: var(--text-color);
+  color: var(--container-color);
   font-size: 2rem;
 }
 
@@ -398,6 +399,11 @@ vg-player.darkened{
     visibility: visible;
     bottom: 4.5rem;
     right: 1rem;
+    background-color: var(--text-color);
+  }
+
+  .show-scroll-toggle i{
+    color: var(--container-color);
   }
 
   .doc-icons li{
