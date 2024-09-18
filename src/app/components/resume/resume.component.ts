@@ -68,6 +68,8 @@ export class ResumeComponent {
           this.addThemeDark();
         }
 
+
+
       });
 
     });
@@ -128,6 +130,9 @@ export class ResumeComponent {
     $(".change-theme").removeClass("bx-moon");
 
     $(".change-theme").addClass("bx-sun");
+
+    $(".resume__left").css("background-color", "#f39431e6");
+
   }
 
   removeThemeDark(){
@@ -140,6 +145,8 @@ export class ResumeComponent {
 
     // Change cv-containter to dark-theme
     $(".cv-container").removeClass("dark-theme");
+    $(".resume__left").css("background-color", "#D7FEE3");
+
 }
 
 

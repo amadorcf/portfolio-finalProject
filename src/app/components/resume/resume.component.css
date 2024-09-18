@@ -20,16 +20,18 @@
   right: 0;
   top: 2.2rem;
   display: flex;
-  color:var(--text-color);
+  color: var(--text-color);
   font-size: 1.2rem;
   cursor: pointer;
   padding: 0.5rem;
+  transition: .3s;
+  border-radius: 50%;
 }
 
 .change-theme:hover{
   color: var(--container-color);
   background-color: var(--text-color-light);
-  border-radius: 50%;
+
 }
 
 
@@ -43,12 +45,14 @@
   color: var(--text-color);
   cursor: pointer;
   padding: 0.5rem;
+  transition: .5s;
+  border-radius: 50%;
 }
 
 .generate-pdf:hover{
   color: var(--container-color);
   background-color: var(--text-color-light);
-  border-radius: 50%;
+
 }
 
 .cv-container{
@@ -379,7 +383,8 @@ h3.skills__content{
 
 .skills__name, .lenguages__name{
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
   margin-bottom: var(--mb-1);
 }
 
@@ -510,7 +515,7 @@ p.formation__description{
   }
 
   .resume__left{
-    background-color: #f39431e6;
+    background-color: #D7FEE3;
   }
 
   .resume__left,.resume__right{
