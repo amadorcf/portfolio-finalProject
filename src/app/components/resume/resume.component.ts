@@ -1,80 +1,70 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, HostListener } from '@angular/core';
 import { addIcons } from 'ionicons';
-import { mail, logoLinkedin, logoGithub} from 'ionicons/icons';
+import { mail, logoLinkedin, logoGithub } from 'ionicons/icons';
 
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
-  styleUrl: './resume.component.css'
+  styleUrl: './resume.component.css',
 })
 export class ResumeComponent {
   public title: string | undefined;
   public subtitle: string | undefined;
   public description: string | undefined;
+  public isMobile: boolean | any;
 
-
-  constructor(){
-    this.title = "Amador Cano Fernández";
-    this.subtitle = "Future Full-Stack Developer";
-    this.description = "Graduado en Ingeniería Electrónica y Automática. Organizado, resolutivo, trabajador y con espíritu de continuo aprendizaje y renovación. Actualmente inmerso en un giro profesional buscando nuevas experiencias en el mundo de la programación."
-
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.title = 'Amador Cano Fernández';
+    this.subtitle = 'Future Full-Stack Developer';
+    this.description =
+      'Graduado en Ingeniería Electrónica y Automática. Organizado, resolutivo, trabajador y con espíritu de continuo aprendizaje y renovación. Actualmente inmerso en un giro profesional buscando nuevas experiencias en el mundo de la programación.';
+    this.checkIfMobile();
     addIcons({
       logoLinkedin,
       logoGithub,
-      mail
+      mail,
     });
   }
 
   ngOnInit(): void {
-
-
     $(() => {
-
       /*==================== SHOW MENU ====================*/
-      $(".nav__toggle").on("click",  () => {
-        if ($(".nav__menu").hasClass("show-menu")) {
-          $(".nav__menu").removeClass("show-menu");
+      $('.nav__toggle').on('click', () => {
+        if ($('.nav__menu').hasClass('show-menu')) {
+          $('.nav__menu').removeClass('show-menu');
         } else {
-          $(".nav__menu").addClass("show-menu");
+          $('.nav__menu').addClass('show-menu');
         }
       });
 
-
-      $(".nav__link").on("click",  (navEl) => {
-
+      $('.nav__link').on('click', (navEl) => {
         /*==================== SECTIONS ACTIVE LINK ====================*/
-        $(".nav__link").removeClass("active-link");
-        $(navEl.currentTarget).addClass("active-link")
+        $('.nav__link').removeClass('active-link');
+        $(navEl.currentTarget).addClass('active-link');
 
         /*==================== REMOVE MENU MOBILE ====================*/
-        if ($(".nav__menu").hasClass("show-menu")) {
-          $(".nav__menu").removeClass("show-menu");
+        if ($('.nav__menu').hasClass('show-menu')) {
+          $('.nav__menu').removeClass('show-menu');
         } else {
-          $(".nav__menu").addClass("show-menu");
+          $('.nav__menu').addClass('show-menu');
         }
       });
 
       /*==================== DARK LIGHT THEME ====================*/
-/*       this.localStorageTheme(); */
+      /*       this.localStorageTheme(); */
 
-      $("#theme-button").on("click",  () => {
-
-/*         localStorage.setItem('selected-theme', this.getCurrentTheme())
+      $('#theme-button').on('click', () => {
+        /*         localStorage.setItem('selected-theme', this.getCurrentTheme())
         localStorage.setItem('selected-icon', this.getCurrentIcon()) */
 
-        if ($(".cv-container").hasClass("dark-theme")) {
+        if ($('.cv-container').hasClass('dark-theme')) {
           this.removeThemeDark();
         } else {
           this.addThemeDark();
         }
-
-
-
       });
-
     });
-
-
   }
 
   /*==================== SHOW SCROLL TOP ====================*/
@@ -84,72 +74,86 @@ export class ResumeComponent {
   onWindowScroll() {
     // Obtener la posición actual del scroll
     this.scrollTop = window.scrollY || document.documentElement.scrollTop;
-    if(this.scrollTop >= 350){
-      $("#scroll-top").addClass('show-scroll');
+    if (this.scrollTop >= 350) {
+      $('#scroll-top').addClass('show-scroll');
     } else {
-      $("#scroll-top").removeClass('show-scroll');
+      $('#scroll-top').removeClass('show-scroll');
     }
 
-    const sections = $('section[id]')
-
+    const sections = $('section[id]');
   }
 
-  localStorageTheme(){
-    const selectedTheme = localStorage.getItem('selected-theme')
-    const selectedIcon = localStorage.getItem('selected-icon')
+  localStorageTheme() {
+    const selectedTheme = localStorage.getItem('selected-theme');
+    const selectedIcon = localStorage.getItem('selected-icon');
 
-    if (selectedTheme ==='dark') {
+    if (selectedTheme === 'dark') {
       // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
       this.addThemeDark();
     }
-    if(selectedTheme ==='ligth'){
+    if (selectedTheme === 'ligth') {
       this.removeThemeDark();
     }
-
   }
 
-  getCurrentTheme(){
-    if($(".cv-container").attr("class")?.split(' ').includes('dark-theme')){
+  // Detectar si es móvil
+  checkIfMobile() {
+    this.breakpointObserver
+      .observe([Breakpoints.Handset])
+      .subscribe((result) => {
+        if (result.matches) {
+          this.isMobile = true;
+          console.log('Es un dispositivo móvil', this.isMobile);
+        } else {
+          this.isMobile = false;
+          console.log('No es un dispositivo móvil', this.isMobile);
+        }
+      });
+  }
+
+  getCurrentTheme() {
+    if ($('.cv-container').attr('class')?.split(' ').includes('dark-theme')) {
       return 'light';
-    }else{
+    } else {
       return 'dark';
     }
   }
 
-  getCurrentIcon(){
-    if($("#theme-button").attr("class")?.split(' ').includes('bx-sun')){
+  getCurrentIcon() {
+    if ($('#theme-button').attr('class')?.split(' ').includes('bx-sun')) {
       return 'bx-moon';
-    }else{
-      return  'bx-sun';
+    } else {
+      return 'bx-sun';
     }
   }
 
-  addThemeDark(){
-    $("main").addClass("dark-theme");
-    $(".cv-container").addClass("dark-theme");
-    $(".change-theme").removeClass("bx-moon");
+  addThemeDark() {
+    $('main').addClass('dark-theme');
+    $('.cv-container').addClass('dark-theme');
+    $('.change-theme').removeClass('bx-moon');
 
-    $(".change-theme").addClass("bx-sun");
+    $('.change-theme').addClass('bx-sun');
 
-    $(".resume__left").css("background-color", "#f39431e6");
+    if(!this.isMobile){
+      $('.resume__left').css('background-color', '#f39431e6');
+    }
 
   }
 
-  removeThemeDark(){
+  removeThemeDark() {
     // Change main section color
-    $("main").removeClass("dark-theme");
+    $('main').removeClass('dark-theme');
 
     //Change icon
-    $(".change-theme").removeClass("bx-sun");
-    $(".change-theme").addClass("bx-moon");
+    $('.change-theme').removeClass('bx-sun');
+    $('.change-theme').addClass('bx-moon');
 
     // Change cv-containter to dark-theme
-    $(".cv-container").removeClass("dark-theme");
-    $(".resume__left").css("background-color", "#D7FEE3");
+    $('.cv-container').removeClass('dark-theme');
 
+    if(!this.isMobile){
+      $('.resume__left').css('background-color', '#D7FEE3');
+    }
+
+  }
 }
-
-
-
-}
-

@@ -371,6 +371,7 @@ ul.experience__description{
 .skills__content, .lenguages__content {
   grid-template-columns: repeat(1, 1fr);
   gap: 0rem;
+  text-align: center;
 }
 
 h3.skills__content{
