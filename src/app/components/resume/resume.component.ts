@@ -103,10 +103,10 @@ export class ResumeComponent {
       .subscribe((result) => {
         if (result.matches) {
           this.isMobile = true;
-          console.log('Es un dispositivo móvil', this.isMobile);
+          //console.log('Es un dispositivo móvil', this.isMobile);
         } else {
           this.isMobile = false;
-          console.log('No es un dispositivo móvil', this.isMobile);
+          //console.log('No es un dispositivo móvil', this.isMobile);
         }
       });
   }

@@ -35,13 +35,13 @@ export class AboutComponent {
     const cardRect = card.getBoundingClientRect();
 
     const xPosition = (e.clientX - cardRect.left) / cardRect.width;
-    const yPosition = 0; //(e.clientY - cardRect.top) / cardRect.height - 0.6;
+    const yPosition = (e.clientY - cardRect.top) / cardRect.height - 0.6;
     const xOffset = -(xPosition - 0.6);
     const dxNorm = Math.min(Math.max(xOffset, -0.6), 0.6);
 
     this.renderer.setStyle(card, 'transform', `perspective(1000px)
-      rotateY(${dxNorm * 55}deg)
-      rotateX(${yPosition * 1}deg)`);
+      rotateY(${dxNorm * 25}deg)
+      rotateX(${yPosition * 10}deg)`);
   }
 
   onMouseOut(): void {
