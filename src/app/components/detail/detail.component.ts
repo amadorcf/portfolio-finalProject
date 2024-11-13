@@ -66,8 +66,6 @@ export class DetailComponent implements OnInit {
       this.getImages(id);
       this.getProject(id);
 
-
-
       $(() => {
         $(window).scrollTop(0);
 

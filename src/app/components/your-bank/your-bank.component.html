@@ -1,19 +1,34 @@
 <section class="project__section" *ngIf="project" id="inicio">
+  <p-dialog [(visible)]="display" [modal]="true" [closable]="false" [responsive]="true" class="custom-dialog">
+    <div class="modal-overlay" (click)="closeModal()">
+      <div class="modal-grid" (click)="stopPropagation($event)">
+
+        <!-- Botón de cierre "X" en la esquina superior derecha -->
+        <button class="close-btn" (click)="closeModal()">X</button>
+
+        <!-- Imagen en el centro de la cuadrícula -->
+        <img src="../../../assets/img/project/YourBank/mobile_adds.png" alt="YourBank App" class="styled-image" (click)="openGoogleAndClose($event)">
+
+        <!-- Botón "Pruébala" centrado debajo de la imagen -->
+        <button class="action-btn" (click)="openGoogleAndClose($event)">
+          Pruébala
+        </button>
+
+      </div>
+      <!-- Barra de progreso -->
+      <div class="progress-container">
+        <div class="progress-bar" [style.width.%]="progressBarWidth"></div>
+      </div>
+    </div>
+  </p-dialog>
+
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav
-      class="sidenav"
-      #sidenav
-      mode="side"
-      [(opened)]="isSidenavOpen"
-    >
+    <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="isSidenavOpen">
+
       <div class="sidenav-title">
         <h1>Proyecto: {{ project.name }}</h1>
-        <button
-          mat-button
-          (click)="sidenav.toggle()"
-          class="toggle-button"
-          [ngClass]="{ 'active-button': isSidenavOpen }"
-        >
+        <button mat-button (click)="sidenav.toggle()" class="toggle-button"
+          [ngClass]="{ 'active-button': isSidenavOpen }">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -24,9 +39,7 @@
         </mat-list-item>
 
         <mat-list-item class="sidebar-link" (click)="navigateTo('tech')">
-          <a mat-line href="projects/your-bank#tech"
-            >2. Tecnologías utilizadas</a
-          >
+          <a mat-line href="projects/your-bank#tech">2. Tecnologías utilizadas</a>
         </mat-list-item>
 
         <mat-list-item class="sidebar-link" (click)="navigateTo('arch')">
@@ -40,32 +53,46 @@
         <mat-list-item class="sidebar-link" (click)="navigateTo('doc')">
           <a mat-line href="projects/your-bank#doc">5. Recursos</a>
         </mat-list-item>
+
+        <mat-list-item id="highlighted-item" (click)="openGoogleAndClose($event)">
+          <div class="flex justify-center items-center gap-2"> <!-- Agregar clases de Tailwind aquí -->
+            <img src="../../../assets/img/project/YourBank/Recurso 3.png" alt="logo" width="30px">
+            <a mat-line >Acceso a la web</a>
+          </div>
+        </mat-list-item>
+
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav-content">
-      <div class="video_player" *ngIf="!isSidenavOpen || !isMobile" >
-        <vg-player  [ngClass]="{'darkened': isPlaying}">
-          <video [vgMedia]="$any(media)" #media id="singleVideo" controls crossorigin [attr.autoplay]="autoplay ? true : null" (play)="onPlay()" (pause)="onPause()" (ended)="onPause()">
+      <div class="video_player" *ngIf="!isSidenavOpen || !isMobile">
+        <vg-player [ngClass]="{'darkened': isPlaying}">
+          <video [vgMedia]="$any(media)" #media id="singleVideo" controls crossorigin
+            [attr.autoplay]="autoplay ? false : null" (play)="onPlay()" (pause)="onPause()" (ended)="onPause()">
             <!-- preload="auto" -->
             <!-- AUTOPLAY -> (canplay)="media.play()" -->
-            <source
-              src="../../../assets/img/project/YourBank/demo_v1.mp4"
-              type="video/mp4"
-            />
+            <source src="../../../assets/img/project/YourBank/demo_v1.mp4" type="video/mp4" />
           </video>
         </vg-player>
       </div>
 
+      <!-- Enlace al proyecto -->
+      <div class="content__section" id="link">
+        <section>
+          <h3>Acceso a la web</h3>
+          <a class="text-blue" href="https://yourbank-fullstack.oa.r.appspot.com/">https://yourbank-fullstack.com/</a>
+          <div class="link-button">
+            <button class="" (click)="openGoogleAndClose($event)">
+              Pruébala
+            </button>
+          </div>
+        </section>
+      </div>
+
       <div class="togglebtnwrapper">
         <h1>Proyecto: {{ project.name }}</h1>
-        <button
-          mat-button
-          (click)="sidenav.toggle()"
-          class="toggle-button"
-          [ngClass]="{ 'active-button': isSidenavOpen }"
-          *ngIf="!isSidenavOpen || !isMobile"
-        >
+        <button mat-button (click)="sidenav.toggle()" class="toggle-button"
+          [ngClass]="{ 'active-button': isSidenavOpen }" *ngIf="!isSidenavOpen || !isMobile">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -125,10 +152,7 @@
           <h2>3. Arquitectura</h2>
           <div class="img" (click)="this.sidenav.toggle()" *ngIf="!isMobile">
 
-            <p-image
-              src="../../../assets/img/project/YourBank/arquitectura.png"
-              alt="arquitectura"
-              width="500"
+            <p-image src="../../../assets/img/project/YourBank/arquitectura.png" alt="arquitectura" width="500"
               [preview]="true">
             </p-image>
 
@@ -204,9 +228,10 @@
         <section id="doc">
           <h2>5. Recursos</h2>
           <ul class="doc-icons">
-            <li ><i class="bx bxl-github"></i>Github: <a href="https://github.com/amadorcf">YourBank-API</a></li>
+            <li><i class="bx bxl-github"></i>Github: <a href="https://github.com/amadorcf">YourBank-API</a></li>
             <li>
-              <i class="bx bxs-file-doc"></i>Documentación: <a href="https://documenter.getpostman.com/view/28708244/2sAXjJ6De7">API Documentation</a>
+              <i class="bx bxs-file-doc"></i>Documentación: <a
+                href="https://documenter.getpostman.com/view/28708244/2sAXjJ6De7">API Documentation</a>
             </li>
           </ul>
         </section>
@@ -219,11 +244,7 @@
     <i class="bx bxs-up-arrow-alt scrolltop__icon"></i>
   </a>
 
-  <button
-    class="scrolltop scroll-toggle-button"
-    id="scroll-toggle-button"
-    (click)="sidenav.toggle()"
-  >
+  <button class="scrolltop scroll-toggle-button" id="scroll-toggle-button" (click)="sidenav.toggle()">
     <a href="/projects/your-bank#">
       <i class="bx bx-menu scrolltop__icon"></i>
     </a>

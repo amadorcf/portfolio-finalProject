@@ -9,23 +9,32 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
+// Importar módulos de PrimeNG
+import { DialogModule } from 'primeng/dialog';
+import { ImageModule } from 'primeng/image';
+
 @Component({
   selector: 'app-your-bank',
   templateUrl: './your-bank.component.html',
-  styleUrl: './your-bank.component.css'
+  styleUrl: './your-bank.component.css',
 })
 export class YourBankComponent {
-
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
 
-  public url:string | undefined;
+  public url: string | undefined;
 
   projects: Project[];
   project: Project | undefined;
   isSidenavOpen = true; // Set the initial state to visible
   isMobile = true;
   isPlaying = false;
-  autoplay: boolean = true;
+  autoplay: boolean = false;
+  display: boolean = false;
+
+  progressBarWidth: number = 0; // Ancho de la barra de progreso
+  timer: any; // Temporizador
+  timeLeft: number = 7; // Tiempo en segundos hasta que desaparezca el modal
+  interval: number = 100; // Intervalo de 100 ms
 
   constructor(
     private projectFireService: ProjectFireService,
@@ -38,28 +47,38 @@ export class YourBankComponent {
     this.url = Global.url;
   }
 
-  ngOnInit(){
+  ngOnInit() {
+    this.display = true; // Mostrar el modal al cargar la página
+    this.startTimer();
+
     // Cambiar dinámicamente el título de la página
     this.titleService.setTitle('YourBank Project');
 
     // Actualizar las meta etiquetas
     this.meta.updateTag({ property: 'og:title', content: 'YourBank Project' });
     this.meta.updateTag({ name: 'description', content: 'YourBank App' });
-    this.meta.updateTag({ property: 'og:description', content: 'YourBank Project' });
-    this.meta.updateTag({ property: 'og:image', content: 'https://firebasestorage.googleapis.com/v0/b/portfolio-project-d906b.appspot.com/o/images%2FYourBank_v3.1.png?alt=media&token=dd2cd3d2-8957-4f79-9390-acf4ac1a6cad' });
-    this.meta.updateTag({ property: 'og:url', content: 'https://amadorcf.es/projects/your-bank' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'YourBank Project',
+    });
+    this.meta.updateTag({
+      property: 'og:image',
+      content:
+        'https://firebasestorage.googleapis.com/v0/b/portfolio-project-d906b.appspot.com/o/images%2FYourBank_v3.1.png?alt=media&token=dd2cd3d2-8957-4f79-9390-acf4ac1a6cad',
+    });
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://amadorcf.es/projects/your-bank',
+    });
 
-
-    this.projectFireService.getProjects().subscribe( projects => {
+    this.projectFireService.getProjects().subscribe((projects) => {
       this.projects = projects;
       this.getProject();
       //console.log("Metodo getProjects", projects)
-
-
     });
 
     this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
-      if(screenSize.matches){
+      if (screenSize.matches) {
         this.isMobile = true;
         this.isSidenavOpen = false;
         this.autoplay = false;
@@ -69,31 +88,28 @@ export class YourBankComponent {
     });
 
     $(() => {
-      $('mat-list-item').on("click", () => {
-        $("body").css("background-color", "red");
+      $('mat-list-item').on('click', () => {
+        $('body').css('background-color', 'red');
       });
     });
-
   }
 
   getProject() {
-    this.projectFireService.getProjects().subscribe( projects => {
+    this.projectFireService.getProjects().subscribe((projects) => {
       this.projects = projects;
 
-      for(let project of projects){
-        if ( project.name == "YourBank"){
+      for (let project of projects) {
+        if (project.name == 'YourBank') {
           this.project = project;
           /* console.log("Detail Project", project); */
         }
       }
-
-      });
+    });
   }
-
 
   navigateTo(sectionId: string): void {
     const section = document.getElementById(sectionId);
-    if(this.isMobile){
+    if (this.isMobile) {
       this.sidenav.toggle();
     }
     //console.log(section)
@@ -110,27 +126,23 @@ export class YourBankComponent {
     }, 500);
   }
 
-      /*==================== SHOW SCROLL TOP ====================*/
+  /*==================== SHOW SCROLL TOP ====================*/
   scrollTop: number = 0;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     // Obtener la posición actual del scroll
     this.scrollTop = window.scrollY || document.documentElement.scrollTop;
-    if(this.scrollTop >= 350){
-      $("#scroll-top").addClass('show-scroll');
-      $("#scroll-toggle-button").addClass('show-scroll-toggle');
-
+    if (this.scrollTop >= 350) {
+      $('#scroll-top').addClass('show-scroll');
+      $('#scroll-toggle-button').addClass('show-scroll-toggle');
     } else {
-      $("#scroll-top").removeClass('show-scroll');
-      $("#scroll-toggle-button").removeClass('show-scroll-toggle');
+      $('#scroll-top').removeClass('show-scroll');
+      $('#scroll-toggle-button').removeClass('show-scroll-toggle');
     }
 
-    const sections = $('section[id]')
-
+    const sections = $('section[id]');
   }
-
-
 
   onPlay() {
     this.isPlaying = true;
@@ -138,5 +150,47 @@ export class YourBankComponent {
 
   onPause() {
     this.isPlaying = false;
+  }
+
+  openGoogleAndClose(event: MouseEvent) {
+    event.stopPropagation(); // Detiene la propagación del evento
+    window.open('https://yourbank-fullstack.oa.r.appspot.com/', '_blank'); // Abrir Google en una nueva pestaña
+    this.closeModal(); // Cierra el modal
+  }
+
+  closeModal() {
+    this.display = false; // Cierra el modal
+  }
+
+  stopPropagation(event: MouseEvent) {
+    event.stopPropagation(); // Evita que el clic en la imagen cierre el modal
+  }
+
+  // Inicia el temporizador y actualiza la barra de progreso
+  startTimer() {
+    const progressDuration = 6.5; // Duración en la que la barra debe llenarse (antes de que cierre el modal)
+
+    this.timer = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft -= 0.1; // Decremento en décimas de segundo
+
+        // Calculamos la barra de progreso para que se llene más rápido (antes de los 6 segundos)
+        // Aquí usamos (progressDuration - timeLeft) * (100 / progressDuration) para adelantar la barra
+        if (this.timeLeft >= (7 - progressDuration)) {
+          // Si aún no hemos llegado a los 6 segundos, calculamos la barra normalmente
+          this.progressBarWidth = (7 - this.timeLeft) * (100 / 7);
+        } else {
+          // Cuando lleguemos a los 6 segundos, aseguramos que la barra esté al 100%
+          this.progressBarWidth = 100;
+        }
+      } else {
+        this.closeModal(); // Cierra el modal cuando el tiempo se acaba
+      }
+    }, this.interval); // Cada 100 ms (0.1 segundo)
+  }
+
+  // Detiene el temporizador
+  stopTimer() {
+    clearInterval(this.timer);
   }
 }

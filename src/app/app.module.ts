@@ -35,6 +35,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { ImageModule } from 'primeng/image';
 
+// Importar módulos de PrimeNG
+import { DialogModule } from 'primeng/dialog';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +63,7 @@ import { ImageModule } from 'primeng/image';
     HttpClientModule,
     IonIcon,
     ImageModule,
+    DialogModule,
     ReactiveFormsModule,
     VgCoreModule,
     BrowserAnimationsModule,

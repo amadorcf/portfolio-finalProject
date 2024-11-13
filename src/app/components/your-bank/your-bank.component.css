@@ -1,3 +1,143 @@
+/* Fondo difuso */
+::ng-deep .p-dialog-mask {
+  background: rgba(0, 0, 0, 0.85); /* Fondo oscuro con transparencia */
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo del diálogo */
+::ng-deep .p-dialog {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  max-width: 90vw;
+  height: 80vh;
+}
+
+/* Contenido del diálogo */
+::ng-deep .p-dialog-content {
+  background: transparent;
+  display: flex;
+  height: 100%;
+}
+
+.modal-overlay {
+  display: grid;
+  /* place-items: center; */
+  width: 100%;
+  height: auto;
+  margin: 10px
+}
+
+/* Configuración de la cuadrícula */
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Tres columnas */
+  grid-template-rows: 1fr auto 1fr;    /* Tres filas */
+  gap: 10px;
+  background: transparent;
+}
+
+/* Imagen más grande */
+.styled-image {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 190px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Botón de acción "Pruébala" centrado debajo de la imagen */
+.action-btn {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: #1f78ff;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+  justify-self: center;
+  margin-top: 10px;
+  border: none;
+
+  /* Animación de parpadeo */
+  animation: blink 1.5s infinite;
+}
+
+.action-btn:hover {
+  background-color: #0056d2;
+  transform: scale(1.05); /* Aumenta ligeramente al hacer hover */
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+  0%, 100% {
+    text-shadow: 0 0 5px #1f78ff, 0 0 10px #1f78ff, 0 0 15px #00b8ff, 0 0 20px #00b8ff, 0 0 25px #00b8ff;
+    opacity: 1;  /* Totalmente opaco */
+    transform: scale(1); /* Tamaño normal (sin cambio) */
+  }
+  50% {
+    text-shadow: 0 0 10px #1f78ff, 0 0 20px #00b8ff, 0 0 30px #00b8ff, 0 0 40px #00b8ff, 0 0 50px #00b8ff;
+    opacity: 0.5;  /* Opacidad reducida al 50% */
+    transform: scale(1); /* No cambiar el tamaño, solo parpadeo en opacidad */
+  }
+}
+
+/* Botón de cierre minimalista en la esquina superior derecha */
+.close-btn {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: white;
+  border: none;
+  color: black;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.custom-dialog {
+  position: relative;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: #f3f3f3;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #8fe6a2; /* Color de la barra de progreso */
+  transition: width 1s;
+  border-radius: 10px;
+
+}
+
+/* ESTILOS */
 .project__section{
   display: flex;
   justify-content: center;
@@ -130,6 +270,35 @@ mat-list-item a.active {
   background-color: #90e5a3;
 }
 
+mat-list-item div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Agrega un espacio entre la imagen y el enlace */
+}
+
+/* Resaltar item con id 'highlighted-item' */
+#highlighted-item {
+  background-color: #b8eec3;  /* Color de fondo especial para el item destacado */
+  color: #fff;  /* Cambia el color del texto si lo deseas */
+}
+
+#highlighted-item:hover {
+  background-color: #60b671;  /* Color de fondo cuando el ratón pasa sobre el item */
+  transform: scale(0.95, 0.95);
+  font-weight: 800;
+}
+
+/* También puedes cambiar el color del enlace cuando el item está destacado */
+#highlighted-item a {
+  color: #2d2926;  /* Cambia el color del texto del enlace en este item */
+
+}
+
+/* #highlighted-item a:hover {
+
+} */
+
 
 /* Right panel */
 .sidenav-content{
@@ -191,6 +360,65 @@ ul.doc-icons{
   font-family: stealfish;
   text-transform: uppercase;
   font-size: 36px;
+}
+
+.content__section h3{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-family: stealfish;
+  text-transform: uppercase;
+  font-size: 36px;
+  text-align: center;
+}
+
+.content__section button{
+  background-color: #1f78ff;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+  justify-self: center;
+  margin-top: 10px;
+  border: none;
+}
+
+.text-blue{
+  color: #0056d2;
+}
+
+/* #link{
+  animation: blink2 2s infinite;
+} */
+
+.link-button{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.link-button button{
+  animation: blink2 2s infinite;
+}
+
+@keyframes blink2 {
+  0%, 100% {
+    /* text-shadow: 0 0 5px #333, 0 0 10px #333, 0 0 15px #555, 0 0 20px #777, 0 0 30px #999; */
+    box-shadow: 0px 0px 5px #48509b;
+    /* opacity: 1;  /* Totalmente opaco */
+    transform: scale(1); /* Tamaño normal (sin cambio) */
+  }
+  50% {
+    /* text-shadow: 0 0 10px #333, 0 0 20px #444, 0 0 30px #666, 0 0 40px #777, 0 0 50px #888; */
+    box-shadow: 0px 0px 12px #5f67b3;
+    /* opacity: 0.9;  */ /* Opacidad reducida al 50% */
+    transform: scale(1.05); /* No cambiar el tamaño, solo parpadeo en opacidad */
+  }
 }
 
 .content__section h5 {
@@ -326,9 +554,20 @@ vg-player.darkened{
   }
 
   ::ng-deep main, .sidenav-content, .sidenav-container {
-    background-color: #90e5a3; /* Cambia este color al que desees */
+    background: #8fe6a2;
   }
 
+  ::ng-deep .p-dialog {
+    height: auto;
+  }
+
+  .styled-image{
+    max-width: 210px;
+  }
+
+  .close-btn{
+    margin: 2px;
+  }
 
   .project__section{
     margin-top: 0px;
@@ -365,6 +604,7 @@ vg-player.darkened{
   .sidenav-content{
     gap: 10px;
     padding: 20px;
+    background: #8fe6a2;
   }
 
   .content__section{
@@ -416,11 +656,27 @@ vg-player.darkened{
   }
 }
 
+
+
 /* TABLET version */
 @media all and (max-width: 600px) {
 
   .togglebtnwrapper>button {
     margin-right: 10px;
+  }
+
+}
+
+
+/* LAPTOP version */
+@media screen and (min-height: 900px){
+
+  ::ng-deep .p-dialog {
+    height: auto;
+  }
+
+  .styled-image {
+    max-width: 350px;
   }
 
 }
