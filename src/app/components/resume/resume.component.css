@@ -78,6 +78,12 @@
   font-weight: var(--font-semi-bold);
 }
 
+.cv-container a{
+  color: var(--title-color);
+  font-weight: bold;
+}
+
+
 /* .cv-container ul{
   padding: 0;
   list-style: none;
@@ -516,7 +522,7 @@ p.formation__description{
   }
 
   .resume__left{
-    background-color: #D7FEE3;
+    background-color: #d6eaf8;
   }
 
   .resume__left,.resume__right{

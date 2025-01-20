@@ -28,7 +28,8 @@ export class YourBankComponent {
   isSidenavOpen = true; // Set the initial state to visible
   isMobile = true;
   isPlaying = false;
-  autoplay: boolean = false;
+  
+  autoplay: boolean = true;
   display: boolean = false;
 
   progressBarWidth: number = 0; // Ancho de la barra de progreso
@@ -48,7 +49,7 @@ export class YourBankComponent {
   }
 
   ngOnInit() {
-    this.display = true; // Mostrar el modal al cargar la página
+    this.display = false; // Mostrar el modal al cargar la página
     this.startTimer();
 
     // Cambiar dinámicamente el título de la página
@@ -152,9 +153,10 @@ export class YourBankComponent {
     this.isPlaying = false;
   }
 
-  openGoogleAndClose(event: MouseEvent) {
+  /* POP-UP: nuevo proyecto */
+  openAddUrl(event: MouseEvent) {
     event.stopPropagation(); // Detiene la propagación del evento
-    window.open('https://yourbank-fullstack.oa.r.appspot.com/', '_blank'); // Abrir Google en una nueva pestaña
+    window.open('https://yourbank-front.ey.r.appspot.com/', '_blank'); // Abrir Google en una nueva pestaña
     this.closeModal(); // Cierra el modal
   }
 
@@ -193,4 +195,5 @@ export class YourBankComponent {
   stopTimer() {
     clearInterval(this.timer);
   }
+
 }

@@ -152,7 +152,7 @@ export class ResumeComponent {
     $('.cv-container').removeClass('dark-theme');
 
     if(!this.isMobile){
-      $('.resume__left').css('background-color', '#D7FEE3');
+      $('.resume__left').css('background-color', '#d6eaf8');
     }
 
   }

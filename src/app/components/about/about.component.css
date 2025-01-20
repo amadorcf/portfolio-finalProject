@@ -22,7 +22,6 @@
   width: 200px;
   height: auto;
   border-radius: 100%;
-
   box-shadow: 5px 5px 10px 0px rgba(0,0,0, .4);
 }
 
@@ -47,7 +46,7 @@
 .contact-button{
   align-self: center;
   text-align: center;
-  background: rgba(243, 148, 49, 0.9);
+  background: var(--orange);
   box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.9);
   color: #2e2e2e;
   font-weight: bold;
@@ -124,7 +123,7 @@
 }
 
 .cardContainer #mail:hover{
-  color: #f39431e6;
+  color: var(--orange);
 }
 
 .cardContainer .about-icons{
@@ -137,7 +136,7 @@
 
 .cardContainer .about-icons a:hover{
   transition: all 500ms;
-  color: #f39431e6;
+  color: var(--orange);
 }
 
 
@@ -189,7 +188,7 @@
 	position: absolute;
 	width: 50%;
 	height: 3px;
-	background-color: #f39431e6;
+	background-color: var(--orange);
 	top: calc(125% - 1px);
 	left: 50%;
 	transform: translateX(-50%);
@@ -213,7 +212,7 @@
   transition: all 500ms;
 }
 .skill .skill-icon:hover{
-  color:#f39431e6;
+  color: var(--orange);
   transform: scale(1.15, 1.15);
 }
 
@@ -255,7 +254,7 @@
 	height: 3px;
 	top: calc(125% - 1px);
 	left: 0;
-	background-color: #f39431e6;
+	background-color: var(--orange);
 }
 
 .subject{
@@ -281,13 +280,14 @@
 	top: -35px;
 	right: 0;
 	font-size: 18px;
+  font-weight: bold;
 }
 
 .progress-line{
 	position: absolute;
 	width: 0%;
 	height: 8px;
-	background-color: #f39431e6;
+	background-color: var(--orange);
   border: 1px solid black;
 	border-radius: 15px;
 	top: -2px;
@@ -309,7 +309,7 @@
 	top: 50%;
 	left: 100%;
 	transform: translate(-50%, -50%);
-	background-color: #f39431e6;
+	background-color: var(--orange);
   border: 1px solid black;
 }
 

@@ -1,16 +1,16 @@
 <section class="project__section" *ngIf="project" id="inicio">
+  <!-- POP-UP: nuevo proyecto -->
   <p-dialog [(visible)]="display" [modal]="true" [closable]="false" [responsive]="true" class="custom-dialog">
-    <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-overlay" (click)="closeModal()" >
       <div class="modal-grid" (click)="stopPropagation($event)">
 
-        <!-- Botón de cierre "X" en la esquina superior derecha -->
+        <!-- Botón de cierre "X" -->
         <button class="close-btn" (click)="closeModal()">X</button>
 
-        <!-- Imagen en el centro de la cuadrícula -->
-        <img src="../../../assets/img/project/YourBank/mobile_adds.png" alt="YourBank App" class="styled-image" (click)="openGoogleAndClose($event)">
+        <img src="../../../assets/img/project/YourBank/mobile_adds.png" alt="YourBank App" class="styled-image" (click)="openAddUrl($event)">
 
-        <!-- Botón "Pruébala" centrado debajo de la imagen -->
-        <button class="action-btn" (click)="openGoogleAndClose($event)">
+        <!-- Botón "Pruébala" -->
+        <button class="action-btn" (click)="openAddUrl($event)">
           Pruébala
         </button>
 
@@ -54,9 +54,9 @@
           <a mat-line href="projects/your-bank#doc">5. Recursos</a>
         </mat-list-item>
 
-        <mat-list-item id="highlighted-item" (click)="openGoogleAndClose($event)">
+        <mat-list-item id="highlighted-item" (click)="openAddUrl($event)">
           <div class="flex justify-center items-center gap-2"> <!-- Agregar clases de Tailwind aquí -->
-            <img src="../../../assets/img/project/YourBank/Recurso 3.png" alt="logo" width="30px">
+            <img src="../../../assets/img/project/YourBank/logo.png" alt="logo" width="30px">
             <a mat-line >Acceso a la web</a>
           </div>
         </mat-list-item>
@@ -80,9 +80,9 @@
       <div class="content__section" id="link">
         <section>
           <h3>Acceso a la web</h3>
-          <a class="text-blue" href="https://yourbank-fullstack.oa.r.appspot.com/">https://yourbank-fullstack.com/</a>
+          <a class="text-blue" href="https://yourbank-front.ey.r.appspot.com/">https://yourbank-fullstack.com/</a>
           <div class="link-button">
-            <button class="" (click)="openGoogleAndClose($event)">
+            <button class="" (click)="openAddUrl($event)">
               Pruébala
             </button>
           </div>

@@ -38,7 +38,8 @@
   --container-color: #FAFAFA;
   --container-color-alt: #F2F2F2;
   --body-color: rgb(252, 252, 252);
-  --orange: #e08a31;
+  --back-color: #002C34;
+  --orange: #ffa35c;
 
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
@@ -133,7 +134,7 @@ main.dark-theme{
 
 .menu{
   text-transform: uppercase;
-  background: #2e2e2e
+  background: var(--back-color);/* #2e2e2e; */
 }
 
 .toggle a{
@@ -174,7 +175,7 @@ main.dark-theme{
 .menu .item a:hover{
   transform: scale(1.1, 1.1);
 
-  background: rgba(243, 148, 49, 0.6);
+  background: rgb(255, 163, 92, 0.6);
   color: #2e2e2e;
   box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.9);
 
@@ -182,7 +183,7 @@ main.dark-theme{
 }
 
 .menu .item .actived{
-  background: #f39431e6;
+  background: #ffa35c;
   box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.9);
 
   color: #2e2e2e;
