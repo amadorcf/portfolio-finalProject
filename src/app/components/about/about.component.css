@@ -6,16 +6,43 @@
   margin: 0px auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .about-content{
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+  padding: 20px;
+}
+
+/* SOBRE MI -about- */
+.about .about-content h2{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-family: stealfish;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.about p{
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: justify;
+  font-size: 16px;
+  font-family: var(--body-font);
 }
 
 .about-content a{
   color: black;
+}
+
+.about .my-img{
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about #cartoon{
@@ -23,10 +50,6 @@
   height: auto;
   border-radius: 100%;
   box-shadow: 5px 5px 10px 0px rgba(0,0,0, .4);
-}
-
-.about .my-img{
-  padding-bottom: 20px;
 }
 
 .about-buttons {
@@ -106,11 +129,64 @@
   cursor: pointer;
 }
 
+.cardContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px auto;
+  text-align: center;
+  border-radius: 40px;
+  padding: 20px 50px;
+  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.5);
+  width: 70%;
+}
+
+.cardContainer-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.cardContainer-info .border{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  gap: .5rem;
+}
+
+.cardContainer-info p{
+  margin: 0 30px;
+  text-align: center;
+}
+
 .cardContainer a{
   align-self: center;
   text-decoration: none;
   color: #2e2e2e;
   font-weight: bold;
+}
+
+.cardContainer .about-icons a:hover{
+  transition: all 500ms;
+  color: var(--orange);
+}
+
+.cardContainer h1{
+  font-family: trashHand;
+  font-size: 55px;
+  color:#000;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, .25);
+}
+
+.cardContainer h2{
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .cardContainer #mail{
@@ -129,17 +205,8 @@
 .cardContainer .about-icons{
   display: flex;
   font-size: 2rem;
-
-  padding: .5rem;
   gap: 10px;
 }
-
-.cardContainer .about-icons a:hover{
-  transition: all 500ms;
-  color: var(--orange);
-}
-
-
 
 /* Skills Progress Bar */
 .skills__progressBar{
@@ -337,9 +404,13 @@
   }
 
   .cardContainer{
-    padding: 0;
+    padding: 30px;
+    flex-direction: column;
   }
 
+  .cardContainer-info p{
+    margin: 0px;
+  }
   .about-buttons{
     flex-direction: column;
   }
@@ -352,6 +423,7 @@
 		flex-direction: column;
 	}
 	.skills__progressBar .main-title h1{
+    text-align: center;
 		font-size: 40px;
 	}
 	.skills__progressBar .row{
