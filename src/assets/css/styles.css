@@ -210,6 +210,40 @@ main.dark-theme{
   transform: scale(1.1, 1.1);
 }
 
+.p-icon{
+  color: white;
+}
+
+.p-carousel-indicator-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 0.5rem;
+  margin: 0;
+  list-style: none;
+}
+
+/* Indicadores del carrusel */
+.p-carousel-indicators {
+  display: flex !important;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.p-carousel-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.p-carousel-indicator.p-highlight {
+  background-color: var(--orange);
+}
 
 /* CONTENEDOR PRINCIPAL */
 #content{

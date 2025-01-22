@@ -1,0 +1,60 @@
+.carousel-project {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-project img {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: block; /* Asegura que no haya espacios extra */
+  margin: 0 auto; /* Centra la imagen */
+  filter: grayscale(0.4);
+  transition: all 300ms;
+}
+
+.carousel-project img:hover{
+  filter: grayscale(0);
+  transform: scale(1.05, 1.05);
+}
+
+
+.carousel-project h3,a {
+  margin-top: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+}
+
+/* Indicadores del carrusel */
+.p-carousel-indicators {
+  display: flex !important;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.p-carousel-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.p-carousel-indicator.p-highlight {
+  background-color: #007ad9;
+}
+
+@media all and (max-width: 950px) {
+  .carousel-project img {
+    height: 120px;
+  }
+
+}
+
+

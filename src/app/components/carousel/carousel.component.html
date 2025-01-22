@@ -1,0 +1,11 @@
+<p-carousel [value]="projects" [numVisible]="3" [numScroll]="1" [circular]="true"  autoplayInterval="5000" [responsiveOptions]="responsiveOptions" [showIndicators]="true">
+  <ng-template pTemplate="project" let-project>
+    <a [routerLink]="project.name !== 'YourBank' ? ['/project', project.name] : null"
+    (click)="checkRedirect(project.name, $event)">
+      <div class="carousel-project">
+        <img *ngIf="project.image" [src]="project.image" [alt]="project.name" />
+        <h3>{{ project.name }}</h3>
+      </div>
+    </a>
+  </ng-template>
+</p-carousel>

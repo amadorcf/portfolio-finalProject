@@ -33,10 +33,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
-import { ImageModule } from 'primeng/image';
+
 
 // Importar módulos de PrimeNG
 import { DialogModule } from 'primeng/dialog';
+import { ImageModule } from 'primeng/image';
+import { CarouselModule } from 'primeng/carousel';
+
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 @NgModule({
@@ -55,15 +59,17 @@ import { DialogModule } from 'primeng/dialog';
     FooterComponent,
     ResumeComponent,
     YourBankComponent,
+    CarouselComponent,
   ],
   imports: [
+    routing,
     BrowserModule,
     FormsModule,
-    routing,
     HttpClientModule,
     IonIcon,
     ImageModule,
     DialogModule,
+    CarouselModule,
     ReactiveFormsModule,
     VgCoreModule,
     BrowserAnimationsModule,
