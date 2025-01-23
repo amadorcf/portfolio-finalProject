@@ -135,7 +135,7 @@ export class ResumeComponent {
     $('.change-theme').addClass('bx-sun');
 
     if(!this.isMobile){
-      $('.resume__left').css('background-color', '#f39431e6');
+      $('.resume__left').css('background-color', '#525252');
     }
 
   }

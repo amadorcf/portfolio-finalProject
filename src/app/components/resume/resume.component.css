@@ -8,8 +8,9 @@
   --title-color: #F2F2F2;
   --text-color: #f8f8f8;
   --container-color: #212121;
-  --container-color-alt: #181616;
-  --body-color: #2e2e2e;
+  --container-color-alt: #026274;
+  --body-color: var(--back-color);
+  --download-color: var(--orange);
 }
 
 
@@ -30,8 +31,7 @@
 
 .change-theme:hover{
   color: var(--container-color);
-  background-color: var(--text-color-light);
-
+  background-color: var(--text-color);
 }
 
 
@@ -51,8 +51,7 @@
 
 .generate-pdf:hover{
   color: var(--container-color);
-  background-color: var(--text-color-light);
-
+  background-color: #3c7dab;
 }
 
 .cv-container{
@@ -78,8 +77,8 @@
   font-weight: var(--font-semi-bold);
 }
 
-.cv-container a{
-  color: var(--title-color);
+.cv-container .vav-logo a{
+  color: var(--body-color);
   font-weight: bold;
 }
 
@@ -132,7 +131,7 @@
   bottom: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: var(--text-color);
+  background-color: var(--back-color);
   box-shadow: 0 -1px 4px rgba(0, 0, 0, .1);
   transition: 0.3s;
 }
@@ -162,7 +161,7 @@
   }
 
   .nav__logo, .nav__toggle{
-    color: var(--container-color-alt);
+    color: #F2F2F2;
     font-weight: var(--font-medium);
   }
 

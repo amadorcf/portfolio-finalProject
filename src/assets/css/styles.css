@@ -34,7 +34,7 @@
   /*========== Colors ==========*/
   --title-color: #0B0A0A;
   --text-color: #2e2e2e;
-  --text-color-light: #707070;
+  --text-color-light: #a3a3a3;
   --container-color: #FAFAFA;
   --container-color-alt: #F2F2F2;
   --body-color: rgb(252, 252, 252);
@@ -112,7 +112,7 @@ main.dark-theme{
   --text-color: #f8f8f8;
   --container-color: #212121;
   --container-color-alt: #181616;
-  --body-color: #2e2e2e;
+  --body-color: var(--back-color);
 }
 
 
