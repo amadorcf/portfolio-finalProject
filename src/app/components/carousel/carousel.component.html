@@ -1,11 +1,20 @@
-<p-carousel [value]="projects" [numVisible]="3" [numScroll]="1" [circular]="true"  autoplayInterval="5000" [responsiveOptions]="responsiveOptions" [showIndicators]="true">
-  <ng-template pTemplate="project" let-project>
-    <a [routerLink]="project.name !== 'YourBank' ? ['/project', project.name] : null"
-    (click)="checkRedirect(project.name, $event)">
-      <div class="carousel-project">
-        <img *ngIf="project.image" [src]="project.image" [alt]="project.name" />
+<p-carousel [value]="projects" [numVisible]="3" [numScroll]="1" [circular]="true"  autoplayInterval="6000" [responsiveOptions]="responsiveOptions" [showIndicators]="true">
+  <ng-template pTemplate="project" let-project class="project">
+    <div class="carousel-project">
+      <a [routerLink]="project.name !== 'YourBank' ? ['/project', project.name] : ['/project', project.name]"
+      (click)="checkRedirect(project.name, $event)">
+
+        <div [ngClass]="{'no-hover': project.name === 'YourCommerce'}">
+          <img *ngIf="project.image" [src]="project.image" [alt]="project.name" />
+        </div>
+
+        <div class="in-development" *ngIf="project.name == 'YourCommerce'">
+          <h1> 🚧  EN DESARROLLO... </h1>
+        </div>
+
         <h3>{{ project.name }}</h3>
-      </div>
-    </a>
+
+      </a>
+    </div>
   </ng-template>
 </p-carousel>

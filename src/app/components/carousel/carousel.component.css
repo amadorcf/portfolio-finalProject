@@ -22,7 +22,7 @@
 }
 
 
-.carousel-project h3,a {
+.carousel-project h3, a {
   margin-top: 10px;
   font-weight: bold;
   text-decoration: none;
@@ -30,13 +30,68 @@
   text-align: center;
 }
 
-/* Indicadores del carrusel */
+
+/* .carousel-project a .in-development{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(252, 252, 252, 0.8);
+  color: var(--text-color);
+  border-radius: 10px;
+  transition: all 400ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.carousel-project a:hover > .in-development {
+  opacity: 1;
+  visibility: visible;
+} */
+
+.carousel-project a > .in-development{
+  position: absolute;
+  bottom: 56px;
+  padding-top: 62px;
+  padding-bottom: 62px;
+  background-color: rgba(252, 252, 252, 0.9);
+  transition: all 800ms ease-out;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+}
+.carousel-project a:hover > .in-development {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-project a > .in-development h1{
+  width: 246px;
+  font-size: 28px;
+  transition: all 400ms ease-out;
+}
+
+.carousel-project a:hover > .in-development h1{
+  color: var(--text-color);
+  margin-bottom: 0;
+}
+
+.carousel-project img:hover{
+  filter: grayscale(0);
+  transform: scale(1.05, 1.05);
+}
+.carousel-project .no-hover img:hover {
+  filter: none;
+  transform: none;
+}
+
+/* INDICADORES DEL CARRUSEL*/
 .p-carousel-indicators {
   display: flex !important;
   justify-content: center;
   margin-top: 10px;
 }
-
 .p-carousel-indicator {
   width: 12px;
   height: 12px;
