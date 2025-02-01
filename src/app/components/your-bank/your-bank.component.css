@@ -279,13 +279,16 @@ mat-list-item div {
 
 /* Resaltar item con id 'highlighted-item' */
 #highlighted-item {
-  background-color: #b8eec3;  /* Color de fondo especial para el item destacado */
+  transform: scale(0.95, 0.95);
+  background-color: #5DE979FF;
+   /* Color de fondo especial para el item destacado */
   color: #fff;  /* Cambia el color del texto si lo deseas */
 }
 
 #highlighted-item:hover {
-  background-color: #60b671;  /* Color de fondo cuando el ratón pasa sobre el item */
-  transform: scale(0.95, 0.95);
+   /* Color de fondo cuando el ratón pasa sobre el item */
+  transform: scale(0.9, 0.9);
+  background-color: #88F19DFF;
   font-weight: 800;
 }
 
@@ -656,6 +659,11 @@ vg-player.darkened{
   }
 }
 
+.content__section section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 /* TABLET version */

@@ -28,7 +28,7 @@ export class YourBankComponent {
   isSidenavOpen = true; // Set the initial state to visible
   isMobile = true;
   isPlaying = false;
-  
+
   autoplay: boolean = true;
   display: boolean = false;
 
@@ -156,7 +156,7 @@ export class YourBankComponent {
   /* POP-UP: nuevo proyecto */
   openAddUrl(event: MouseEvent) {
     event.stopPropagation(); // Detiene la propagación del evento
-    window.open('https://yourbank-front.ey.r.appspot.com/', '_blank'); // Abrir Google en una nueva pestaña
+    window.open('http://yourbank-frontend.s3-website.eu-north-1.amazonaws.com/', '_blank'); // Abrir Google en una nueva pestaña
     this.closeModal(); // Cierra el modal
   }
 

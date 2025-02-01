@@ -34,6 +34,13 @@
       </div>
 
       <mat-nav-list>
+        <mat-list-item id="highlighted-item" (click)="openAddUrl($event)">
+          <div class="flex justify-center items-center gap-2"> <!-- Agregar clases de Tailwind aquí -->
+            <img src="../../../assets/img/project/YourBank/logo.png" alt="logo" width="30px">
+            <a mat-line >Acceso a la web</a>
+          </div>
+        </mat-list-item>
+        
         <mat-list-item class="sidebar-link" (click)="navigateTo('intro')">
           <a mat-line href="projects/your-bank#intro">1. Introducción</a>
         </mat-list-item>
@@ -54,12 +61,7 @@
           <a mat-line href="projects/your-bank#doc">5. Recursos</a>
         </mat-list-item>
 
-        <mat-list-item id="highlighted-item" (click)="openAddUrl($event)">
-          <div class="flex justify-center items-center gap-2"> <!-- Agregar clases de Tailwind aquí -->
-            <img src="../../../assets/img/project/YourBank/logo.png" alt="logo" width="30px">
-            <a mat-line >Acceso a la web</a>
-          </div>
-        </mat-list-item>
+
 
       </mat-nav-list>
     </mat-sidenav>
@@ -76,18 +78,7 @@
         </vg-player>
       </div>
 
-      <!-- Enlace al proyecto -->
-      <div class="content__section" id="link">
-        <section>
-          <h3>Acceso a la web</h3>
-          <a class="text-blue" href="https://yourbank-front.ey.r.appspot.com/">https://yourbank-fullstack.com/</a>
-          <div class="link-button">
-            <button class="" (click)="openAddUrl($event)">
-              Pruébala
-            </button>
-          </div>
-        </section>
-      </div>
+
 
       <div class="togglebtnwrapper">
         <h1>Proyecto: {{ project.name }}</h1>
@@ -95,6 +86,19 @@
           [ngClass]="{ 'active-button': isSidenavOpen }" *ngIf="!isSidenavOpen || !isMobile">
           <i class="fas fa-bars"></i>
         </button>
+      </div>
+
+      <!-- Enlace al proyecto -->
+      <div class="content__section" id="link">
+        <section>
+          <h3>Acceso a la web</h3>
+          <a class="text-blue" style="align-t: center;">Pulsa abajo 👇</a>
+          <div class="link-button">
+            <button class="" (click)="openAddUrl($event)">
+              Pruébala
+            </button>
+          </div>
+        </section>
       </div>
 
       <!-- Contenido principal -->
