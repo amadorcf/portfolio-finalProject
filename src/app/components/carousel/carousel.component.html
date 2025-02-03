@@ -4,12 +4,10 @@
       <a [routerLink]="project.name !== 'YourBank' ? ['/project', project.name] : ['/project', project.name]"
       (click)="checkRedirect(project.name, $event)">
 
-        <div [ngClass]="{'no-hover': project.name === 'YourCommerce'}">
+        <div [ngClass]="{'no-hover': project.name === 'YourCommerce'}" class="project-image-container">
           <img *ngIf="project.image" [src]="project.image" [alt]="project.name" />
-        </div>
-
-        <div class="in-development" *ngIf="project.name == 'YourCommerce'">
-          <h1> 🚧  EN DESARROLLO... </h1>
+          <span class="label-new" *ngIf="project.name == 'YourBank'">Actualizado</span>
+          <span class="label-new in-development" *ngIf="project.name == 'YourCommerce'">🚧 En desarrollo </span>
         </div>
 
         <h3>{{ project.name }}</h3>

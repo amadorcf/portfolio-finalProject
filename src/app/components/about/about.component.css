@@ -83,7 +83,7 @@
 
 .contact-button:hover{
   transform: scale(1.1, 1.1);
-  background-color: rgba(243, 148, 49, 0.5);
+  background: #f08d41;
   cursor: pointer;
 }
 
@@ -91,7 +91,7 @@
   align-self: center;
   text-align: center;
   /* background: rgba(30, 215, 96, 1); */
-  background: rgb(130, 228, 223, 1);
+  background: #d7e6e9;
   box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.9);
   color: #fff;
   font-weight: bold;
@@ -498,7 +498,7 @@
   .about .h2-title{
     text-align: center;
   }
-  
+
   .about-buttons{
     flex-direction: column;
   }
