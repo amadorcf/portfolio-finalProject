@@ -78,7 +78,18 @@
         </vg-player>
       </div>
 
-
+      <!-- Enlace al proyecto -->
+      <div class="content__section" id="link">
+        <section>
+          <h3>Acceso a la web</h3>
+          <a class="text-blue">Pulsa abajo 👇</a>
+          <div class="link-button">
+            <button class="" (click)="openAddUrl($event)">
+              Pruébala
+            </button>
+          </div>
+        </section>
+      </div>
 
       <div class="togglebtnwrapper">
         <h1>Proyecto: {{ project.name }}</h1>
@@ -86,19 +97,6 @@
           [ngClass]="{ 'active-button': isSidenavOpen }" *ngIf="!isSidenavOpen || !isMobile">
           <i class="fas fa-bars"></i>
         </button>
-      </div>
-
-      <!-- Enlace al proyecto -->
-      <div class="content__section" id="link">
-        <section>
-          <h3>Acceso a la web</h3>
-          <a class="text-blue" style="align-t: center;">Pulsa abajo 👇</a>
-          <div class="link-button">
-            <button class="" (click)="openAddUrl($event)">
-              Pruébala
-            </button>
-          </div>
-        </section>
       </div>
 
       <!-- Contenido principal -->
@@ -154,12 +152,10 @@
 
         <section id="arch">
           <h2>3. Arquitectura</h2>
-          <div class="img" (click)="this.sidenav.toggle()" *ngIf="!isMobile">
-
+          <div class="img" *ngIf="!isMobile">
             <p-image src="../../../assets/img/project/YourBank/arquitectura.png" alt="arquitectura" width="500"
-              [preview]="true">
+              [preview]="true" (onShow)="closeSidenav()" (onHide)="openSidenav()">>
             </p-image>
-
           </div>
 
           <ul>
@@ -232,7 +228,7 @@
         <section id="doc">
           <h2>5. Recursos</h2>
           <ul class="doc-icons">
-            <li><i class="bx bxl-github"></i>Github: <a href="https://github.com/amadorcf">YourBank-API</a></li>
+            <li><i class="bx bxl-github"></i>Github: <a href="https://github.com/amadorcf">YourBank repository</a></li>
             <li>
               <i class="bx bxs-file-doc"></i>Documentación: <a
                 href="https://documenter.getpostman.com/view/28708244/2sAXjJ6De7">API Documentation</a>

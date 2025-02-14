@@ -88,11 +88,6 @@ export class YourBankComponent {
       }
     });
 
-    $(() => {
-      $('mat-list-item').on('click', () => {
-        $('body').css('background-color', 'red');
-      });
-    });
   }
 
   getProject() {
@@ -196,4 +191,14 @@ export class YourBankComponent {
     clearInterval(this.timer);
   }
 
+  //ZOOM image
+  // Métodos para abrir y cerrar el sidenav
+  closeSidenav() {
+    this.sidenav.close(); // Cierra el sidenav cuando la imagen hace zoom
+  }
+
+  openSidenav() {
+    this.sidenav.open();  // Abre el sidenav cuando se sale del zoom
+  }
+  
 }
