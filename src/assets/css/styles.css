@@ -536,15 +536,15 @@ details[open] summary{
 }
 
 
-.p-image-toolbar {
-  position: absolute;
-  top: 180px;
-  right: 200px;
+/* Barra de herramientas del componente p-image */
+.p-image .p-image-toolbar {
+  position: initial;
   display: flex;
-  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+  flex-direction: column-reverse;
 }
 
-.p-image-toolbar button {
+/* Estilo del botón "X" */
+.p-image .p-image-toolbar button {
   background: #44c2af;
   color: white;
   border: none;
@@ -560,6 +560,6 @@ details[open] summary{
   transition: background 0.3s ease;
 }
 
-.p-image-toolbar button:hover {
+.p-image .p-image-toolbar button:hover {
   background: #92C5BDFF;
 }
