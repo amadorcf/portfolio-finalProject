@@ -280,7 +280,7 @@ mat-list-item div {
 /* Resaltar item con id 'highlighted-item' */
 #highlighted-item {
   transform: scale(0.95, 0.95);
-  background-color: #5DE979FF;
+  background-color: #90e5a3;
    /* Color de fondo especial para el item destacado */
   color: #fff;  /* Cambia el color del texto si lo deseas */
 }
@@ -288,7 +288,7 @@ mat-list-item div {
 #highlighted-item:hover {
    /* Color de fondo cuando el ratón pasa sobre el item */
   transform: scale(0.9, 0.9);
-  background-color: #88F19DFF;
+  background-color: #BCDBC3FF;
   font-weight: 800;
 }
 

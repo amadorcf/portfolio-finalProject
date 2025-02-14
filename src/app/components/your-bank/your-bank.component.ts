@@ -29,7 +29,7 @@ export class YourBankComponent {
   isMobile = true;
   isPlaying = false;
 
-  autoplay: boolean = true;
+  autoplay: boolean = false;
   display: boolean = false;
 
   progressBarWidth: number = 0; // Ancho de la barra de progreso

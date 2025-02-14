@@ -6,7 +6,7 @@
 
         <div [ngClass]="{'no-hover': project.name === 'YourCommerce'}" class="project-image-container">
           <img *ngIf="project.image" [src]="project.image" [alt]="project.name" />
-          <span class="label-new" *ngIf="project.name == 'YourBank'">Actualizado</span>
+          <span class="label-new updated" *ngIf="project.name == 'YourBank'">Actualizado</span>
           <span class="label-new in-development" *ngIf="project.name == 'YourCommerce'">🚧 En desarrollo </span>
         </div>
 

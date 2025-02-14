@@ -34,9 +34,11 @@
   filter: grayscale(0);
   transform: scale(1.05, 1.05);
 }
+
 .carousel-project .no-hover img:hover {
   filter: none;
   transform: none;
+  opacity: .5;
 }
 
 /* INDICADORES DEL CARRUSEL*/
@@ -59,11 +61,6 @@
 }
 
 /* ETIQUETA: NOVEDADES */
-
-.project {
-  position: relative;
-}
-
 .project-image-container {
   position: relative;  /* Esto asegura que la etiqueta se posicione dentro de este contenedor */
 }
@@ -72,8 +69,8 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: #f1c40f; /* Un azul moderno */
-  color: black;
+  background-color: #2ecc71;
+  color: white;
   padding: 10px 20px;
   font-weight: bold;
   border-radius: 20px;
@@ -82,12 +79,35 @@
   z-index: 10;
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: transform 0.3s ease;
 }
 
 .in-development {
-  background-color: #fff; /* Un azul moderno */
+  background-color: #fff;
+  color: black;
+  opacity: .9;
 }
 
+.updated {
+  background-color: #3498db; /* Un azul moderno */
+  animation: blink 1.5s infinite; /* Animación de parpadeo */
+}
+
+.carousel-project:hover .label-new {
+  transform: scale(1.05); /* Aumentar tamaño de la etiqueta */
+}
+/* Animación de parpadeo */
+@keyframes blink {
+  0% {
+    opacity: 1; /* Totalmente visible */
+  }
+  50% {
+    opacity: .6; /* Invisible */
+  }
+  100% {
+    opacity: 1; /* Totalmente visible */
+  }
+}
 
 /* VERSION MOVIL */
 @media all and (max-width: 950px) {
@@ -96,7 +116,7 @@
   }
 
   .label-new {
-    font-size: 12px;  /* Reducir el tamaño de la etiqueta en pantallas pequeñas */
+    font-size: 12px;
     padding: 4px 12px;
     top: 8px;
     right: 8px;
