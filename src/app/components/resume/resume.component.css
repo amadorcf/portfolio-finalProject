@@ -9,7 +9,8 @@
   --text-color: #f8f8f8;
   --container-color: #212121;
   --container-color-alt: #026274;
-  --body-color: var(--back-color);
+/*   --body-color: var(--back-color);*/
+  --body-color: #0D1117;
   --download-color: var(--orange);
 }
 

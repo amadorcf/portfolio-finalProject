@@ -53,8 +53,12 @@
 
 /* Botón de acción "Pruébala" centrado debajo de la imagen */
 .action-btn {
-  grid-column: 2;
-  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: auto;
+  width: 60%;
   background-color: #1f78ff;
   color: rgb(255, 255, 255);
   padding: 10px 20px;
@@ -64,8 +68,6 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  align-self: center;
-  justify-self: center;
   margin-top: 10px;
   border: none;
 
@@ -198,7 +200,9 @@
 }
 
 .toggle-button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 5px 5px;
   border: 1px solid var(--body-color);
   cursor: pointer;
@@ -278,33 +282,34 @@ mat-list-item div {
 }
 
 /* Resaltar item con id 'highlighted-item' */
-#highlighted-item {
-  transform: scale(0.95, 0.95);
-  background-color: #90e5a3;
-   /* Color de fondo especial para el item destacado */
-  color: #fff;  /* Cambia el color del texto si lo deseas */
-}
+/* #highlighted-item {
+  color: #fff;
+} */
 
-#highlighted-item:hover {
-   /* Color de fondo cuando el ratón pasa sobre el item */
+/* #highlighted-item:hover {
   transform: scale(0.9, 0.9);
   background-color: #BCDBC3FF;
   font-weight: 800;
-}
+} */
 
-/* También puedes cambiar el color del enlace cuando el item está destacado */
+
 #highlighted-item a {
-  color: #2d2926;  /* Cambia el color del texto del enlace en este item */
-
+  color: #fff;
 }
 
 
 /* Right panel */
+.show-scroll{
+  visibility: visible;
+  bottom: 2rem;
+  right: 2rem;
+}
+
 .sidenav-content{
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 20px 40px 40px;
+  padding: 40px 40px 40px;
   align-items: center;
   background-image: linear-gradient(hwb(133 56% 10%), #67D2AA, #44c2af);
 }
@@ -318,6 +323,12 @@ mat-list-item div {
   gap: 30px;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(12, 12, 12, .3);
+}
+
+.content__section section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content__section p, ul{
@@ -437,7 +448,7 @@ ul.doc-icons{
 .video_player{
   display: flex;
   justify-content: center;
-  padding: 40px;
+  padding: 0px 40px;
   max-width: 854px;
 }
 
@@ -484,7 +495,7 @@ vg-player.darkened{
   transition: .4s;
   visibility: hidden;
   text-decoration: none;
-  box-shadow: 0 0 8px rgba(12, 12, 12, .3);
+  box-shadow: 0 0 8px rgba(250, 250, 250, .3);
 }
 
 .scrolltop:hover{
@@ -548,12 +559,14 @@ vg-player.darkened{
 @media screen and (max-width: 968px){
 
   * {
-    box-shadow: none !important;
+    /* box-shadow: none !important; */
     background-image: none !important;
   }
 
   ::ng-deep main, .sidenav-content, .sidenav-container {
-    background: #8fe6a2;
+    background: var(--body-color);
+    box-shadow: none !important;
+    /* background: #8fe6a2; */
   }
 
   ::ng-deep .p-dialog {
@@ -573,7 +586,12 @@ vg-player.darkened{
   }
 
   .togglebtnwrapper{
-    gap: 10px;
+    gap: 20px;
+    width: 100%;
+    border-radius: 0;
+    /* border-top: .5px solid var(--back-color); */
+    position: fixed;
+    bottom: 0;
   }
 
   .togglebtnwrapper h1{
@@ -602,12 +620,13 @@ vg-player.darkened{
 
   .sidenav-content{
     gap: 10px;
-    padding: 20px;
-    background: #8fe6a2;
+    padding: 0px;
+    background: transparent;
   }
 
   .content__section{
     padding: 20px;
+    box-shadow: none !important;
   }
 
   .content__section p, ul{
@@ -622,8 +641,14 @@ vg-player.darkened{
     margin-bottom: 20px;
   }
 
+  .show-scroll{
+    bottom: 5rem;
+    opacity: 0.9;
+  }
+
   .scrolltop{
     right: 1rem;
+    box-shadow: .5 solid white !important;
   }
 
   .show-scroll{
@@ -653,12 +678,10 @@ vg-player.darkened{
   .content__section>#doc ul.doc-icons{
     margin-left: 0;
   }
-}
 
-.content__section section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  vg-player{
+    box-shadow: none !important;
+  }
 }
 
 

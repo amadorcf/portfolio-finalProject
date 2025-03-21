@@ -137,7 +137,6 @@ export class YourBankComponent {
       $('#scroll-toggle-button').removeClass('show-scroll-toggle');
     }
 
-    const sections = $('section[id]');
   }
 
   onPlay() {
@@ -200,5 +199,5 @@ export class YourBankComponent {
   openSidenav() {
     this.sidenav.open();  // Abre el sidenav cuando se sale del zoom
   }
-  
+
 }

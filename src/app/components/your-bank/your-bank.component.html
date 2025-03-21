@@ -34,12 +34,14 @@
       </div>
 
       <mat-nav-list>
-        <mat-list-item id="highlighted-item" (click)="openAddUrl($event)">
-          <div class="flex justify-center items-center gap-2"> <!-- Agregar clases de Tailwind aquí -->
-            <img src="../../../assets/img/project/YourBank/logo.png" alt="logo" width="30px">
-            <a mat-line >Acceso a la web</a>
+
+          <div class="flex justify-center items-center gap-2" (click)="openAddUrl($event)">
+            <div class="action-btn">
+              <img src="../../../assets/img/project/YourBank/logo.png" alt="logo" width="30px">
+              <a mat-line >Acceso a la web</a>
+            </div>
           </div>
-        </mat-list-item>
+
 
         <mat-list-item class="sidebar-link" (click)="navigateTo('intro')">
           <a mat-line href="projects/your-bank#intro">1. Introducción</a>
@@ -67,6 +69,19 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav-content">
+
+      <!-- HEADER -->
+      <div class="togglebtnwrapper" *ngIf="!isSidenavOpen || !isMobile">
+        <h1>Proyecto: {{ project.name }}</h1>
+        <button mat-button (click)="sidenav.toggle()" class="toggle-button"
+          [ngClass]="{ 'active-button': isSidenavOpen }" *ngIf="!isSidenavOpen">
+          <a href="/projects/your-bank#">
+            <i class="bx bx-menu scrolltop__icon"></i>
+          </a>
+        </button>
+      </div>
+
+      <!-- VIDEO PROMO -->
       <div class="video_player" *ngIf="!isSidenavOpen || !isMobile">
         <vg-player [ngClass]="{'darkened': isPlaying}">
           <video [vgMedia]="$any(media)" #media id="singleVideo" controls crossorigin
@@ -79,7 +94,13 @@
       </div>
 
       <!-- Enlace al proyecto -->
-      <div class="content__section" id="link">
+      <div *ngIf="isMobile && !isSidenavOpen" class="flex justify-center items-center gap-2" (click)="openAddUrl($event)">
+        <div class="action-btn">
+          <img src="../../../assets/img/project/YourBank/logo.png" alt="logo" width="30px">
+          <a mat-line >Acceso a la web</a>
+        </div>
+      </div>
+<!--       <div class="content__section" id="link">
         <section>
           <h3>Acceso a la web</h3>
           <a class="text-blue">Pulsa abajo 👇</a>
@@ -90,14 +111,7 @@
           </div>
         </section>
       </div>
-
-      <div class="togglebtnwrapper">
-        <h1>Proyecto: {{ project.name }}</h1>
-        <button mat-button (click)="sidenav.toggle()" class="toggle-button"
-          [ngClass]="{ 'active-button': isSidenavOpen }" *ngIf="!isSidenavOpen || !isMobile">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
+ -->
 
       <!-- Contenido principal -->
       <div class="content__section">
@@ -244,11 +258,11 @@
     <i class="bx bxs-up-arrow-alt scrolltop__icon"></i>
   </a>
 
-  <button class="scrolltop scroll-toggle-button" id="scroll-toggle-button" (click)="sidenav.toggle()">
+<!--   <button class="scrolltop scroll-toggle-button" id="scroll-toggle-button" (click)="sidenav.toggle()">
     <a href="/projects/your-bank#">
       <i class="bx bx-menu scrolltop__icon"></i>
     </a>
-  </button>
+  </button> -->
 </section>
 
 <div class="projects__button">
