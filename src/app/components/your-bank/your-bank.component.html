@@ -22,7 +22,7 @@
     </div>
   </p-dialog>
 
-  <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-container class="sidenav-container" [ngStyle]="{ 'height': (isMobile && isSidenavOpen) ? '75vh' : '100%' }">
     <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="isSidenavOpen">
 
       <div class="sidenav-title">
@@ -34,15 +34,15 @@
       </div>
 
       <mat-nav-list>
-
-          <div class="flex justify-center items-center gap-2" (click)="openAddUrl($event)">
-            <div class="action-btn">
-              <img src="../../../assets/img/project/YourBank/logo.png" alt="logo" width="30px">
-              <a mat-line >Acceso a la web</a>
-            </div>
+        <!-- Link yourbank AWS -->
+        <div class="flex justify-center items-center gap-2" (click)="openAddUrl($event)">
+          <div class="action-btn">
+            <img src="../../../assets/img/project/YourBank/logo.png" alt="logo" width="30px">
+            <a mat-line >Acceso a la web</a>
           </div>
+        </div>
 
-
+        <!-- Indice -->
         <mat-list-item class="sidebar-link" (click)="navigateTo('intro')">
           <a mat-line href="projects/your-bank#intro">1. Introducción</a>
         </mat-list-item>
@@ -62,10 +62,8 @@
         <mat-list-item class="sidebar-link" (click)="navigateTo('doc')">
           <a mat-line href="projects/your-bank#doc">5. Recursos</a>
         </mat-list-item>
-
-
-
       </mat-nav-list>
+      
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav-content">
@@ -73,7 +71,7 @@
       <!-- HEADER -->
       <div class="togglebtnwrapper" *ngIf="!isSidenavOpen || !isMobile">
         <h1>Proyecto: {{ project.name }}</h1>
-        <button mat-button (click)="sidenav.toggle()" class="toggle-button"
+        <button (click)="sidenav.toggle()" class="toggle-button"
           [ngClass]="{ 'active-button': isSidenavOpen }" *ngIf="!isSidenavOpen">
           <a href="/projects/your-bank#">
             <i class="bx bx-menu scrolltop__icon"></i>
@@ -100,21 +98,21 @@
           <a mat-line >Acceso a la web</a>
         </div>
       </div>
-<!--       <div class="content__section" id="link">
-        <section>
-          <h3>Acceso a la web</h3>
-          <a class="text-blue">Pulsa abajo 👇</a>
-          <div class="link-button">
-            <button class="" (click)="openAddUrl($event)">
-              Pruébala
-            </button>
-          </div>
-        </section>
-      </div>
- -->
+      <!--       <div class="content__section" id="link">
+              <section>
+                <h3>Acceso a la web</h3>
+                <a class="text-blue">Pulsa abajo 👇</a>
+                <div class="link-button">
+                  <button class="" (click)="openAddUrl($event)">
+                    Pruébala
+                  </button>
+                </div>
+              </section>
+            </div>
+      -->
 
       <!-- Contenido principal -->
-      <div class="content__section">
+      <div class="content__section" *ngIf="!(isMobile && isSidenavOpen)">
         <section id="intro">
           <h2>1. Introducción</h2>
           <p>

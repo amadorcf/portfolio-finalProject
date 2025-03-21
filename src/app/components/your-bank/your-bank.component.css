@@ -151,7 +151,6 @@
 .sidenav-container {
   border-radius: 40px;
   box-shadow: 0 0 8px rgba(12, 12, 12, .3);
-  height: 100%;
 }
 
 /* Left panel */
@@ -174,20 +173,18 @@
 
 .togglebtnwrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   right: 0;
-  width: fit-content;
   padding: 10px;
-  align-items: center;
-
   background-color: var(--body-color);
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(12, 12, 12, .3);
 }
 
 .togglebtnwrapper h1{
-  margin: 0px 20px 0px 20px;
+  padding: 0px 20px 0px 20px;
   text-align: center;
   text-transform: uppercase;
   font-family: stealfish;
@@ -195,14 +192,11 @@
 }
 
 
-.togglebtnwrapper>button {
-  margin-right: 20px;
-}
-
 .toggle-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 10px;
   padding: 5px 5px;
   border: 1px solid var(--body-color);
   cursor: pointer;
@@ -573,6 +567,10 @@ vg-player.darkened{
     height: auto;
   }
 
+  .mat-drawer{
+    position: relative;
+  }
+
   .styled-image{
     max-width: 210px;
   }
@@ -586,12 +584,14 @@ vg-player.darkened{
   }
 
   .togglebtnwrapper{
-    gap: 20px;
+    gap: 30px;
     width: 100%;
     border-radius: 0;
     /* border-top: .5px solid var(--back-color); */
     position: fixed;
     bottom: 0;
+    padding: 10px 0;
+    background: #fff;
   }
 
   .togglebtnwrapper h1{
@@ -606,7 +606,8 @@ vg-player.darkened{
   }
 
   .togglebtnwrapper>button {
-    margin-right: 10px;
+    margin-right: 0px;
+    padding: 2px 12px;
   }
 
   .sidenav{
@@ -689,7 +690,7 @@ vg-player.darkened{
 @media all and (max-width: 600px) {
 
   .togglebtnwrapper>button {
-    margin-right: 10px;
+    margin-right: 0px;
   }
 
 }
